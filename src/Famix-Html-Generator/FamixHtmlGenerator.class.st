@@ -10,7 +10,8 @@ Class {
 		'tWithAttribute',
 		'tWithDomElements',
 		'tag',
-		'tDomElement'
+		'tDomElement',
+		'tHasIndexedReferenceToImmediateSource'
 	],
 	#category : #'Famix-Html-Generator'
 }
@@ -25,6 +26,11 @@ FamixHtmlGenerator class >> packageName [
 FamixHtmlGenerator class >> prefix [
 
 	^ #'FamixHtml'
+]
+
+{ #category : #accessing }
+FamixHtmlGenerator class >> submetamodels [ 
+	^ { FamixGenerator }
 ]
 
 { #category : #definition }
@@ -54,9 +60,11 @@ FamixHtmlGenerator >> defineHierarchy [
 
 	super defineHierarchy.
 	document --|> tWithDomElements.
+	document --|> #THasImmediateSource.
 	element --|> tWithDomElements.
 	element --|> tDomElement.
-	element --|> tWithAttribute
+	element --|> tWithAttribute.
+	element --|> tHasIndexedReferenceToImmediateSource
 ]
 
 { #category : #definition }
@@ -89,5 +97,7 @@ FamixHtmlGenerator >> defineTraits [
 	tDomElement := builder
 		                newTraitNamed: #DomElement
 		                comment:
-		                'A dom object that can be added inside an element accepting dom concept'
+		                'A dom object that can be added inside an element accepting dom concept'.
+	tHasIndexedReferenceToImmediateSource := builder
+		                newTraitNamed: #THasIndexedReferenceToImmediateSource
 ]
