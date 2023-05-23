@@ -49,8 +49,8 @@ HTMLContentNode >> elements: anOrderedCollection [
 { #category : #'generated-initialize-release' }
 HTMLContentNode >> initialize [
 	super initialize.
-	elements := OrderedCollection new: 2.
 	_comments := OrderedCollection new: 2.
+	elements := OrderedCollection new: 2.
 ]
 
 { #category : #generated }
