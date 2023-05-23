@@ -15,16 +15,19 @@ HTMLParser class >> ambiguousTransitions [
 #[ 0 97 0 106] 
 #[ 0 105 0 106] 
 #[ 0 130 0 134] 
-#[ 0 134 0 205] 
-#[ 0 134 0 209] 
-#[ 0 50 0 150] 
-#[ 0 50 0 170]
+#[ 0 134 0 217] 
+#[ 0 134 0 221] 
+#[ 0 130 0 142] 
+#[ 0 142 0 217] 
+#[ 0 142 0 221] 
+#[ 0 50 0 158] 
+#[ 0 50 0 178]
 	).
 ]
 
 { #category : #'generated-accessing' }
 HTMLParser class >> cacheId [
-	^'2023-05-23T13:53:21.714+02:00'
+	^'2023-05-23T14:05:50.473+02:00'
 ]
 
 { #category : #generated }
@@ -57,8 +60,8 @@ htmlElements
     ;
 
 htmlElement
-    :  StartTag <TAG_OPEN> 'beginTagOpen' <TAG_NAME> 'tagOpenName' (<SEA_WS> Attribute 'htmlAttribute')*
-      (RetDefault <TAG_CLOSE> 'beginTagClose' (Content 'children' StartTag <TAG_OPEN> 'endTagOpen' <TAG_SLASH> <TAG_NAME> 'endTagOpenName' RetDefault <TAG_CLOSE> 'endTagClose' )? | RetDefault <TAG_SLASH_CLOSE>) {{ Element }}
+    :  StartTag <TAG_OPEN> 'beginTagOpen' <TAG_NAME> 'tagOpenName' (<SEA_WS> Attribute 'htmlAttribute')* <SEA_WS>?
+      (RetDefault <TAG_CLOSE> 'beginTagClose' (Content 'children' StartTag <TAG_OPEN> 'endTagOpen' <TAG_SLASH> <TAG_NAME> 'endTagOpenName' <SEA_WS>?  RetDefault <TAG_CLOSE> 'endTagClose' )? | RetDefault <TAG_SLASH_CLOSE>) {{ Element }}
     | <SCRIPTLET>
     | script
     | style
@@ -174,7 +177,7 @@ tag <TAG_NAME>
     ;
 
 tag <TAG_WHITESPACE>
-    : [\ \t\r\n] /* TODO: -> channel(HIDDEN)*/
+    : [\ \t\r\n]
     ;
 
 tag <HEXDIGIT>
@@ -291,7 +294,7 @@ attvalue <SINGLE_QUOTE_STRING>
 { #category : #generated }
 HTMLParser class >> reduceTable [
 ^#(
-	#(42 0 #reduceActionForRetDefault1: 2238465 true) 
+	#(42 0 #reduceActionForRetDefault1: 2259969 true) 
 	#(24 0 #nil 188417 false) 
 	#(26 1 #liftFirstValue: 295937 false) 
 	#(26 1 #liftFirstValue: 295938 false) 
@@ -302,42 +305,47 @@ HTMLParser class >> reduceTable [
 	#(23 6 #reduceActionForhtmlDocument3: 157699 false) 
 	#(23 6 #reduceActionForhtmlDocument3: 157698 false) 
 	#(25 2 #reduceActionForhtmlElements_2: 258050 false) 
-	#(41 0 #reduceActionForStartTag1: 2196481 true) 
+	#(41 0 #reduceActionForStartTag1: 2217985 true) 
 	#(23 7 #reduceActionForhtmlDocument4: 157700 false) 
-	#(38 1 #liftFirstValue: 1226753 false) 
-	#(38 1 #liftFirstValue: 1226754 false) 
-	#(29 1 #liftFirstValue: 423940 false) 
-	#(37 1 #liftFirstValue: 1154050 false) 
+	#(38 1 #liftFirstValue: 1248257 false) 
+	#(38 1 #liftFirstValue: 1248258 false) 
+	#(29 1 #liftFirstValue: 423945 false) 
+	#(37 1 #liftFirstValue: 1175554 false) 
 	#(28 2 #liftFirstValue: 373762 false) 
-	#(37 1 #reduceActionForhtmlMisc1: 1154049 false) 
-	#(29 1 #liftFirstValue: 423941 false) 
-	#(29 1 #liftFirstValue: 423942 false) 
-	#(39 2 #liftFirstValue: 1301505 false) 
-	#(39 2 #liftFirstValue: 1301506 false) 
-	#(40 2 #liftFirstValue: 1375233 false) 
-	#(40 2 #liftFirstValue: 1375234 false) 
+	#(37 1 #reduceActionForhtmlMisc1: 1175553 false) 
+	#(29 1 #liftFirstValue: 423946 false) 
+	#(29 1 #liftFirstValue: 423947 false) 
+	#(39 2 #liftFirstValue: 1323009 false) 
+	#(39 2 #liftFirstValue: 1323010 false) 
+	#(40 2 #liftFirstValue: 1396737 false) 
+	#(40 2 #liftFirstValue: 1396738 false) 
 	#(27 3 #reduceActionForhtmlElements1: 354305 false) 
 	#(31 0 #reduceActionFor__SEA_WS__Attribute__htmlAttribute___1: 504833 false) 
 	#(31 2 #reduceActionFor__SEA_WS__Attribute__htmlAttribute___2: 504834 false) 
-	#(35 1 #reduceActionForAttribute1: 944129 false) 
-	#(43 0 #reduceActionForStartATTVALUE1: 3475457 true) 
+	#(35 1 #reduceActionForAttribute1: 965633 false) 
+	#(43 0 #reduceActionForStartATTVALUE1: 3466241 true) 
 	#(30 2 #liftSecondValue: 504833 false) 
-	#(34 0 #reduceActionForhtmlElements_1: 854017 false) 
+	#(34 0 #reduceActionForhtmlElements_1: 875521 false) 
 	#(29 6 #reduceActionForhtmlElement1: 423937 false) 
-	#(29 6 #reduceActionForhtmlElement3: 423939 false) 
-	#(36 1 #liftFirstValue: 1099778 false) 
-	#(36 1 #liftFirstValue: 1099777 false) 
-	#(32 1 #reduceActionForContent1: 825345 false) 
-	#(33 1 #reduceActionFor__htmlComment__comment____htmlElement__element_____CDATA____htmlChardata__5: 854021 false) 
-	#(33 1 #reduceActionFor__htmlComment__comment____htmlElement__element_____CDATA____htmlChardata__3: 854019 false) 
-	#(34 2 #reduceActionFor__htmlComment__comment____htmlElement__element_____CDATA____htmlChardata___2: 854018 false) 
-	#(33 1 #reduceActionFor__htmlComment__comment____htmlElement__element_____CDATA____htmlChardata__1: 854017 false) 
-	#(32 2 #reduceActionForContent2: 825346 false) 
-	#(33 2 #reduceActionFor__htmlComment__comment____htmlElement__element_____CDATA____htmlChardata__5: 854022 false) 
-	#(33 2 #reduceActionFor__htmlComment__comment____htmlElement__element_____CDATA____htmlChardata__3: 854020 false) 
-	#(33 2 #reduceActionFor__htmlComment__comment____htmlElement__element_____CDATA____htmlChardata__1: 854018 false) 
-	#(35 5 #reduceActionForAttribute2: 944130 false) 
-	#(29 13 #reduceActionForhtmlElement2: 423938 false)
+	#(29 6 #reduceActionForhtmlElement4: 423940 false) 
+	#(29 7 #reduceActionForhtmlElement5: 423941 false) 
+	#(29 7 #reduceActionForhtmlElement4: 423944 false) 
+	#(36 1 #liftFirstValue: 1121282 false) 
+	#(36 1 #liftFirstValue: 1121281 false) 
+	#(32 1 #reduceActionForContent1: 846849 false) 
+	#(33 1 #reduceActionFor__htmlComment__comment____htmlElement__element_____CDATA____htmlChardata__5: 875525 false) 
+	#(33 1 #reduceActionFor__htmlComment__comment____htmlElement__element_____CDATA____htmlChardata__3: 875523 false) 
+	#(34 2 #reduceActionFor__htmlComment__comment____htmlElement__element_____CDATA____htmlChardata___2: 875522 false) 
+	#(33 1 #reduceActionFor__htmlComment__comment____htmlElement__element_____CDATA____htmlChardata__1: 875521 false) 
+	#(32 2 #reduceActionForContent2: 846850 false) 
+	#(33 2 #reduceActionFor__htmlComment__comment____htmlElement__element_____CDATA____htmlChardata__5: 875526 false) 
+	#(33 2 #reduceActionFor__htmlComment__comment____htmlElement__element_____CDATA____htmlChardata__3: 875524 false) 
+	#(33 2 #reduceActionFor__htmlComment__comment____htmlElement__element_____CDATA____htmlChardata__1: 875522 false) 
+	#(35 5 #reduceActionForAttribute2: 965634 false) 
+	#(29 13 #reduceActionForhtmlElement2: 423938 false) 
+	#(29 14 #reduceActionForhtmlElement6: 423942 false) 
+	#(29 14 #reduceActionForhtmlElement3: 423939 false) 
+	#(29 15 #reduceActionForhtmlElement7: 423943 false)
 	).
 ]
 
@@ -432,36 +440,52 @@ HTMLParser class >> transitionTable [
 #[0 0 165 0 16] 
 #[1 0 110 0 7 0 110 0 12 0 110 0 13 0 169 0 31] 
 #[1 0 173 0 7 0 6 0 12 0 6 0 13 0 177 0 30 0 181 0 42] 
-#[1 0 185 0 16 0 189 0 35] 
+#[1 0 6 0 12 0 6 0 13 0 185 0 16 0 189 0 35 0 193 0 42] 
 #[0 0 114 0 7 0 12 0 13] 
-#[1 0 193 0 12 0 197 0 13] 
-#[1 0 118 0 7 0 118 0 12 0 118 0 13 0 122 0 15 0 201 0 43] 
+#[1 0 197 0 12 0 201 0 13] 
+#[1 0 118 0 7 0 118 0 12 0 118 0 13 0 122 0 15 0 205 0 43] 
 #[0 0 126 0 7 0 12 0 13] 
-#[1 0 35 0 1 0 35 0 2 0 35 0 4 0 35 0 6 0 39 0 7 0 35 0 8 0 35 0 9 0 35 0 10 0 43 0 11 0 213 0 32 0 217 0 34 0 221 0 36 0 134 0 44] 
+#[1 0 209 0 12 0 213 0 13] 
+#[1 0 35 0 1 0 35 0 2 0 35 0 4 0 35 0 6 0 39 0 7 0 35 0 8 0 35 0 9 0 35 0 10 0 43 0 11 0 225 0 32 0 229 0 34 0 233 0 36 0 134 0 44] 
 #[0 0 138 0 1 0 2 0 4 0 6 0 7 0 8 0 9 0 10 0 11 0 44] 
-#[0 0 225 0 15] 
-#[0 0 142 0 1 0 2 0 4 0 6 0 8 0 9 0 10] 
-#[0 0 146 0 1 0 2 0 4 0 6 0 8 0 9 0 10] 
-#[1 0 50 0 10 0 229 0 41] 
-#[1 0 245 0 1 0 245 0 2 0 233 0 4 0 237 0 6 0 109 0 8 0 113 0 9 0 47 0 10 0 237 0 29 0 241 0 33 0 245 0 38 0 237 0 39 0 237 0 40 0 137 0 41] 
-#[1 0 130 0 1 0 130 0 2 0 130 0 4 0 130 0 6 0 130 0 8 0 130 0 9 0 130 0 10 0 249 0 34] 
-#[1 0 50 0 21 0 253 0 41] 
-#[0 1 1 0 10] 
-#[1 0 154 0 1 0 154 0 2 0 154 0 4 0 154 0 6 1 5 0 7 0 154 0 8 0 154 0 9 0 154 0 10 1 5 0 11 1 5 0 36] 
-#[1 0 158 0 1 0 158 0 2 0 158 0 4 0 158 0 6 1 9 0 7 0 158 0 8 0 158 0 9 0 158 0 10 1 9 0 11 1 9 0 36] 
-#[0 0 162 0 1 0 2 0 4 0 6 0 8 0 9 0 10] 
-#[1 0 166 0 1 0 166 0 2 0 166 0 4 0 166 0 6 1 13 0 7 0 166 0 8 0 166 0 9 0 166 0 10 1 13 0 11 1 13 0 36] 
-#[1 0 245 0 1 0 245 0 2 0 233 0 4 0 237 0 6 0 109 0 8 0 113 0 9 0 51 0 10 0 237 0 29 0 241 0 33 0 245 0 38 0 237 0 39 0 237 0 40 0 137 0 41] 
-#[0 1 17 0 21] 
-#[0 1 21 0 14] 
-#[0 0 174 0 1 0 2 0 4 0 6 0 8 0 9 0 10] 
-#[0 0 178 0 1 0 2 0 4 0 6 0 8 0 9 0 10] 
+#[0 0 237 0 15] 
+#[1 0 47 0 1 0 47 0 2 0 47 0 4 0 47 0 6 0 51 0 7 0 47 0 8 0 47 0 9 0 47 0 10 0 55 0 11 0 241 0 32 0 229 0 34 0 233 0 36 0 142 0 44] 
+#[0 0 146 0 1 0 2 0 4 0 6 0 7 0 8 0 9 0 10 0 11 0 44] 
+#[0 0 150 0 1 0 2 0 4 0 6 0 8 0 9 0 10] 
+#[0 0 154 0 1 0 2 0 4 0 6 0 8 0 9 0 10] 
+#[1 0 50 0 10 0 245 0 41] 
+#[1 1 5 0 1 1 5 0 2 0 249 0 4 0 253 0 6 0 109 0 8 0 113 0 9 0 59 0 10 0 253 0 29 1 1 0 33 1 5 0 38 0 253 0 39 0 253 0 40 0 137 0 41] 
+#[1 0 130 0 1 0 130 0 2 0 130 0 4 0 130 0 6 0 130 0 8 0 130 0 9 0 130 0 10 1 9 0 34] 
+#[1 0 50 0 21 1 13 0 41] 
+#[1 0 50 0 10 1 17 0 41] 
+#[0 1 21 0 10] 
+#[1 0 162 0 1 0 162 0 2 0 162 0 4 0 162 0 6 1 25 0 7 0 162 0 8 0 162 0 9 0 162 0 10 1 25 0 11 1 25 0 36] 
+#[1 0 166 0 1 0 166 0 2 0 166 0 4 0 166 0 6 1 29 0 7 0 166 0 8 0 166 0 9 0 166 0 10 1 29 0 11 1 29 0 36] 
+#[0 0 170 0 1 0 2 0 4 0 6 0 8 0 9 0 10] 
+#[1 0 174 0 1 0 174 0 2 0 174 0 4 0 174 0 6 1 33 0 7 0 174 0 8 0 174 0 9 0 174 0 10 1 33 0 11 1 33 0 36] 
+#[1 1 5 0 1 1 5 0 2 0 249 0 4 0 253 0 6 0 109 0 8 0 113 0 9 0 63 0 10 0 253 0 29 1 1 0 33 1 5 0 38 0 253 0 39 0 253 0 40 0 137 0 41] 
+#[0 1 37 0 21] 
+#[0 1 41 0 10] 
+#[0 1 45 0 14] 
 #[0 0 182 0 1 0 2 0 4 0 6 0 8 0 9 0 10] 
-#[0 0 186 0 7 0 12 0 13] 
-#[0 1 25 0 16] 
-#[1 0 6 0 12 1 29 0 42] 
-#[0 1 33 0 12] 
-#[0 0 190 0 1 0 2 0 4 0 6 0 7 0 8 0 9 0 10 0 11 0 44]
+#[0 0 186 0 1 0 2 0 4 0 6 0 8 0 9 0 10] 
+#[0 0 190 0 1 0 2 0 4 0 6 0 8 0 9 0 10] 
+#[0 0 194 0 7 0 12 0 13] 
+#[0 1 49 0 14] 
+#[0 1 53 0 16] 
+#[0 1 57 0 16] 
+#[1 1 61 0 7 0 6 0 12 1 65 0 42] 
+#[1 1 69 0 7 0 6 0 12 1 73 0 42] 
+#[1 0 6 0 12 1 77 0 42] 
+#[0 1 81 0 12] 
+#[1 0 6 0 12 1 85 0 42] 
+#[0 1 89 0 12] 
+#[0 1 93 0 12] 
+#[0 0 198 0 1 0 2 0 4 0 6 0 7 0 8 0 9 0 10 0 11 0 44] 
+#[0 1 97 0 12] 
+#[0 0 202 0 1 0 2 0 4 0 6 0 7 0 8 0 9 0 10 0 11 0 44] 
+#[0 0 206 0 1 0 2 0 4 0 6 0 7 0 8 0 9 0 10 0 11 0 44] 
+#[0 0 210 0 1 0 2 0 4 0 6 0 7 0 8 0 9 0 10 0 11 0 44]
 	).
 ]
 
@@ -645,6 +669,66 @@ HTMLParser >> reduceActionForhtmlElement3: nodes [
 	result beginTagOpen: (nodes at: 2).
 	result tagOpenName: (nodes at: 3).
 	result addNodes: (nodes at: 4) to: result htmlAttributes.
+	result beginTagClose: (nodes at: 6).
+	result _children: (nodes at: 7).
+	result endTagOpen: (nodes at: 9).
+	result endTagOpenName: (nodes at: 11).
+	result endTagClose: (nodes at: 14).
+	^ result
+]
+
+{ #category : #'generated-reduction actions' }
+HTMLParser >> reduceActionForhtmlElement4: nodes [
+
+	| result |
+	result := HTMLElementNode new.
+	result beginTagOpen: (nodes at: 2).
+	result tagOpenName: (nodes at: 3).
+	result addNodes: (nodes at: 4) to: result htmlAttributes.
+	^ result
+]
+
+{ #category : #'generated-reduction actions' }
+HTMLParser >> reduceActionForhtmlElement5: nodes [
+
+	| result |
+	result := HTMLElementNode new.
+	result beginTagOpen: (nodes at: 2).
+	result tagOpenName: (nodes at: 3).
+	result addNodes: (nodes at: 4) to: result htmlAttributes.
+	result beginTagClose: (nodes at: 7).
+	^ result
+]
+
+{ #category : #'generated-reduction actions' }
+HTMLParser >> reduceActionForhtmlElement6: nodes [
+
+	| result |
+	result := HTMLElementNode new.
+	result beginTagOpen: (nodes at: 2).
+	result tagOpenName: (nodes at: 3).
+	result addNodes: (nodes at: 4) to: result htmlAttributes.
+	result beginTagClose: (nodes at: 7).
+	result _children: (nodes at: 8).
+	result endTagOpen: (nodes at: 10).
+	result endTagOpenName: (nodes at: 12).
+	result endTagClose: (nodes at: 14).
+	^ result
+]
+
+{ #category : #'generated-reduction actions' }
+HTMLParser >> reduceActionForhtmlElement7: nodes [
+
+	| result |
+	result := HTMLElementNode new.
+	result beginTagOpen: (nodes at: 2).
+	result tagOpenName: (nodes at: 3).
+	result addNodes: (nodes at: 4) to: result htmlAttributes.
+	result beginTagClose: (nodes at: 7).
+	result _children: (nodes at: 8).
+	result endTagOpen: (nodes at: 10).
+	result endTagOpenName: (nodes at: 12).
+	result endTagClose: (nodes at: 15).
 	^ result
 ]
 
