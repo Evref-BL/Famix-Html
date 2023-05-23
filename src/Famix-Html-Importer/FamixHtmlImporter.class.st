@@ -5,10 +5,21 @@ Class {
 	#classTraits : 'THTMLProgramNodeVisitor classTrait',
 	#instVars : [
 		'model',
-		'parentNode'
+		'parentNode',
+		'currentDocument'
 	],
 	#category : #'Famix-Html-Importer'
 }
+
+{ #category : #generated }
+FamixHtmlImporter >> create: aType for: aNode [
+
+	^ self model add: (aType new
+			   startPos: aNode startPosition;
+			   endPos: aNode stopPosition;
+			   immediateSource: currentDocument;
+			   yourself)
+]
 
 { #category : #'as yet unclassified' }
 FamixHtmlImporter >> importString: aHTMLString [
@@ -46,7 +57,7 @@ FamixHtmlImporter >> visitAttribute: anAttribute [
 
 	| currentEntity |
 	currentEntity := parentNode addAttribute:
-		                 (self model add: FamixHtmlAttribute new).
+		                 (self create: FamixHtmlAttribute for: anAttribute).
 	currentEntity attributeName: anAttribute attributeName value.
 	currentEntity attributeValue: anAttribute attributeValue value
 ]
@@ -54,8 +65,10 @@ FamixHtmlImporter >> visitAttribute: anAttribute [
 { #category : #generated }
 FamixHtmlImporter >> visitDocument: aDocument [
 
-	parentNode := (self model add: FamixHtmlDocument new).
-	self clone visitSmaCCParseNode: aDocument.
+	parentNode := self model add: FamixHtmlDocument new.
+	currentDocument := parentNode.
+	parentNode source: aDocument source.
+	self clone visitSmaCCParseNode: aDocument
 ]
 
 { #category : #generated }
@@ -63,7 +76,7 @@ FamixHtmlImporter >> visitElement: anElement [
 
 	| currentEntity |
 	currentEntity := parentNode addDomElement:
-		                 (self model add: FamixHtmlElement new).
+		                 (self create: FamixHtmlElement for: anElement).
 	currentEntity tagName: anElement tagOpenName value.
 	self clone
 		parentNode: currentEntity;

@@ -4,6 +4,8 @@ I represent an attribute of an HTML element
 Class {
 	#name : #FamixHtmlAttribute,
 	#superclass : #FamixHtmlEntity,
+	#traits : 'FamixHtmlTHasIndexedReferenceToImmediateSource',
+	#classTraits : 'FamixHtmlTHasIndexedReferenceToImmediateSource classTrait',
 	#instVars : [
 		'#attributeName => FMProperty',
 		'#attributeValue => FMProperty',

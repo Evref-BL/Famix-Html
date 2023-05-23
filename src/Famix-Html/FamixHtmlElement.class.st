@@ -4,8 +4,8 @@ I represent an element of an HTML document
 Class {
 	#name : #FamixHtmlElement,
 	#superclass : #FamixHtmlEntity,
-	#traits : 'FamixHtmlDomElement + FamixHtmlTWithAttribute + FamixHtmlTWithDomElements',
-	#classTraits : 'FamixHtmlDomElement classTrait + FamixHtmlTWithAttribute classTrait + FamixHtmlTWithDomElements classTrait',
+	#traits : 'FamixHtmlDomElement + FamixHtmlTHasIndexedReferenceToImmediateSource + FamixHtmlTWithAttribute + FamixHtmlTWithDomElements',
+	#classTraits : 'FamixHtmlDomElement classTrait + FamixHtmlTHasIndexedReferenceToImmediateSource classTrait + FamixHtmlTWithAttribute classTrait + FamixHtmlTWithDomElements classTrait',
 	#instVars : [
 		'#attributes => FMMany type: #FamixHtmlAttribute opposite: #element',
 		'#tagName => FMProperty'

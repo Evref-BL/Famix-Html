@@ -4,6 +4,12 @@ Class {
 	#category : #'Famix-Html-Model'
 }
 
+{ #category : #accessing }
+FamixHtmlModel class >> allSubmetamodelsPackagesNames [
+	<generated>
+	^ #(#'Moose-Query' #'Famix-Traits')
+]
+
 { #category : #meta }
 FamixHtmlModel class >> annotation [
 	<FMClass: #FamixHtmlModel super: #MooseModel>

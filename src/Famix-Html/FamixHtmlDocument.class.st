@@ -4,8 +4,8 @@ I represent an HTML document
 Class {
 	#name : #FamixHtmlDocument,
 	#superclass : #FamixHtmlEntity,
-	#traits : 'FamixHtmlTWithDomElements',
-	#classTraits : 'FamixHtmlTWithDomElements classTrait',
+	#traits : 'FamixHtmlTWithDomElements + FamixTHasImmediateSource',
+	#classTraits : 'FamixHtmlTWithDomElements classTrait + FamixTHasImmediateSource classTrait',
 	#category : #'Famix-Html-Entities'
 }
 

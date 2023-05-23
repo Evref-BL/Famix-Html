@@ -11,7 +11,8 @@ Class {
 		'tWithDomElements',
 		'tag',
 		'tDomElement',
-		'tHasIndexedReferenceToImmediateSource'
+		'tHasIndexedReferenceToImmediateSource',
+		'famixTHasImmediateSource'
 	],
 	#category : #'Famix-Html-Generator'
 }
@@ -52,7 +53,9 @@ FamixHtmlGenerator >> defineClasses [
 		        comment: 'I represent some text inside an element'.
 	script := builder
 		          newClassNamed: #Script
-		          comment: 'I represent some script inside an element'
+		          comment: 'I represent some script inside an element'.
+		
+	famixTHasImmediateSource := self remoteTrait: #THasImmediateSource withPrefix: #Famix 
 ]
 
 { #category : #definition }
@@ -60,11 +63,12 @@ FamixHtmlGenerator >> defineHierarchy [
 
 	super defineHierarchy.
 	document --|> tWithDomElements.
-	document --|> #THasImmediateSource.
+	document --|> famixTHasImmediateSource.
 	element --|> tWithDomElements.
 	element --|> tDomElement.
 	element --|> tWithAttribute.
-	element --|> tHasIndexedReferenceToImmediateSource
+	element --|> tHasIndexedReferenceToImmediateSource.
+	attribute --|> tHasIndexedReferenceToImmediateSource.
 ]
 
 { #category : #definition }
@@ -73,7 +77,9 @@ FamixHtmlGenerator >> defineProperties [
 	super defineProperties.
 	attribute property: #attributeName type: #String.
 	attribute property: #attributeValue type: #String.
-	element property: #tagName type: #String
+	element property: #tagName type: #String.
+	tHasIndexedReferenceToImmediateSource property: #startPos type: #Number.
+	tHasIndexedReferenceToImmediateSource property: #endPos type: #Number.
 ]
 
 { #category : #definition }
@@ -81,7 +87,9 @@ FamixHtmlGenerator >> defineRelations [
 
 	super defineRelations.
 	tWithDomElements <>-* tDomElement.
-	element <>-* attribute
+	element <>-* attribute.
+	(tHasIndexedReferenceToImmediateSource property: #immediateSource)
+	*- (famixTHasImmediateSource property: #referenceToImmediateSource)
 ]
 
 { #category : #definition }
