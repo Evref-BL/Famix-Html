@@ -360,6 +360,49 @@ HTMLScanner >> scan112 [
 ]
 
 { #category : #generated }
+HTMLScanner >> scan113 [
+
+	self step.
+	currentCharacter == $< ifTrue: [ ^ self scan3 ].
+	(currentCharacter == $: or: [ 
+		 (currentCharacter between: $A and: $Z) or: [ 
+			 currentCharacter between: $a and: $z ] ]) ifTrue: [ 
+		^ self scan114 ].
+	^ self scan2
+]
+
+{ #category : #generated }
+HTMLScanner >> scan114 [
+
+	[ 
+	self recordMatch: #( 17 ).
+	self step.
+	currentCharacter == $) ifTrue: [ 
+		self recordMatch: #( 17 ).
+		self step.
+		currentCharacter == $< ifTrue: [ ^ self scan3 ].
+		currentCharacter == $] ifTrue: [ ^ self scan115 ].
+		^ self scan2 ].
+	currentCharacter == $< ifTrue: [ ^ self scan3 ].
+	currentCharacter == $] ifTrue: [ ^ self scan115 ].
+	(currentCharacter between: $- and: $.) or: [ 
+		(currentCharacter between: $0 and: $:) or: [ 
+			(currentCharacter between: $A and: $Z) or: [ 
+				currentCharacter == $_ or: [ currentCharacter between: $a and: $z ] ] ] ] ]
+		whileTrue.
+	^ self scan2
+]
+
+{ #category : #generated }
+HTMLScanner >> scan115 [
+
+	self recordMatch: #( 17 ).
+	self step.
+	currentCharacter == $< ifTrue: [ ^ self scan3 ].
+	^ self scan2
+]
+
+{ #category : #generated }
 HTMLScanner >> scan12 [
 
 	[ 
@@ -2494,13 +2537,24 @@ HTMLScanner >> scanForTokenX1 [
 
 	self step.
 	currentCharacter == Character cr ifTrue: [ ^ self scan7 ].
-	currentCharacter == $/ ifTrue: [ ^ self scanForTokenX1X1 ].
-	currentCharacter == $< ifTrue: [ ^ self scan14 ].
-	^ self scanForTokenX1X4
+	^ self scanForTokenX1X5
 ]
 
 { #category : #generated }
 HTMLScanner >> scanForTokenX1X1 [
+
+	self step.
+	currentCharacter == $( ifTrue: [ ^ self scan113 ].
+	currentCharacter == $< ifTrue: [ ^ self scan3 ].
+	(currentCharacter == $: or: [ 
+		 (currentCharacter between: $A and: $Z) or: [ 
+			 currentCharacter between: $a and: $z ] ]) ifTrue: [ 
+		^ self scan114 ].
+	^ self scan2
+]
+
+{ #category : #generated }
+HTMLScanner >> scanForTokenX1X2 [
 
 	self recordMatch: #( 15 ).
 	self step.
@@ -2513,7 +2567,7 @@ HTMLScanner >> scanForTokenX1X1 [
 ]
 
 { #category : #generated }
-HTMLScanner >> scanForTokenX1X2 [
+HTMLScanner >> scanForTokenX1X3 [
 
 	self recordMatch: #( 13 ).
 	self step.
@@ -2522,7 +2576,7 @@ HTMLScanner >> scanForTokenX1X2 [
 ]
 
 { #category : #generated }
-HTMLScanner >> scanForTokenX1X3 [
+HTMLScanner >> scanForTokenX1X4 [
 
 	self recordMatch: #( 16 ).
 	self step.
@@ -2531,25 +2585,21 @@ HTMLScanner >> scanForTokenX1X3 [
 ]
 
 { #category : #generated }
-HTMLScanner >> scanForTokenX1X4 [
+HTMLScanner >> scanForTokenX1X5 [
 
-	currentCharacter == $= ifTrue: [ ^ self scanForTokenX1X3 ].
-	currentCharacter == $> ifTrue: [ ^ self scanForTokenX1X2 ].
+	currentCharacter == $( ifTrue: [ ^ self scan113 ].
+	currentCharacter == $/ ifTrue: [ ^ self scanForTokenX1X2 ].
+	currentCharacter == $< ifTrue: [ ^ self scan14 ].
+	currentCharacter == $= ifTrue: [ ^ self scanForTokenX1X4 ].
+	currentCharacter == $> ifTrue: [ ^ self scanForTokenX1X3 ].
+	currentCharacter == $[ ifTrue: [ ^ self scanForTokenX1X1 ].
 	(currentCharacter between: Character pageUp and: Character newPage) 
 		ifTrue: [ ^ self scan6 ].
 	currentCharacter isSeparator ifTrue: [ ^ self scan5 ].
 	(currentCharacter == $: or: [ 
 		 (currentCharacter between: $A and: $Z) or: [ 
 			 currentCharacter between: $a and: $z ] ]) ifTrue: [ 
-		[ 
-		self recordMatch: #( 17 ).
-		self step.
-		currentCharacter == $< ifTrue: [ ^ self scan3 ].
-		(currentCharacter between: $- and: $.) or: [ 
-			(currentCharacter between: $0 and: $:) or: [ 
-				(currentCharacter between: $A and: $Z) or: [ 
-					currentCharacter == $_ or: [ 
-						currentCharacter between: $a and: $z ] ] ] ] ] whileTrue ].
+		^ self scan114 ].
 	^ self scan2
 ]
 

@@ -24,7 +24,7 @@ HTMLParser class >> ambiguousTransitions [
 
 { #category : #'generated-accessing' }
 HTMLParser class >> cacheId [
-	^'2023-05-16T07:50:43.519+02:00'
+	^'2023-05-23T07:16:03.082+02:00'
 ]
 
 { #category : #generated }
@@ -71,7 +71,7 @@ Content
     ;
 
 Attribute
-    : <TAG_NAME> 'attributeName' (StartATTVALUE <TAG_EQUALS> 'attributeEqualSymbol' StartTag <ATTVALUE_VALUE> 'attributeValue')? {{}}
+    :  <TAG_NAME> 'attributeName' (StartATTVALUE <TAG_EQUALS> 'attributeEqualSymbol' StartTag <ATTVALUE_VALUE> 'attributeValue')? {{}}
     ;
 
 htmlChardata
@@ -172,7 +172,7 @@ tag <TAG_EQUALS>
     ;
 
 tag <TAG_NAME>
-    : <TAG_NameStartChar> <TAG_NameChar>*
+    : <Attribute_tag_prefix>? <TAG_NameStartChar> <TAG_NameChar>* <Attribute_tag_suffix>?
     ;
 
 tag <TAG_WHITESPACE>
@@ -198,6 +198,15 @@ tag <TAG_NameChar>
 tag <TAG_NameStartChar>
     : [\:a-zA-Z]
     ;
+
+
+tag <Attribute_tag_prefix>
+	: \[? \(?
+	;
+
+tag <Attribute_tag_suffix>
+	: \)? \]?
+	;
 
 /* <scripts> */
 
@@ -294,32 +303,32 @@ HTMLParser class >> reduceTable [
 	#(24 5 #reduceActionForhtmlDocument3: 181251 false) 
 	#(24 5 #reduceActionForhtmlDocument3: 181250 false) 
 	#(26 2 #reduceActionForhtmlElements_2: 270338 false) 
-	#(42 0 #reduceActionForStartTag1: 2082817 true) 
+	#(42 0 #reduceActionForStartTag1: 2083841 true) 
 	#(24 6 #reduceActionForhtmlDocument4: 181252 false) 
-	#(39 1 #liftFirstValue: 1206273 false) 
-	#(39 1 #liftFirstValue: 1206274 false) 
+	#(39 1 #liftFirstValue: 1207297 false) 
+	#(39 1 #liftFirstValue: 1207298 false) 
 	#(30 1 #liftFirstValue: 436228 false) 
-	#(38 1 #liftFirstValue: 1156098 false) 
+	#(38 1 #liftFirstValue: 1157122 false) 
 	#(29 2 #liftFirstValue: 386050 false) 
-	#(38 1 #liftFirstValue: 1156097 false) 
+	#(38 1 #liftFirstValue: 1157121 false) 
 	#(30 1 #liftFirstValue: 436229 false) 
 	#(30 1 #liftFirstValue: 436230 false) 
-	#(40 2 #liftFirstValue: 1281025 false) 
-	#(40 2 #liftFirstValue: 1281026 false) 
-	#(41 2 #liftFirstValue: 1354753 false) 
-	#(41 2 #liftFirstValue: 1354754 false) 
+	#(40 2 #liftFirstValue: 1282049 false) 
+	#(40 2 #liftFirstValue: 1282050 false) 
+	#(41 2 #liftFirstValue: 1355777 false) 
+	#(41 2 #liftFirstValue: 1355778 false) 
 	#(28 3 #liftSecondValue: 366593 false) 
 	#(32 0 #reduceActionForhtmlElements_1: 517121 false) 
-	#(43 0 #reduceActionForRetDefault1: 2124801 true) 
+	#(43 0 #reduceActionForRetDefault1: 2125825 true) 
 	#(36 1 #reduceActionForAttribute1: 947201 false) 
-	#(44 0 #reduceActionForStartATTVALUE1: 3222529 true) 
+	#(44 0 #reduceActionForStartATTVALUE1: 3360769 true) 
 	#(32 2 #reduceActionForhtmlElements_2: 517122 false) 
 	#(31 1 #liftFirstValue: 517121 false) 
 	#(30 6 #reduceActionForhtmlElement1: 436225 false) 
 	#(35 0 #reduceActionFor__htmlElement__element_____CDATA____htmlComment__comment____htmlChardata___1: 857089 false) 
 	#(30 6 #reduceActionForhtmlElement3: 436227 false) 
-	#(37 1 #liftFirstValue: 1101826 false) 
-	#(37 1 #liftFirstValue: 1101825 false) 
+	#(37 1 #liftFirstValue: 1102850 false) 
+	#(37 1 #liftFirstValue: 1102849 false) 
 	#(33 1 #reduceActionForContent1: 828417 false) 
 	#(34 1 #reduceActionFor__htmlElement__element_____CDATA____htmlComment__comment____htmlChardata__3: 857091 false) 
 	#(34 1 #reduceActionFor__htmlElement__element_____CDATA____htmlComment__comment____htmlChardata__1: 857089 false) 
