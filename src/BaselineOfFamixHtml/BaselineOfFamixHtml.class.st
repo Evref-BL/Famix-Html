@@ -36,5 +36,6 @@ BaselineOfFamixHtml >> definePackages: spec [
 		package: 'Famix-Html-Extension'
 		with: [ spec requires: #( 'Famix-Html' ) ];
 		package: 'Famix-Html-Generator';
+		package: 'Famix-Html-Importer' with: [ spec requires: #( 'SmaCC_HTML' ) ];
 		package: 'SmaCC_HTML' with: [ spec requires: #( 'SmaCC' ) ]
 ]
