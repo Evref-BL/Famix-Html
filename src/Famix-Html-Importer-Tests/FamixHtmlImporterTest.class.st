@@ -98,3 +98,17 @@ FamixHtmlImporterTest >> testCanImportTagWithEndOfLine [
 				attributeValue
 		equals: '"hello"'
 ]
+
+{ #category : #initialization }
+FamixHtmlImporterTest >> testCanParseTwoComments [
+
+	importer importString: '<div att="hello1"></div>
+	<!-- First comment -->
+	<div att="hello2"></div>
+	<!-- Second comment -->
+	<div att="hello3"></div>'.
+	self
+		assert:
+		(htmlModel allWithType: FamixHtmlElement) size
+		equals: 3
+]
