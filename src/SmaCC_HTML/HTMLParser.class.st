@@ -27,7 +27,7 @@ HTMLParser class >> ambiguousTransitions [
 
 { #category : #'generated-accessing' }
 HTMLParser class >> cacheId [
-	^'2023-05-23T14:05:50.473+02:00'
+	^'2023-06-06T07:32:47.568+02:00'
 ]
 
 { #category : #generated }
@@ -124,7 +124,7 @@ default <SCRIPTLET>
     ;
 
 default tag attvalue style <SEA_WS>
-    :  (\ |\t|\r? \n)+
+    :  (\ |\t|\r|\n)+
     ;
 
 default <SCRIPT_OPEN>
@@ -244,7 +244,7 @@ StartATTVALUE
 	;
 
 attvalue <ATTVALUE_VALUE>
-    : \ * <ATTRIBUTE> /* TODO: -> popMode*/
+    : \ * <ATTRIBUTE>
     ;
 
 attvalue <ATTRIBUTE>
@@ -271,6 +271,8 @@ attvalue <ATTCHAR>
     | \:
     | \;
     | \#
+    | \<
+    | \>
     | [0-9a-zA-Z]
     ;
 
@@ -283,18 +285,18 @@ attvalue <DECCHARS>
     ;
 
 attvalue <DOUBLE_QUOTE_STRING>
-    : \"" [^\<\""]* \""
+    : \"" [^\""]* \""
     ;
 
 attvalue <SINGLE_QUOTE_STRING>
-    : \' [^\<\']* \'
+    : \' [^\']* \'
     ;"
 ]
 
 { #category : #generated }
 HTMLParser class >> reduceTable [
 ^#(
-	#(42 0 #reduceActionForRetDefault1: 2259969 true) 
+	#(42 0 #reduceActionForRetDefault1: 2258945 true) 
 	#(24 0 #nil 188417 false) 
 	#(26 1 #liftFirstValue: 295937 false) 
 	#(26 1 #liftFirstValue: 295938 false) 
@@ -305,7 +307,7 @@ HTMLParser class >> reduceTable [
 	#(23 6 #reduceActionForhtmlDocument3: 157699 false) 
 	#(23 6 #reduceActionForhtmlDocument3: 157698 false) 
 	#(25 2 #reduceActionForhtmlElements_2: 258050 false) 
-	#(41 0 #reduceActionForStartTag1: 2217985 true) 
+	#(41 0 #reduceActionForStartTag1: 2216961 true) 
 	#(23 7 #reduceActionForhtmlDocument4: 157700 false) 
 	#(38 1 #liftFirstValue: 1248257 false) 
 	#(38 1 #liftFirstValue: 1248258 false) 
@@ -323,7 +325,7 @@ HTMLParser class >> reduceTable [
 	#(31 0 #reduceActionFor__SEA_WS__Attribute__htmlAttribute___1: 504833 false) 
 	#(31 2 #reduceActionFor__SEA_WS__Attribute__htmlAttribute___2: 504834 false) 
 	#(35 1 #reduceActionForAttribute1: 965633 false) 
-	#(43 0 #reduceActionForStartATTVALUE1: 3466241 true) 
+	#(43 0 #reduceActionForStartATTVALUE1: 3465217 true) 
 	#(30 2 #liftSecondValue: 504833 false) 
 	#(34 0 #reduceActionForhtmlElements_1: 875521 false) 
 	#(29 6 #reduceActionForhtmlElement1: 423937 false) 

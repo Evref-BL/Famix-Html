@@ -21,6 +21,27 @@ FamixHtmlImporterTest >> setUp [
 ]
 
 { #category : #initialization }
+FamixHtmlImporterTest >> testCanImportComplexAttributeValue [
+
+	importer importString: '<div att="hello<--world"></div>'.
+	self assert: htmlModel size equals: 3.
+	self
+		assert:
+		(htmlModel allUsing: FamixHtmlDomElement) anyOne attributes size
+		equals: 1.
+	self
+		assert:
+			(htmlModel allUsing: FamixHtmlDomElement) anyOne attributes anyOne
+				attributeName
+		equals: 'att'.
+	self
+		assert:
+			(htmlModel allUsing: FamixHtmlDomElement) anyOne attributes anyOne
+				attributeValue
+		equals: '"hello<--world"'
+]
+
+{ #category : #initialization }
 FamixHtmlImporterTest >> testCanImportEmptyFile [
 
 	importer importString: ''.
@@ -51,6 +72,29 @@ FamixHtmlImporterTest >> testCanImportSimpleDivWithAttribute [
 		equals: 'att'.
 	self
 		assert: (htmlModel allUsing: FamixHtmlDomElement) anyOne attributes anyOne
+				attributeValue
+		equals: '"hello"'
+]
+
+{ #category : #initialization }
+FamixHtmlImporterTest >> testCanImportTagWithEndOfLine [
+
+	importer importString: '<div
+	att="hello"
+	></div>'.
+	self assert: htmlModel size equals: 3.
+	self
+		assert:
+		(htmlModel allUsing: FamixHtmlDomElement) anyOne attributes size
+		equals: 1.
+	self
+		assert:
+			(htmlModel allUsing: FamixHtmlDomElement) anyOne attributes anyOne
+				attributeName
+		equals: 'att'.
+	self
+		assert:
+			(htmlModel allUsing: FamixHtmlDomElement) anyOne attributes anyOne
 				attributeValue
 		equals: '"hello"'
 ]
