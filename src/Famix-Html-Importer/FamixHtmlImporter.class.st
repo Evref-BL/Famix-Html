@@ -1,3 +1,16 @@
+"
+```st
+importer := FamixHtmlImporter new.
+importer model: FamixHtmlModel new.
+
+importer importString: '<h1>
+	<button class=""Hello"">
+		hello
+	</button>
+</h1>'.
+importer model
+```
+"
 Class {
 	#name : #FamixHtmlImporter,
 	#superclass : #Object,
