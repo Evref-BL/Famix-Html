@@ -1,0 +1,17 @@
+SmalltalkCISpec {
+  #loading : [
+    SCIMetacelloLoadSpec {
+      #baseline : 'FamixHtml',
+      #directory : 'src',
+      #platforms : [ #pharo ],
+      #onConflict : #useIncoming,
+      #onUpgrade : #useIncoming
+    }
+  ],
+  #testing : {
+    #coverage : {
+      #packages : [ 'Famix-Html.*', 'SmaCC_HTML' ],
+      #format : #lcov
+    }
+  }
+}
