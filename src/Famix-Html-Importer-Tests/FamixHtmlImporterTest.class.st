@@ -114,7 +114,21 @@ FamixHtmlImporterTest >> testCanParseTwoComments [
 ]
 
 { #category : #initialization }
-FamixHtmlImporterTest >> testParseMultilineWithDashAndArrow [
+FamixHtmlImporterTest >> testParseMultilineWithArrow [
+
+	importer importString: '<div>
+    <!-- 
+      >
+    -->
+</div>'.
+	self
+		assert:
+		(htmlModel allWithType: FamixHtmlElement) size
+		equals: 1
+]
+
+{ #category : #initialization }
+FamixHtmlImporterTest >> testParseMultilineWithDash [
 
 	importer importString: '<div>
     <!-- 

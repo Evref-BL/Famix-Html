@@ -15,9 +15,9 @@ HTMLParser class >> ambiguousTransitions [
 #[ 0 97 0 106] 
 #[ 0 105 0 106] 
 #[ 0 130 0 134] 
-#[ 0 130 0 217] 
-#[ 0 130 0 221] 
-#[ 0 134 0 142] 
+#[ 0 134 0 217] 
+#[ 0 134 0 221] 
+#[ 0 130 0 142] 
 #[ 0 142 0 217] 
 #[ 0 142 0 221] 
 #[ 0 50 0 158] 
@@ -27,7 +27,7 @@ HTMLParser class >> ambiguousTransitions [
 
 { #category : #'generated-accessing' }
 HTMLParser class >> cacheId [
-	^'2023-06-06T10:10:52.119+02:00'
+	^'2023-06-06T10:16:42.97+02:00'
 ]
 
 { #category : #generated }
@@ -99,7 +99,7 @@ style
     ;
 
 default <HTML_COMMENT>
-    : \<!\-\- (.?[^\-\>])* \-\-\>
+    : \<!\-\- (.?[^\-])* \-\-\>
     ;
 
 default <HTML_CONDITIONAL_COMMENT>
@@ -296,7 +296,7 @@ attvalue <SINGLE_QUOTE_STRING>
 { #category : #generated }
 HTMLParser class >> reduceTable [
 ^#(
-	#(42 0 #reduceActionForRetDefault1: 2269185 true) 
+	#(42 0 #reduceActionForRetDefault1: 2267137 true) 
 	#(24 0 #nil 188417 false) 
 	#(26 1 #liftFirstValue: 295937 false) 
 	#(26 1 #liftFirstValue: 295938 false) 
@@ -307,7 +307,7 @@ HTMLParser class >> reduceTable [
 	#(23 6 #reduceActionForhtmlDocument3: 157699 false) 
 	#(23 6 #reduceActionForhtmlDocument3: 157698 false) 
 	#(25 2 #reduceActionForhtmlElements_2: 258050 false) 
-	#(41 0 #reduceActionForStartTag1: 2227201 true) 
+	#(41 0 #reduceActionForStartTag1: 2225153 true) 
 	#(23 7 #reduceActionForhtmlDocument4: 157700 false) 
 	#(38 1 #liftFirstValue: 1248257 false) 
 	#(38 1 #liftFirstValue: 1248258 false) 
@@ -325,10 +325,10 @@ HTMLParser class >> reduceTable [
 	#(31 0 #reduceActionFor__SEA_WS__Attribute__htmlAttribute___1: 504833 false) 
 	#(31 2 #reduceActionFor__SEA_WS__Attribute__htmlAttribute___2: 504834 false) 
 	#(35 1 #reduceActionForAttribute1: 965633 false) 
-	#(43 0 #reduceActionForStartATTVALUE1: 3475457 true) 
+	#(43 0 #reduceActionForStartATTVALUE1: 3473409 true) 
 	#(30 2 #liftSecondValue: 504833 false) 
-	#(29 6 #reduceActionForhtmlElement1: 423937 false) 
 	#(34 0 #reduceActionForhtmlElements_1: 875521 false) 
+	#(29 6 #reduceActionForhtmlElement1: 423937 false) 
 	#(29 6 #reduceActionForhtmlElement4: 423940 false) 
 	#(29 7 #reduceActionForhtmlElement5: 423941 false) 
 	#(29 7 #reduceActionForhtmlElement4: 423944 false) 
@@ -448,7 +448,7 @@ HTMLParser class >> transitionTable [
 #[1 0 118 0 7 0 118 0 12 0 118 0 13 0 122 0 15 0 205 0 43] 
 #[0 0 126 0 7 0 12 0 13] 
 #[1 0 209 0 12 0 213 0 13] 
-#[1 0 35 0 1 0 35 0 2 0 35 0 4 0 35 0 6 0 39 0 7 0 35 0 8 0 35 0 9 0 35 0 10 0 43 0 11 0 225 0 32 0 229 0 34 0 233 0 36 0 130 0 44] 
+#[1 0 35 0 1 0 35 0 2 0 35 0 4 0 35 0 6 0 39 0 7 0 35 0 8 0 35 0 9 0 35 0 10 0 43 0 11 0 225 0 32 0 229 0 34 0 233 0 36 0 134 0 44] 
 #[0 0 138 0 1 0 2 0 4 0 6 0 7 0 8 0 9 0 10 0 11 0 44] 
 #[0 0 237 0 15] 
 #[1 0 47 0 1 0 47 0 2 0 47 0 4 0 47 0 6 0 51 0 7 0 47 0 8 0 47 0 9 0 47 0 10 0 55 0 11 0 241 0 32 0 229 0 34 0 233 0 36 0 142 0 44] 
@@ -457,7 +457,7 @@ HTMLParser class >> transitionTable [
 #[0 0 154 0 1 0 2 0 4 0 6 0 8 0 9 0 10] 
 #[1 0 50 0 10 0 245 0 41] 
 #[1 1 5 0 1 1 5 0 2 0 249 0 4 0 253 0 6 0 109 0 8 0 113 0 9 0 59 0 10 0 253 0 29 1 1 0 33 1 5 0 38 0 253 0 39 0 253 0 40 0 137 0 41] 
-#[1 0 134 0 1 0 134 0 2 0 134 0 4 0 134 0 6 0 134 0 8 0 134 0 9 0 134 0 10 1 9 0 34] 
+#[1 0 130 0 1 0 130 0 2 0 130 0 4 0 130 0 6 0 130 0 8 0 130 0 9 0 130 0 10 1 9 0 34] 
 #[1 0 50 0 21 1 13 0 41] 
 #[1 0 50 0 10 1 17 0 41] 
 #[0 1 21 0 10] 
