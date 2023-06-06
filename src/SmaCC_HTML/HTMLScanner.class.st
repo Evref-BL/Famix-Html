@@ -434,7 +434,9 @@ HTMLScanner >> scan24 [
 
 	self step.
 	currentCharacter == $- ifTrue: [ 
+		[ 
 		self step.
+		currentCharacter == $- ] whileTrue.
 		currentCharacter == $< ifTrue: [ ^ self scan2 ].
 		currentCharacter == $> ifTrue: [ 
 			self recordMatch: #( 1 ).

@@ -100,6 +100,15 @@ FamixHtmlImporterTest >> testCanImportTagWithEndOfLine [
 ]
 
 { #category : #initialization }
+FamixHtmlImporterTest >> testCanParseLongEndComment [
+
+	importer importString: '<div att="hello1"></div>
+	<!-- First comment ----->
+	<div att="hello2"></div>'.
+	self assert: (htmlModel allWithType: FamixHtmlElement) size equals: 2
+]
+
+{ #category : #initialization }
 FamixHtmlImporterTest >> testCanParseTwoComments [
 
 	importer importString: '<div att="hello1"></div>
