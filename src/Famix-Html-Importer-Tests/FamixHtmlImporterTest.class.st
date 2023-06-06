@@ -100,12 +100,54 @@ FamixHtmlImporterTest >> testCanImportTagWithEndOfLine [
 ]
 
 { #category : #initialization }
+FamixHtmlImporterTest >> testCanParseCommentFirstThenDiv [
+
+	importer importString: '<!-- hello --> <div></div>'.
+	self assert: (htmlModel allWithType: FamixHtmlElement) size equals: 1
+]
+
+{ #category : #initialization }
+FamixHtmlImporterTest >> testCanParseDivFirstThenComment [
+
+	importer importString: '<div></div><!-- hello --> '.
+	self assert: (htmlModel allWithType: FamixHtmlElement) size equals: 1
+]
+
+{ #category : #initialization }
+FamixHtmlImporterTest >> testCanParseDivFirstThenSimpleText [
+
+	importer importString: '<div></div>Hello World'.
+	self assert: (htmlModel allWithType: FamixHtmlElement) size equals: 1
+]
+
+{ #category : #initialization }
 FamixHtmlImporterTest >> testCanParseLongEndComment [
 
 	importer importString: '<div att="hello1"></div>
 	<!-- First comment ----->
 	<div att="hello2"></div>'.
 	self assert: (htmlModel allWithType: FamixHtmlElement) size equals: 2
+]
+
+{ #category : #initialization }
+FamixHtmlImporterTest >> testCanParseOnlyComment [
+
+	importer importString: '<!-- hello -->'.
+	self assert: (htmlModel allWithType: FamixHtmlElement) size equals: 0
+]
+
+{ #category : #initialization }
+FamixHtmlImporterTest >> testCanParseSimpleText [
+
+	importer importString: 'Hello World'.
+	self assert: (htmlModel allWithType: FamixHtmlElement) size equals: 0
+]
+
+{ #category : #initialization }
+FamixHtmlImporterTest >> testCanParseSimpleTextFirstThenDiv [
+
+	importer importString: 'Hello World<div></div>'.
+	self assert: (htmlModel allWithType: FamixHtmlElement) size equals: 1
 ]
 
 { #category : #initialization }
