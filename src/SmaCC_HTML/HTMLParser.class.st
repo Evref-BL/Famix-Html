@@ -27,7 +27,7 @@ HTMLParser class >> ambiguousTransitions [
 
 { #category : #'generated-accessing' }
 HTMLParser class >> cacheId [
-	^'2023-06-06T10:08:01.061+02:00'
+	^'2023-06-06T10:10:52.119+02:00'
 ]
 
 { #category : #generated }
@@ -99,7 +99,7 @@ style
     ;
 
 default <HTML_COMMENT>
-    : \<!\-\- (.?.?[^\-\>])* \-\-\>
+    : \<!\-\- (.?[^\-\>])* \-\-\>
     ;
 
 default <HTML_CONDITIONAL_COMMENT>
@@ -296,7 +296,7 @@ attvalue <SINGLE_QUOTE_STRING>
 { #category : #generated }
 HTMLParser class >> reduceTable [
 ^#(
-	#(42 0 #reduceActionForRetDefault1: 2271233 true) 
+	#(42 0 #reduceActionForRetDefault1: 2269185 true) 
 	#(24 0 #nil 188417 false) 
 	#(26 1 #liftFirstValue: 295937 false) 
 	#(26 1 #liftFirstValue: 295938 false) 
@@ -307,7 +307,7 @@ HTMLParser class >> reduceTable [
 	#(23 6 #reduceActionForhtmlDocument3: 157699 false) 
 	#(23 6 #reduceActionForhtmlDocument3: 157698 false) 
 	#(25 2 #reduceActionForhtmlElements_2: 258050 false) 
-	#(41 0 #reduceActionForStartTag1: 2229249 true) 
+	#(41 0 #reduceActionForStartTag1: 2227201 true) 
 	#(23 7 #reduceActionForhtmlDocument4: 157700 false) 
 	#(38 1 #liftFirstValue: 1248257 false) 
 	#(38 1 #liftFirstValue: 1248258 false) 
@@ -325,7 +325,7 @@ HTMLParser class >> reduceTable [
 	#(31 0 #reduceActionFor__SEA_WS__Attribute__htmlAttribute___1: 504833 false) 
 	#(31 2 #reduceActionFor__SEA_WS__Attribute__htmlAttribute___2: 504834 false) 
 	#(35 1 #reduceActionForAttribute1: 965633 false) 
-	#(43 0 #reduceActionForStartATTVALUE1: 3477505 true) 
+	#(43 0 #reduceActionForStartATTVALUE1: 3475457 true) 
 	#(30 2 #liftSecondValue: 504833 false) 
 	#(29 6 #reduceActionForhtmlElement1: 423937 false) 
 	#(34 0 #reduceActionForhtmlElements_1: 875521 false) 
