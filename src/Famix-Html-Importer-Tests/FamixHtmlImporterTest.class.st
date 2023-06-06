@@ -205,3 +205,17 @@ FamixHtmlImporterTest >> testParseMultilineWithDashes [
 		(htmlModel allWithType: FamixHtmlElement) size
 		equals: 1
 ]
+
+{ #category : #initialization }
+FamixHtmlImporterTest >> testParseMultilineWithDashesAndTest [
+
+	importer importString: '<div>
+    <!-- 
+      ---Hello
+    -->
+</div>'.
+	self
+		assert:
+		(htmlModel allWithType: FamixHtmlElement) size
+		equals: 1
+]

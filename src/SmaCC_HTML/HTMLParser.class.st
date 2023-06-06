@@ -26,16 +26,16 @@ HTMLParser class >> ambiguousTransitions [
 #[ 0 50 0 170] 
 #[ 0 174 0 233] 
 #[ 0 178 0 233] 
-#[ 0 86 0 186] 
-#[ 0 86 0 229] 
-#[ 0 86 0 186 0 233] 
+#[ 0 90 0 186] 
+#[ 0 90 0 229] 
+#[ 0 90 0 186 0 233] 
 #[ 0 50 0 190]
 	).
 ]
 
 { #category : #'generated-accessing' }
 HTMLParser class >> cacheId [
-	^'2023-06-06T17:48:23.264+02:00'
+	^'2023-06-06T18:01:40.607+02:00'
 ]
 
 { #category : #generated }
@@ -110,7 +110,7 @@ style
     ;
 
 default <HTML_COMMENT>
-    : \<!\-\- (.?[^\-]|(\-)*\s)* \-*\-\-\>
+    : \<!\-\- (.?[^\-]|(\-)*[^\>\-])* \-*\-\-\>
     ;
 
 default <HTML_CONDITIONAL_COMMENT>
@@ -307,7 +307,7 @@ attvalue <SINGLE_QUOTE_STRING>
 { #category : #generated }
 HTMLParser class >> reduceTable [
 ^#(
-	#(42 0 #reduceActionForRetDefault1: 2356225 true) 
+	#(42 0 #reduceActionForRetDefault1: 2361345 true) 
 	#(24 0 #nil 188417 false) 
 	#(26 1 #liftFirstValue: 295937 false) 
 	#(26 1 #liftFirstValue: 295938 false) 
@@ -318,7 +318,7 @@ HTMLParser class >> reduceTable [
 	#(23 6 #reduceActionForhtmlDocument3: 157699 false) 
 	#(23 6 #reduceActionForhtmlDocument3: 157698 false) 
 	#(25 2 #reduceActionForhtmlElements_2: 258050 false) 
-	#(41 0 #reduceActionForStartTag1: 2314241 true) 
+	#(41 0 #reduceActionForStartTag1: 2319361 true) 
 	#(23 7 #reduceActionForhtmlDocument4: 157700 false) 
 	#(38 1 #liftFirstValue: 1326081 false) 
 	#(38 1 #liftFirstValue: 1326082 false) 
@@ -327,8 +327,8 @@ HTMLParser class >> reduceTable [
 	#(29 1 #liftFirstValue: 423948 false) 
 	#(37 1 #liftFirstValue: 1234946 false) 
 	#(28 2 #liftFirstValue: 373762 false) 
-	#(29 1 #reduceActionForhtmlElement13: 423949 false) 
-	#(37 1 #reduceActionForhtmlElement13: 1234945 false) 
+	#(37 1 #reduceActionForhtmlMisc1: 1234945 false) 
+	#(29 1 #reduceActionForhtmlMisc1: 423949 false) 
 	#(29 1 #liftFirstValue: 423946 false) 
 	#(29 1 #liftFirstValue: 423947 false) 
 	#(39 2 #liftFirstValue: 1400833 false) 
@@ -339,7 +339,7 @@ HTMLParser class >> reduceTable [
 	#(31 0 #reduceActionFor__SEA_WS__Attribute__htmlAttribute___1: 504833 false) 
 	#(31 2 #reduceActionFor__SEA_WS__Attribute__htmlAttribute___2: 504834 false) 
 	#(35 1 #reduceActionForAttribute1: 1025025 false) 
-	#(43 0 #reduceActionForStartATTVALUE1: 3562497 true) 
+	#(43 0 #reduceActionForStartATTVALUE1: 3567617 true) 
 	#(30 2 #liftSecondValue: 504833 false) 
 	#(34 0 #reduceActionForhtmlElements_1: 934913 false) 
 	#(29 6 #reduceActionForhtmlElement1: 423937 false) 
@@ -445,7 +445,7 @@ HTMLParser class >> transitionTable [
 #[1 0 23 0 1 0 23 0 2 0 23 0 6 0 23 0 7 0 23 0 8 0 23 0 9 0 23 0 10 0 23 0 11 0 74 0 44] 
 #[1 0 30 0 1 0 30 0 2 0 30 0 6 0 30 0 7 0 30 0 8 0 30 0 9 0 30 0 10 0 30 0 11 0 161 0 28 0 30 0 44] 
 #[0 0 82 0 1 0 2 0 6 0 7 0 8 0 9 0 10 0 11 0 44] 
-#[1 0 27 0 1 0 27 0 2 0 27 0 6 0 27 0 7 0 27 0 8 0 27 0 9 0 27 0 10 0 27 0 11 0 86 0 44] 
+#[1 0 27 0 1 0 27 0 2 0 27 0 6 0 27 0 7 0 27 0 8 0 27 0 9 0 27 0 10 0 27 0 11 0 90 0 44] 
 #[0 0 94 0 1 0 2 0 4 0 6 0 7 0 8 0 9 0 10 0 11 0 44] 
 #[0 0 98 0 1 0 2 0 4 0 6 0 7 0 8 0 9 0 10 0 11 0 44] 
 #[0 0 165 0 10] 
@@ -456,7 +456,7 @@ HTMLParser class >> transitionTable [
 #[1 0 31 0 1 0 35 0 2 0 118 0 6 0 39 0 7 0 118 0 8 0 118 0 9 0 118 0 10 0 43 0 11 0 125 0 37 0 173 0 38 0 118 0 44] 
 #[0 0 177 0 16] 
 #[0 0 78 0 1 0 2 0 6 0 7 0 8 0 9 0 10 0 11 0 44] 
-#[0 0 90 0 1 0 2 0 6 0 7 0 8 0 9 0 10 0 11 0 44] 
+#[0 0 86 0 1 0 2 0 6 0 7 0 8 0 9 0 10 0 11 0 44] 
 #[1 0 122 0 7 0 122 0 12 0 122 0 13 0 181 0 31] 
 #[1 0 185 0 7 0 6 0 12 0 6 0 13 0 189 0 30 0 193 0 42] 
 #[1 0 6 0 12 0 6 0 13 0 197 0 16 0 201 0 35 0 205 0 42] 
@@ -654,15 +654,6 @@ HTMLParser >> reduceActionForhtmlDocument4: nodes [
 ]
 
 { #category : #'generated-reduction actions' }
-HTMLParser >> reduceActionForhtmlElement13: nodes [
-
-	| result |
-	result := HTMLCommentNode new.
-	result comment: (nodes at: 1).
-	^ result
-]
-
-{ #category : #'generated-reduction actions' }
 HTMLParser >> reduceActionForhtmlElement1: nodes [
 
 	| result |
@@ -788,5 +779,14 @@ HTMLParser >> reduceActionForhtmlElements_2: nodes [
 	result := nodes at: 1.
 	self addAll: ((nodes at: 2) at: 1) to: (result at: 2).
 	self add: ((nodes at: 2) at: 2) to: (result at: 1).
+	^ result
+]
+
+{ #category : #'generated-reduction actions' }
+HTMLParser >> reduceActionForhtmlMisc1: nodes [
+
+	| result |
+	result := HTMLCommentNode new.
+	result comment: (nodes at: 1).
 	^ result
 ]

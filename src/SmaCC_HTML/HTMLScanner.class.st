@@ -437,15 +437,13 @@ HTMLScanner >> scan24 [
 		[ 
 		self step.
 		currentCharacter == $- ] whileTrue.
-		currentCharacter == $< ifTrue: [ ^ self scan2 ].
+		currentCharacter == $< ifTrue: [ ^ self scan25 ].
 		currentCharacter == $> ifTrue: [ 
 			self recordMatch: #( 1 ).
 			self step.
 			currentCharacter == $< ifTrue: [ ^ self scan2 ].
 			^ self scan1 ].
-		(currentCharacter isSeparator or: [ 
-			 currentCharacter == Character pageUp ]) ifTrue: [ ^ self scan23 ].
-		^ self scan1 ].
+		^ self scan23 ].
 	currentCharacter == $< ifTrue: [ ^ self scan25 ].
 	^ self scan23
 ]
