@@ -1,5 +1,7 @@
 # Famix-Html
 
+[![Coverage Status](https://coveralls.io/repos/github/Evref-BL/Famix-Html/badge.svg?branch=main)](https://coveralls.io/github/Evref-BL/Famix-Html?branch=main)
+
 A Famix meta-model to represent HTML files.
 
 ## Installation
