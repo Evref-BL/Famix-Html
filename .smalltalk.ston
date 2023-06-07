@@ -10,7 +10,7 @@ SmalltalkCISpec {
   ],
   #testing : {
     #coverage : {
-      #packages : [ 'Famix-Html.*', 'SmaCC_HTML' ],
+      #packages : [ 'Famix-Html', 'Famix-Html-Extension', 'Famix-Html-Importer', 'Famix-Html-Importer-Tests', 'SmaCC_HTML' ],
       #format : #lcov
     }
   }
