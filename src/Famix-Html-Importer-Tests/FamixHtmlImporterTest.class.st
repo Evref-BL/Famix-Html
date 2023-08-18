@@ -202,9 +202,9 @@ FamixHtmlImporterTest >> testCanParseTwoComments [
 FamixHtmlImporterTest >> testCanParseWithoutEndingTag [
 
 	importer importString: '<div>
-			<span>
+			<area>
 			<div-b>
-				<a>
+				<input>
 				<div-c></div-c>
 				<b/>
 			</div-b>
