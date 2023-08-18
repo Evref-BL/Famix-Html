@@ -100,6 +100,13 @@ FamixHtmlImporterTest >> testCanImportTagWithEndOfLine [
 ]
 
 { #category : #initialization }
+FamixHtmlImporterTest >> testCanParseAttributeWithComa [
+
+	importer importString: '<div att="''hello1''"></div>'.
+	self assert: (htmlModel allWithType: FamixHtmlElement) size equals: 1
+]
+
+{ #category : #initialization }
 FamixHtmlImporterTest >> testCanParseCommentFirstThenDiv [
 
 	importer importString: '<!-- hello --> <div></div>'.
