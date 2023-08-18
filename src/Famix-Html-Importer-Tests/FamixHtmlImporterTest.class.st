@@ -149,6 +149,21 @@ FamixHtmlImporterTest >> testCanParseLongEndComment [
 ]
 
 { #category : #initialization }
+FamixHtmlImporterTest >> testCanParseNested [
+
+	importer importString:
+'<div-a>
+    <div-b>
+		<div-c>
+       </div-c>
+		<div-D>
+</div-D>
+	</div-b>
+</div-a>'.
+	self assert: (htmlModel allWithType: FamixHtmlElement) size equals: 4
+]
+
+{ #category : #initialization }
 FamixHtmlImporterTest >> testCanParseOnlyComment [
 
 	importer importString: '<!-- hello -->'.
