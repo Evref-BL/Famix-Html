@@ -35,11 +35,11 @@ HTMLElementNode >> _children [
 ]
 
 { #category : #generated }
-HTMLElementNode >> _children: aHTMLContentNode [
+HTMLElementNode >> _children: anOrderedCollection [
 
-	self _children notNil ifTrue: [ self _children parent: nil ].
-	_children := aHTMLContentNode.
-	self _children notNil ifTrue: [ self _children parent: self ]
+	self setParent: self _children to: nil.
+	_children := anOrderedCollection.
+	self setParent: self _children to: self
 ]
 
 { #category : #generated }
@@ -111,7 +111,13 @@ HTMLElementNode >> endTagOpenName: aSmaCCToken [
 { #category : #generated }
 HTMLElementNode >> nodeVariables [
 
-	^ #( #_children #_attributes )
+	^ #( #_attributes )
+]
+
+{ #category : #generated }
+HTMLElementNode >> otherVariables [
+
+	^ #( #_children )
 ]
 
 { #category : #generated }

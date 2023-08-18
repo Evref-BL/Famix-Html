@@ -24,12 +24,6 @@ THTMLProgramNodeVisitor >> visitComment: aComment [
 ]
 
 { #category : #generated }
-THTMLProgramNodeVisitor >> visitContent: aContent [
-
-	^ self visitProgram: aContent
-]
-
-{ #category : #generated }
 THTMLProgramNodeVisitor >> visitDocument: aDocument [
 
 	^ self visitProgram: aDocument

@@ -184,6 +184,12 @@ FamixHtmlImporterTest >> testCanParseTwoComments [
 ]
 
 { #category : #initialization }
+FamixHtmlImporterTest >> testIncorrectTagName [
+
+	self should: (importer importString: '<[div]>') raise: Exception
+]
+
+{ #category : #initialization }
 FamixHtmlImporterTest >> testParseMultilineWithArrow [
 
 	importer importString: '<div>
