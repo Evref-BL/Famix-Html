@@ -100,6 +100,20 @@ FamixHtmlImporterTest >> testCanImportTagWithEndOfLine [
 ]
 
 { #category : #initialization }
+FamixHtmlImporterTest >> testCanParseAttributePrefixedWithStar [
+
+	importer importString: '<div *ngIf="hello"></div>'.
+	self assert: (htmlModel allWithType: FamixHtmlElement) size equals: 1.
+	self
+		assert: (htmlModel allWithType: FamixHtmlAttribute) size
+		equals: 1.
+	self
+		assert:
+		(htmlModel allWithType: FamixHtmlAttribute) anyOne attributeName
+		equals: '*ngIf'
+]
+
+{ #category : #initialization }
 FamixHtmlImporterTest >> testCanParseAttributeWithComa [
 
 	importer importString: '<div att="''hello1''"></div>'.

@@ -23,7 +23,7 @@ HTMLParser class >> ambiguousTransitions [
 
 { #category : #'generated-accessing' }
 HTMLParser class >> cacheId [
-	^'2023-08-18T16:29:03.68+02:00'
+	^'2023-08-18T16:38:18.924+02:00'
 ]
 
 { #category : #generated }
@@ -220,6 +220,7 @@ tag <TAG_NameStartChar>
 
 tag <Attribute_tag_prefix>
 	: \[? \(? \#?
+	| \*
 	;
 
 tag <Attribute_tag_suffix>
@@ -343,7 +344,7 @@ HTMLParser class >> reduceTable [
 	#(40 2 #liftFirstValue: 1613826 false) 
 	#(26 3 #reduceActionForhtmlElements1: 354305 false) 
 	#(35 1 #reduceActionForAttribute1: 1164289 false) 
-	#(43 0 #reduceActionForStartATTVALUE1: 3830785 true) 
+	#(43 0 #reduceActionForStartATTVALUE1: 3836929 true) 
 	#(34 0 #reduceActionFor__SEA_WS___Attribute__htmlAttribute___1: 1113089 false) 
 	#(30 0 #reduceActionFor__SEA_WS___Attribute__htmlAttribute___1: 658433 false) 
 	#(31 5 #reduceActionForVoidElement1: 891905 false) 
