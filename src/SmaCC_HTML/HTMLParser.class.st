@@ -16,14 +16,15 @@ HTMLParser class >> ambiguousTransitions [
 #[ 0 97 0 118] 
 #[ 0 105 0 118] 
 #[ 0 117 0 118] 
-#[ 0 142 1 101] 
+#[ 0 122 1 29] 
+#[ 0 142 1 109] 
 #[ 0 30 0 50]
 	).
 ]
 
 { #category : #'generated-accessing' }
 HTMLParser class >> cacheId [
-	^'2023-08-18T16:38:18.924+02:00'
+	^'2023-08-18T16:48:02.877+02:00'
 ]
 
 { #category : #generated }
@@ -75,7 +76,7 @@ Attributes
    ;
 
 Attribute
-    :  <TAG_NAME> 'attributeName' (StartATTVALUE <TAG_EQUALS> 'attributeEqualSymbol' StartTag <ATTVALUE_VALUE> 'attributeValue')? {{}}
+    :  <TAG_NAME> 'attributeName' (<SEA_WS>? StartATTVALUE <TAG_EQUALS> 'attributeEqualSymbol' <SEA_WS>? StartTag <ATTVALUE_VALUE> 'attributeValue' )? {{}}
     ;
 
 htmlChardata
@@ -262,7 +263,7 @@ StartATTVALUE
 	;
 
 attvalue <ATTVALUE_VALUE>
-    : \ * <ATTRIBUTE>
+    : <ATTRIBUTE>
     ;
 
 attvalue <ATTRIBUTE>
@@ -314,7 +315,7 @@ attvalue <SINGLE_QUOTE_STRING>
 { #category : #generated }
 HTMLParser class >> reduceTable [
 ^#(
-	#(42 0 #reduceActionForRetDefault1: 2500609 true) 
+	#(42 0 #reduceActionForRetDefault1: 2522113 true) 
 	#(23 0 #nil 188417 false) 
 	#(25 1 #liftFirstValue: 295937 false) 
 	#(25 1 #liftFirstValue: 295938 false) 
@@ -325,26 +326,26 @@ HTMLParser class >> reduceTable [
 	#(22 6 #reduceActionForhtmlDocument3: 157699 false) 
 	#(22 6 #reduceActionForhtmlDocument3: 157698 false) 
 	#(24 2 #reduceActionForhtmlElements_2: 258050 false) 
-	#(41 0 #reduceActionForStartTag1: 2458625 true) 
+	#(41 0 #reduceActionForStartTag1: 2480129 true) 
 	#(22 7 #reduceActionForhtmlDocument4: 157700 false) 
-	#(38 1 #liftFirstValue: 1465345 false) 
-	#(38 1 #liftFirstValue: 1465346 false) 
+	#(38 1 #liftFirstValue: 1486849 false) 
+	#(38 1 #liftFirstValue: 1486850 false) 
 	#(28 1 #liftFirstValue: 423950 false) 
-	#(37 1 #liftFirstValue: 1374211 false) 
-	#(37 1 #liftFirstValue: 1374210 false) 
+	#(37 1 #liftFirstValue: 1395715 false) 
+	#(37 1 #liftFirstValue: 1395714 false) 
 	#(28 1 #reduceActionForhtmlElement1: 423937 false) 
-	#(27 2 #liftFirstValue: 373762 false) 
 	#(28 1 #liftFirstValue: 423953 false) 
-	#(37 1 #reduceActionForhtmlMisc1: 1374209 false) 
+	#(27 2 #liftFirstValue: 373762 false) 
+	#(37 1 #reduceActionForhtmlMisc1: 1395713 false) 
 	#(28 1 #liftFirstValue: 423951 false) 
 	#(28 1 #liftFirstValue: 423952 false) 
-	#(39 2 #liftFirstValue: 1540097 false) 
-	#(39 2 #liftFirstValue: 1540098 false) 
-	#(40 2 #liftFirstValue: 1613825 false) 
-	#(40 2 #liftFirstValue: 1613826 false) 
+	#(39 2 #liftFirstValue: 1561601 false) 
+	#(39 2 #liftFirstValue: 1561602 false) 
+	#(40 2 #liftFirstValue: 1635329 false) 
+	#(40 2 #liftFirstValue: 1635330 false) 
 	#(26 3 #reduceActionForhtmlElements1: 354305 false) 
 	#(35 1 #reduceActionForAttribute1: 1164289 false) 
-	#(43 0 #reduceActionForStartATTVALUE1: 3836929 true) 
+	#(43 0 #reduceActionForStartATTVALUE1: 3858433 true) 
 	#(34 0 #reduceActionFor__SEA_WS___Attribute__htmlAttribute___1: 1113089 false) 
 	#(30 0 #reduceActionFor__SEA_WS___Attribute__htmlAttribute___1: 658433 false) 
 	#(31 5 #reduceActionForVoidElement1: 891905 false) 
@@ -366,6 +367,9 @@ HTMLParser class >> reduceTable [
 	#(28 8 #reduceActionForhtmlElement8: 423947 false) 
 	#(31 8 #reduceActionForVoidElement5: 891912 false) 
 	#(35 5 #reduceActionForAttribute2: 1164290 false) 
+	#(35 6 #reduceActionForAttribute4: 1164292 false) 
+	#(35 6 #reduceActionForAttribute3: 1164291 false) 
+	#(35 7 #reduceActionForAttribute5: 1164293 false) 
 	#(28 12 #reduceActionForhtmlElement3: 423939 false) 
 	#(28 13 #reduceActionForhtmlElement6: 423942 false) 
 	#(28 13 #reduceActionForhtmlElement9: 423945 false) 
@@ -456,7 +460,7 @@ HTMLParser class >> transitionTable [
 #[0 0 74 0 1 0 2 0 5 0 6 0 7 0 8 0 9 0 10 0 44] 
 #[1 0 30 0 1 0 30 0 2 0 30 0 5 0 30 0 6 0 30 0 7 0 30 0 8 0 30 0 9 0 30 0 10 0 165 0 27 0 30 0 44] 
 #[0 0 78 0 1 0 2 0 5 0 6 0 7 0 8 0 9 0 10 0 44] 
-#[1 0 23 0 1 0 23 0 2 0 23 0 5 0 23 0 6 0 23 0 7 0 23 0 8 0 23 0 9 0 23 0 10 0 86 0 44] 
+#[1 0 23 0 1 0 23 0 2 0 23 0 5 0 23 0 6 0 23 0 7 0 23 0 8 0 23 0 9 0 23 0 10 0 82 0 44] 
 #[0 0 90 0 1 0 2 0 5 0 6 0 7 0 8 0 9 0 10 0 44] 
 #[0 0 94 0 1 0 2 0 5 0 6 0 7 0 8 0 9 0 10 0 44] 
 #[0 0 98 0 1 0 2 0 5 0 6 0 7 0 8 0 9 0 10 0 44] 
@@ -467,7 +471,7 @@ HTMLParser class >> transitionTable [
 #[0 0 114 0 1 0 2 0 5 0 6 0 7 0 8 0 9 0 10 0 44] 
 #[1 0 27 0 1 0 31 0 2 0 118 0 5 0 35 0 6 0 118 0 7 0 118 0 8 0 118 0 9 0 39 0 10 0 173 0 37 0 133 0 38 0 118 0 44] 
 #[1 0 177 0 14 0 181 0 15] 
-#[0 0 82 0 1 0 2 0 5 0 6 0 7 0 8 0 9 0 10 0 44] 
+#[0 0 86 0 1 0 2 0 5 0 6 0 7 0 8 0 9 0 10 0 44] 
 #[1 0 185 0 6 0 6 0 11 0 189 0 12 0 193 0 32 0 197 0 42] 
 #[1 0 201 0 6 0 6 0 11 0 205 0 12 0 209 0 32 0 213 0 42] 
 #[1 0 6 0 11 0 217 0 12 0 221 0 14 0 225 0 35 0 229 0 42] 
@@ -479,96 +483,107 @@ HTMLParser class >> transitionTable [
 #[1 1 9 0 6 0 6 0 11 1 13 0 12 1 17 0 42] 
 #[0 1 21 0 11] 
 #[1 0 6 0 11 1 25 0 42] 
-#[1 0 122 0 6 0 122 0 11 0 122 0 12 0 126 0 13 0 122 0 14 1 29 0 43] 
-#[1 0 130 0 6 0 130 0 11 0 130 0 12 0 130 0 14 1 33 0 34] 
-#[0 1 37 0 11] 
+#[1 0 43 0 6 0 122 0 11 0 122 0 12 0 126 0 13 0 122 0 14 1 33 0 43] 
+#[1 0 130 0 6 0 130 0 11 0 130 0 12 0 130 0 14 1 37 0 34] 
 #[0 1 41 0 11] 
-#[1 0 6 0 11 1 45 0 12 1 49 0 42] 
-#[1 0 6 0 11 1 53 0 42] 
-#[0 1 57 0 11] 
-#[1 0 134 0 1 0 134 0 2 0 134 0 5 0 134 0 6 0 134 0 7 0 134 0 8 0 134 0 9 0 134 0 10 1 61 0 30] 
-#[1 0 6 0 11 1 65 0 42] 
-#[0 1 69 0 11] 
+#[0 1 45 0 11] 
+#[1 0 6 0 11 1 49 0 12 1 53 0 42] 
+#[1 0 6 0 11 1 57 0 42] 
+#[0 1 61 0 11] 
+#[1 0 134 0 1 0 134 0 2 0 134 0 5 0 134 0 6 0 134 0 7 0 134 0 8 0 134 0 9 0 134 0 10 1 65 0 30] 
+#[1 0 6 0 11 1 69 0 42] 
 #[0 1 73 0 11] 
-#[1 0 6 0 11 1 77 0 12 1 81 0 42] 
-#[1 0 6 0 11 1 85 0 42] 
-#[0 1 89 0 11] 
-#[0 0 138 0 1 0 2 0 5 0 6 0 7 0 8 0 9 0 10 0 44] 
+#[0 1 77 0 11] 
+#[1 0 6 0 11 1 81 0 12 1 85 0 42] 
+#[1 0 6 0 11 1 89 0 42] 
 #[0 1 93 0 11] 
-#[0 1 97 0 13] 
-#[1 0 43 0 6 0 142 0 11 0 142 0 12 0 221 0 14 1 105 0 33 1 105 0 35] 
-#[1 0 134 0 1 0 134 0 2 0 134 0 5 0 134 0 6 0 134 0 7 0 134 0 8 0 134 0 9 0 134 0 10 1 113 0 30] 
+#[0 0 138 0 1 0 2 0 5 0 6 0 7 0 8 0 9 0 10 0 44] 
+#[0 1 97 0 11] 
+#[1 0 126 0 13 1 101 0 43] 
+#[0 1 105 0 13] 
+#[1 0 47 0 6 0 142 0 11 0 142 0 12 0 221 0 14 1 113 0 33 1 113 0 35] 
+#[1 0 134 0 1 0 134 0 2 0 134 0 5 0 134 0 6 0 134 0 7 0 134 0 8 0 134 0 9 0 134 0 10 1 121 0 30] 
 #[0 0 146 0 1 0 2 0 5 0 6 0 7 0 8 0 9 0 10 0 44] 
-#[1 0 6 0 11 1 117 0 42] 
-#[0 1 121 0 11] 
-#[0 1 125 0 11] 
-#[1 0 134 0 1 0 134 0 2 0 134 0 5 0 134 0 6 0 134 0 7 0 134 0 8 0 134 0 9 0 134 0 10 1 129 0 30] 
-#[1 0 30 0 1 0 30 0 2 0 30 0 5 0 30 0 6 0 30 0 7 0 30 0 8 0 47 0 9 0 30 0 10 1 137 0 26 0 85 0 27 1 137 0 29 1 141 0 41] 
-#[0 1 145 0 11] 
+#[1 0 6 0 11 1 125 0 42] 
+#[0 1 129 0 11] 
+#[0 1 133 0 11] 
+#[1 0 134 0 1 0 134 0 2 0 134 0 5 0 134 0 6 0 134 0 7 0 134 0 8 0 134 0 9 0 134 0 10 1 137 0 30] 
+#[1 0 30 0 1 0 30 0 2 0 30 0 5 0 30 0 6 0 30 0 7 0 30 0 8 0 51 0 9 0 30 0 10 1 145 0 26 0 85 0 27 1 145 0 29 1 149 0 41] 
+#[0 1 153 0 11] 
 #[0 0 150 0 1 0 2 0 5 0 6 0 7 0 8 0 9 0 10 0 44] 
 #[0 0 154 0 1 0 2 0 5 0 6 0 7 0 8 0 9 0 10 0 44] 
-#[1 0 6 0 11 1 149 0 42] 
-#[0 1 153 0 11] 
-#[0 1 157 0 11] 
+#[1 0 6 0 11 1 157 0 42] 
+#[0 1 161 0 11] 
+#[0 1 165 0 11] 
 #[0 0 158 0 1 0 2 0 5 0 6 0 7 0 8 0 9 0 10 0 44] 
 #[0 0 162 0 1 0 2 0 5 0 6 0 7 0 8 0 9 0 10 0 44] 
-#[1 0 50 0 20 1 161 0 41] 
-#[1 0 221 0 14 1 165 0 35] 
+#[0 1 169 0 13] 
+#[1 1 173 0 6 0 50 0 20 1 177 0 41] 
+#[1 0 221 0 14 1 181 0 35] 
 #[0 0 166 0 6 0 11 0 12 0 14] 
 #[0 0 170 0 6 0 11 0 12 0 14] 
-#[1 0 30 0 1 0 30 0 2 0 30 0 5 0 30 0 6 0 30 0 7 0 30 0 8 0 47 0 9 0 30 0 10 1 137 0 26 0 85 0 27 1 137 0 29 1 169 0 41] 
-#[0 1 173 0 11] 
-#[1 0 134 0 1 0 134 0 2 0 134 0 5 0 134 0 6 0 134 0 7 0 134 0 8 0 134 0 9 0 134 0 10 1 177 0 30] 
+#[1 0 30 0 1 0 30 0 2 0 30 0 5 0 30 0 6 0 30 0 7 0 30 0 8 0 51 0 9 0 30 0 10 1 145 0 26 0 85 0 27 1 145 0 29 1 185 0 41] 
+#[0 1 189 0 11] 
+#[1 0 134 0 1 0 134 0 2 0 134 0 5 0 134 0 6 0 134 0 7 0 134 0 8 0 134 0 9 0 134 0 10 1 193 0 30] 
 #[0 0 174 0 1 0 2 0 5 0 6 0 7 0 8 0 9 0 10 0 44] 
-#[1 0 30 0 1 0 30 0 2 0 30 0 5 0 30 0 6 0 30 0 7 0 30 0 8 0 47 0 9 0 30 0 10 1 137 0 26 0 85 0 27 1 137 0 29 1 181 0 41] 
+#[1 0 30 0 1 0 30 0 2 0 30 0 5 0 30 0 6 0 30 0 7 0 30 0 8 0 51 0 9 0 30 0 10 1 145 0 26 0 85 0 27 1 145 0 29 1 197 0 41] 
 #[0 0 178 0 1 0 2 0 5 0 6 0 7 0 8 0 9 0 10] 
 #[0 0 182 0 1 0 2 0 5 0 6 0 7 0 8 0 9 0 10] 
-#[0 1 185 0 9] 
+#[0 1 201 0 9] 
 #[0 0 186 0 1 0 2 0 5 0 6 0 7 0 8 0 9 0 10 0 44] 
-#[0 1 189 0 11] 
+#[0 1 205 0 11] 
 #[0 0 190 0 1 0 2 0 5 0 6 0 7 0 8 0 9 0 10 0 44] 
 #[0 0 194 0 1 0 2 0 5 0 6 0 7 0 8 0 9 0 10 0 44] 
-#[0 1 193 0 20] 
+#[1 1 209 0 6 0 50 0 20 1 213 0 41] 
+#[1 0 50 0 20 1 217 0 41] 
+#[0 1 221 0 20] 
 #[0 0 198 0 6 0 11 0 12 0 14] 
-#[0 1 197 0 9] 
+#[0 1 225 0 9] 
 #[0 0 202 0 1 0 2 0 5 0 6 0 7 0 8 0 9 0 10 0 44] 
-#[1 0 30 0 1 0 30 0 2 0 30 0 5 0 30 0 6 0 30 0 7 0 30 0 8 0 47 0 9 0 30 0 10 1 137 0 26 0 85 0 27 1 137 0 29 1 201 0 41] 
-#[0 1 205 0 9] 
-#[0 1 209 0 12] 
+#[1 0 30 0 1 0 30 0 2 0 30 0 5 0 30 0 6 0 30 0 7 0 30 0 8 0 51 0 9 0 30 0 10 1 145 0 26 0 85 0 27 1 145 0 29 1 229 0 41] 
+#[0 1 233 0 9] 
+#[0 1 237 0 12] 
 #[0 0 206 0 1 0 2 0 5 0 6 0 7 0 8 0 9 0 10 0 44] 
+#[1 0 50 0 20 1 241 0 41] 
+#[0 1 245 0 20] 
+#[0 1 249 0 20] 
 #[0 0 210 0 6 0 11 0 12 0 14] 
-#[0 1 213 0 12] 
-#[0 1 217 0 9] 
-#[0 1 221 0 12] 
-#[0 1 225 0 14] 
-#[0 1 229 0 14] 
-#[0 1 233 0 12] 
-#[0 1 237 0 14] 
-#[1 1 241 0 6 0 6 0 11 1 245 0 42] 
-#[1 1 249 0 6 0 6 0 11 1 253 0 42] 
-#[0 2 1 0 14] 
-#[1 2 5 0 6 0 6 0 11 2 9 0 42] 
-#[1 0 6 0 11 2 13 0 42] 
-#[0 2 17 0 11] 
-#[1 0 6 0 11 2 21 0 42] 
-#[0 2 25 0 11] 
+#[0 1 253 0 12] 
+#[0 2 1 0 9] 
+#[0 2 5 0 12] 
+#[0 2 9 0 14] 
+#[0 2 13 0 20] 
+#[0 0 214 0 6 0 11 0 12 0 14] 
+#[0 0 218 0 6 0 11 0 12 0 14] 
+#[0 2 17 0 14] 
+#[0 2 21 0 12] 
+#[0 2 25 0 14] 
 #[1 2 29 0 6 0 6 0 11 2 33 0 42] 
-#[1 0 6 0 11 2 37 0 42] 
-#[0 2 41 0 11] 
-#[0 2 45 0 11] 
-#[0 0 214 0 1 0 2 0 5 0 6 0 7 0 8 0 9 0 10 0 44] 
-#[0 2 49 0 11] 
-#[0 0 218 0 1 0 2 0 5 0 6 0 7 0 8 0 9 0 10 0 44] 
-#[1 0 6 0 11 2 53 0 42] 
-#[0 2 57 0 11] 
+#[0 0 222 0 6 0 11 0 12 0 14] 
+#[1 2 37 0 6 0 6 0 11 2 41 0 42] 
+#[0 2 45 0 14] 
+#[1 2 49 0 6 0 6 0 11 2 53 0 42] 
+#[1 0 6 0 11 2 57 0 42] 
 #[0 2 61 0 11] 
-#[0 0 222 0 1 0 2 0 5 0 6 0 7 0 8 0 9 0 10 0 44] 
+#[1 0 6 0 11 2 65 0 42] 
+#[0 2 69 0 11] 
+#[1 2 73 0 6 0 6 0 11 2 77 0 42] 
+#[1 0 6 0 11 2 81 0 42] 
+#[0 2 85 0 11] 
+#[0 2 89 0 11] 
 #[0 0 226 0 1 0 2 0 5 0 6 0 7 0 8 0 9 0 10 0 44] 
+#[0 2 93 0 11] 
 #[0 0 230 0 1 0 2 0 5 0 6 0 7 0 8 0 9 0 10 0 44] 
-#[0 2 65 0 11] 
+#[1 0 6 0 11 2 97 0 42] 
+#[0 2 101 0 11] 
+#[0 2 105 0 11] 
 #[0 0 234 0 1 0 2 0 5 0 6 0 7 0 8 0 9 0 10 0 44] 
 #[0 0 238 0 1 0 2 0 5 0 6 0 7 0 8 0 9 0 10 0 44] 
-#[0 0 242 0 1 0 2 0 5 0 6 0 7 0 8 0 9 0 10 0 44]
+#[0 0 242 0 1 0 2 0 5 0 6 0 7 0 8 0 9 0 10 0 44] 
+#[0 2 109 0 11] 
+#[0 0 246 0 1 0 2 0 5 0 6 0 7 0 8 0 9 0 10 0 44] 
+#[0 0 250 0 1 0 2 0 5 0 6 0 7 0 8 0 9 0 10 0 44] 
+#[0 0 254 0 1 0 2 0 5 0 6 0 7 0 8 0 9 0 10 0 44]
 	).
 ]
 
@@ -589,6 +604,39 @@ HTMLParser >> reduceActionForAttribute2: nodes [
 	result attributeName: (nodes at: 1).
 	result attributeEqualSymbol: (nodes at: 3).
 	result attributeValue: (nodes at: 5).
+	^ result
+]
+
+{ #category : #'generated-reduction actions' }
+HTMLParser >> reduceActionForAttribute3: nodes [
+
+	| result |
+	result := HTMLAttributeNode new.
+	result attributeName: (nodes at: 1).
+	result attributeEqualSymbol: (nodes at: 3).
+	result attributeValue: (nodes at: 6).
+	^ result
+]
+
+{ #category : #'generated-reduction actions' }
+HTMLParser >> reduceActionForAttribute4: nodes [
+
+	| result |
+	result := HTMLAttributeNode new.
+	result attributeName: (nodes at: 1).
+	result attributeEqualSymbol: (nodes at: 4).
+	result attributeValue: (nodes at: 6).
+	^ result
+]
+
+{ #category : #'generated-reduction actions' }
+HTMLParser >> reduceActionForAttribute5: nodes [
+
+	| result |
+	result := HTMLAttributeNode new.
+	result attributeName: (nodes at: 1).
+	result attributeEqualSymbol: (nodes at: 4).
+	result attributeValue: (nodes at: 7).
 	^ result
 ]
 

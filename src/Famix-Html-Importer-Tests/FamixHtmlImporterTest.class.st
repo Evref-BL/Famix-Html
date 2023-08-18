@@ -20,7 +20,7 @@ FamixHtmlImporterTest >> setUp [
 	importer model: htmlModel
 ]
 
-{ #category : #initialization }
+{ #category : #'parse - attributes' }
 FamixHtmlImporterTest >> testCanImportComplexAttributeValue [
 
 	importer importString: '<div att="hello<--world"></div>'.
@@ -58,7 +58,7 @@ FamixHtmlImporterTest >> testCanImportSimpleDiv [
 		equals: 'div'
 ]
 
-{ #category : #initialization }
+{ #category : #'parse - attributes' }
 FamixHtmlImporterTest >> testCanImportSimpleDivWithAttribute [
 
 	importer importString: '<div att="hello"></div>'.
@@ -99,7 +99,7 @@ FamixHtmlImporterTest >> testCanImportTagWithEndOfLine [
 		equals: '"hello"'
 ]
 
-{ #category : #initialization }
+{ #category : #'parse - attributes' }
 FamixHtmlImporterTest >> testCanParseAttributePrefixedWithStar [
 
 	importer importString: '<div *ngIf="hello"></div>'.
@@ -113,11 +113,38 @@ FamixHtmlImporterTest >> testCanParseAttributePrefixedWithStar [
 		equals: '*ngIf'
 ]
 
-{ #category : #initialization }
+{ #category : #'parse - attributes' }
 FamixHtmlImporterTest >> testCanParseAttributeWithComa [
 
 	importer importString: '<div att="''hello1''"></div>'.
 	self assert: (htmlModel allWithType: FamixHtmlElement) size equals: 1
+]
+
+{ #category : #'parse - attributes' }
+FamixHtmlImporterTest >> testCanParseAttributesWithSeveralSpaces [
+
+	importer importString:
+		'<div class  =   "hello"  secondAttribute lastAttribute = "''tired''"></div>'.
+	self
+		assert: (htmlModel allWithType: FamixHtmlAttribute) size
+		equals: 3.
+	self
+		assert:
+			((htmlModel allWithType: FamixHtmlAttribute) detect: [ :att |
+				 att attributeName = 'class' ]) attributeValue
+		equals: '"hello"'.
+
+	self
+		assert:
+			((htmlModel allWithType: FamixHtmlAttribute) detect: [ :att |
+				 att attributeName = 'secondAttribute' ]) attributeValue
+		equals: nil.
+
+	self
+		assert:
+			((htmlModel allWithType: FamixHtmlAttribute) detect: [ :att |
+				 att attributeName = 'lastAttribute' ]) attributeValue
+		equals: '"''tired''"'
 ]
 
 { #category : #initialization }
@@ -127,7 +154,7 @@ FamixHtmlImporterTest >> testCanParseCommentFirstThenDiv [
 	self assert: (htmlModel allWithType: FamixHtmlElement) size equals: 1
 ]
 
-{ #category : #initialization }
+{ #category : #'parse - attributes' }
 FamixHtmlImporterTest >> testCanParseConsecutiveAttributes [
 
 	importer importString:
@@ -315,7 +342,7 @@ FamixHtmlImporterTest >> testParseWithInterpolation [
 	self assert: (htmlModel allWithType: FamixHtmlElement) size equals: 3
 ]
 
-{ #category : #initialization }
+{ #category : #'parse - attributes' }
 FamixHtmlImporterTest >> testShortTagWithShortAttribute [
 
 	importer importString: '<div test/>'.
@@ -325,7 +352,7 @@ FamixHtmlImporterTest >> testShortTagWithShortAttribute [
 		equals: 1
 ]
 
-{ #category : #initialization }
+{ #category : #'parse - attributes' }
 FamixHtmlImporterTest >> testShortTagWithShortHashAttribute [
 
 	importer importString: '<div #test/>'.
