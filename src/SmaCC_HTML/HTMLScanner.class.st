@@ -28,17 +28,17 @@ HTMLScanner >> scan1 [
 { #category : #generated }
 HTMLScanner >> scan10 [
 
-	[ 
+	[
 	self recordMatch: #( 21 ).
 	self step.
 	currentCharacter == Character space ifTrue: [ ^ self scan6 ].
 	currentCharacter == $/ ifTrue: [ ^ self scan11 ].
 	currentCharacter == $< ] whileTrue.
-	(currentCharacter == $# or: [ 
-		 (currentCharacter between: $+ and: $?) or: [ 
-			 (currentCharacter between: $A and: $Z) or: [ 
-				 currentCharacter == $_ or: [ 
-					 currentCharacter between: $a and: $z ] ] ] ]) ifTrue: [ 
+	(currentCharacter == $# or: [
+		 (currentCharacter between: $+ and: $?) or: [
+			 (currentCharacter between: $A and: $Z) or: [
+				 currentCharacter == $_ or: [
+					 currentCharacter between: $a and: $z ] ] ] ]) ifTrue: [
 		^ self scan9 ].
 	^ self scan1
 ]
@@ -52,11 +52,11 @@ HTMLScanner >> scan11 [
 	currentCharacter == $< ifTrue: [ ^ self scan10 ].
 	currentCharacter == $> ifTrue: [ ^ self scan11X1 ].
 	currentCharacter == $s ifTrue: [ ^ self scan12 ].
-	(currentCharacter <= $" or: [ 
-		 (currentCharacter between: $$ and: $*) or: [ 
-			 currentCharacter == $@ or: [ 
-				 (currentCharacter between: $[ and: $^) or: [ 
-					 currentCharacter == $` or: [ currentCharacter >= ${ ] ] ] ] ]) 
+	(currentCharacter <= $" or: [
+		 (currentCharacter between: $$ and: $*) or: [
+			 currentCharacter == $@ or: [
+				 (currentCharacter between: $[ and: $^) or: [
+					 currentCharacter == $` or: [ currentCharacter >= ${ ] ] ] ] ])
 		ifTrue: [ ^ self scan1 ].
 	^ self scan9
 ]
@@ -68,11 +68,11 @@ HTMLScanner >> scan11X1 [
 	self step.
 	currentCharacter == Character space ifTrue: [ ^ self scan6 ].
 	currentCharacter == $< ifTrue: [ ^ self scan10 ].
-	(currentCharacter == $# or: [ 
-		 (currentCharacter between: $+ and: $?) or: [ 
-			 (currentCharacter between: $A and: $Z) or: [ 
-				 currentCharacter == $_ or: [ 
-					 currentCharacter between: $a and: $z ] ] ] ]) ifTrue: [ 
+	(currentCharacter == $# or: [
+		 (currentCharacter between: $+ and: $?) or: [
+			 (currentCharacter between: $A and: $Z) or: [
+				 currentCharacter == $_ or: [
+					 currentCharacter between: $a and: $z ] ] ] ]) ifTrue: [
 		^ self scan9 ].
 	^ self scan1
 ]
@@ -85,11 +85,11 @@ HTMLScanner >> scan12 [
 	currentCharacter == Character space ifTrue: [ ^ self scan6 ].
 	currentCharacter == $< ifTrue: [ ^ self scan10 ].
 	currentCharacter == $c ifTrue: [ ^ self scan13 ].
-	(currentCharacter == $# or: [ 
-		 (currentCharacter between: $+ and: $?) or: [ 
-			 (currentCharacter between: $A and: $Z) or: [ 
-				 currentCharacter == $_ or: [ 
-					 currentCharacter between: $a and: $z ] ] ] ]) ifTrue: [ 
+	(currentCharacter == $# or: [
+		 (currentCharacter between: $+ and: $?) or: [
+			 (currentCharacter between: $A and: $Z) or: [
+				 currentCharacter == $_ or: [
+					 currentCharacter between: $a and: $z ] ] ] ]) ifTrue: [
 		^ self scan9 ].
 	^ self scan1
 ]
@@ -101,36 +101,36 @@ HTMLScanner >> scan13 [
 	self step.
 	currentCharacter == Character space ifTrue: [ ^ self scan6 ].
 	currentCharacter == $< ifTrue: [ ^ self scan10 ].
-	currentCharacter == $r ifTrue: [ 
+	currentCharacter == $r ifTrue: [
 		self recordMatch: #( 21 ).
 		self step.
 		currentCharacter == Character space ifTrue: [ ^ self scan6 ].
 		currentCharacter == $< ifTrue: [ ^ self scan10 ].
-		currentCharacter == $i ifTrue: [ 
+		currentCharacter == $i ifTrue: [
 			self recordMatch: #( 21 ).
 			self step.
 			currentCharacter == Character space ifTrue: [ ^ self scan6 ].
 			currentCharacter == $< ifTrue: [ ^ self scan10 ].
-			currentCharacter == $p ifTrue: [ 
+			currentCharacter == $p ifTrue: [
 				self recordMatch: #( 21 ).
 				self step.
 				currentCharacter == Character space ifTrue: [ ^ self scan6 ].
 				currentCharacter == $< ifTrue: [ ^ self scan10 ].
-				currentCharacter == $t ifTrue: [ 
+				currentCharacter == $t ifTrue: [
 					self recordMatch: #( 21 ).
 					self step.
 					currentCharacter == Character space ifTrue: [ ^ self scan6 ].
 					currentCharacter == $< ifTrue: [ ^ self scan10 ].
-					currentCharacter == $> ifTrue: [ 
+					currentCharacter == $> ifTrue: [
 						self recordMatch: #( 17 21 ).
 						self step.
 						currentCharacter == Character space ifTrue: [ ^ self scan6 ].
 						currentCharacter == $< ifTrue: [ ^ self scan10 ] ] ] ] ] ].
-	(currentCharacter == $# or: [ 
-		 (currentCharacter between: $+ and: $?) or: [ 
-			 (currentCharacter between: $A and: $Z) or: [ 
-				 currentCharacter == $_ or: [ 
-					 currentCharacter between: $a and: $z ] ] ] ]) ifTrue: [ 
+	(currentCharacter == $# or: [
+		 (currentCharacter between: $+ and: $?) or: [
+			 (currentCharacter between: $A and: $Z) or: [
+				 currentCharacter == $_ or: [
+					 currentCharacter between: $a and: $z ] ] ] ]) ifTrue: [
 		^ self scan9 ].
 	^ self scan1
 ]
@@ -148,44 +148,44 @@ HTMLScanner >> scan14 [
 { #category : #generated }
 HTMLScanner >> scan15 [
 
-	[ 
+	[
 	self step.
 	currentCharacter == $' ifTrue: [ ^ self scan6 ].
-	currentCharacter == $/ ifTrue: [ 
+	currentCharacter == $/ ifTrue: [
 		self step.
 		currentCharacter == $' ifTrue: [ ^ self scan6 ].
 		currentCharacter == $< ifTrue: [ ^ self scan15 ].
-		currentCharacter == $> ifTrue: [ 
+		currentCharacter == $> ifTrue: [
 			self recordMatch: #( 18 ).
 			self step.
 			currentCharacter == $' ifTrue: [ ^ self scan6 ].
 			currentCharacter == $< ifTrue: [ ^ self scan15 ].
 			^ self scan14 ].
-		currentCharacter == $s ifTrue: [ 
+		currentCharacter == $s ifTrue: [
 			self step.
 			currentCharacter == $' ifTrue: [ ^ self scan6 ].
 			currentCharacter == $< ifTrue: [ ^ self scan15 ].
-			currentCharacter == $c ifTrue: [ 
+			currentCharacter == $c ifTrue: [
 				self step.
 				currentCharacter == $' ifTrue: [ ^ self scan6 ].
 				currentCharacter == $< ifTrue: [ ^ self scan15 ].
-				currentCharacter == $r ifTrue: [ 
+				currentCharacter == $r ifTrue: [
 					self step.
 					currentCharacter == $' ifTrue: [ ^ self scan6 ].
 					currentCharacter == $< ifTrue: [ ^ self scan15 ].
-					currentCharacter == $i ifTrue: [ 
+					currentCharacter == $i ifTrue: [
 						self step.
 						currentCharacter == $' ifTrue: [ ^ self scan6 ].
 						currentCharacter == $< ifTrue: [ ^ self scan15 ].
-						currentCharacter == $p ifTrue: [ 
+						currentCharacter == $p ifTrue: [
 							self step.
 							currentCharacter == $' ifTrue: [ ^ self scan6 ].
 							currentCharacter == $< ifTrue: [ ^ self scan15 ].
-							currentCharacter == $t ifTrue: [ 
+							currentCharacter == $t ifTrue: [
 								self step.
 								currentCharacter == $' ifTrue: [ ^ self scan6 ].
 								currentCharacter == $< ifTrue: [ ^ self scan15 ].
-								currentCharacter == $> ifTrue: [ 
+								currentCharacter == $> ifTrue: [
 									self recordMatch: #( 17 ).
 									self step.
 									currentCharacter == $' ifTrue: [ ^ self scan6 ].
@@ -198,18 +198,18 @@ HTMLScanner >> scan15 [
 { #category : #generated }
 HTMLScanner >> scan16 [
 
-	[ 
+	[
 	self recordMatch: #( 21 ).
 	self step.
 	currentCharacter == $< ifTrue: [ ^ self scan10 ].
 	currentCharacter isDigit ] whileTrue.
-	(currentCharacter == Character space or: [ currentCharacter == $% ]) 
+	(currentCharacter == Character space or: [ currentCharacter == $% ])
 		ifTrue: [ ^ self scan6 ].
-	(currentCharacter == $# or: [ 
-		 (currentCharacter between: $+ and: $?) or: [ 
-			 (currentCharacter between: $A and: $Z) or: [ 
-				 currentCharacter == $_ or: [ 
-					 currentCharacter between: $a and: $z ] ] ] ]) ifTrue: [ 
+	(currentCharacter == $# or: [
+		 (currentCharacter between: $+ and: $?) or: [
+			 (currentCharacter between: $A and: $Z) or: [
+				 currentCharacter == $_ or: [
+					 currentCharacter between: $a and: $z ] ] ] ]) ifTrue: [
 		^ self scan9 ].
 	^ self scan1
 ]
@@ -363,41 +363,41 @@ HTMLScanner >> scan20 [
 { #category : #generated }
 HTMLScanner >> scan21 [
 
-	[ 
+	[
 	self step.
-	currentCharacter == $/ ifTrue: [ 
+	currentCharacter == $/ ifTrue: [
 		self step.
 		currentCharacter == $< ifTrue: [ ^ self scan21 ].
-		currentCharacter == $> ifTrue: [ 
+		currentCharacter == $> ifTrue: [
 			self recordMatch: #( 5 18 ).
 			self step.
 			currentCharacter == $< ifTrue: [ ^ self scan21 ].
 			currentCharacter == $> ifTrue: [ ^ self scan22 ].
 			^ self scan20 ].
-		currentCharacter == $s ifTrue: [ 
+		currentCharacter == $s ifTrue: [
 			self step.
 			currentCharacter == $< ifTrue: [ ^ self scan21 ].
 			currentCharacter == $> ifTrue: [ ^ self scan22 ].
-			currentCharacter == $c ifTrue: [ 
+			currentCharacter == $c ifTrue: [
 				self step.
 				currentCharacter == $< ifTrue: [ ^ self scan21 ].
 				currentCharacter == $> ifTrue: [ ^ self scan22 ].
-				currentCharacter == $r ifTrue: [ 
+				currentCharacter == $r ifTrue: [
 					self step.
 					currentCharacter == $< ifTrue: [ ^ self scan21 ].
 					currentCharacter == $> ifTrue: [ ^ self scan22 ].
-					currentCharacter == $i ifTrue: [ 
+					currentCharacter == $i ifTrue: [
 						self step.
 						currentCharacter == $< ifTrue: [ ^ self scan21 ].
 						currentCharacter == $> ifTrue: [ ^ self scan22 ].
-						currentCharacter == $p ifTrue: [ 
+						currentCharacter == $p ifTrue: [
 							self step.
 							currentCharacter == $< ifTrue: [ ^ self scan21 ].
 							currentCharacter == $> ifTrue: [ ^ self scan22 ].
-							currentCharacter == $t ifTrue: [ 
+							currentCharacter == $t ifTrue: [
 								self step.
 								currentCharacter == $< ifTrue: [ ^ self scan21 ].
-								currentCharacter == $> ifTrue: [ 
+								currentCharacter == $> ifTrue: [
 									self recordMatch: #( 5 17 ).
 									self step.
 									currentCharacter == $< ifTrue: [ ^ self scan21 ].
@@ -451,44 +451,44 @@ HTMLScanner >> scan24 [
 { #category : #generated }
 HTMLScanner >> scan25 [
 
-	[ 
+	[
 	self step.
 	currentCharacter == $- ifTrue: [ ^ self scan24 ].
-	currentCharacter == $/ ifTrue: [ 
+	currentCharacter == $/ ifTrue: [
 		self step.
 		currentCharacter == $- ifTrue: [ ^ self scan24 ].
 		currentCharacter == $< ifTrue: [ ^ self scan25 ].
-		currentCharacter == $> ifTrue: [ 
+		currentCharacter == $> ifTrue: [
 			self recordMatch: #( 18 ).
 			self step.
 			currentCharacter == $- ifTrue: [ ^ self scan24 ].
 			currentCharacter == $< ifTrue: [ ^ self scan25 ].
 			^ self scan23 ].
-		currentCharacter == $s ifTrue: [ 
+		currentCharacter == $s ifTrue: [
 			self step.
 			currentCharacter == $- ifTrue: [ ^ self scan24 ].
 			currentCharacter == $< ifTrue: [ ^ self scan25 ].
-			currentCharacter == $c ifTrue: [ 
+			currentCharacter == $c ifTrue: [
 				self step.
 				currentCharacter == $- ifTrue: [ ^ self scan24 ].
 				currentCharacter == $< ifTrue: [ ^ self scan25 ].
-				currentCharacter == $r ifTrue: [ 
+				currentCharacter == $r ifTrue: [
 					self step.
 					currentCharacter == $- ifTrue: [ ^ self scan24 ].
 					currentCharacter == $< ifTrue: [ ^ self scan25 ].
-					currentCharacter == $i ifTrue: [ 
+					currentCharacter == $i ifTrue: [
 						self step.
 						currentCharacter == $- ifTrue: [ ^ self scan24 ].
 						currentCharacter == $< ifTrue: [ ^ self scan25 ].
-						currentCharacter == $p ifTrue: [ 
+						currentCharacter == $p ifTrue: [
 							self step.
 							currentCharacter == $- ifTrue: [ ^ self scan24 ].
 							currentCharacter == $< ifTrue: [ ^ self scan25 ].
-							currentCharacter == $t ifTrue: [ 
+							currentCharacter == $t ifTrue: [
 								self step.
 								currentCharacter == $- ifTrue: [ ^ self scan24 ].
 								currentCharacter == $< ifTrue: [ ^ self scan25 ].
-								currentCharacter == $> ifTrue: [ 
+								currentCharacter == $> ifTrue: [
 									self recordMatch: #( 17 ).
 									self step.
 									currentCharacter == $- ifTrue: [ ^ self scan24 ].
@@ -526,7 +526,7 @@ HTMLScanner >> scan28 [
 
 	self step.
 	currentCharacter == $< ifTrue: [ ^ self scan27 ].
-	currentCharacter == $> ifTrue: [ 
+	currentCharacter == $> ifTrue: [
 		self recordMatch: #( 5 18 ).
 		self step.
 		currentCharacter == $< ifTrue: [ ^ self scan27 ].
@@ -534,35 +534,35 @@ HTMLScanner >> scan28 [
 		currentCharacter == $] ifTrue: [ ^ self scan30 ].
 		^ self scan26 ].
 	currentCharacter == $] ifTrue: [ ^ self scan30 ].
-	currentCharacter == $s ifTrue: [ 
+	currentCharacter == $s ifTrue: [
 		self step.
 		currentCharacter == $< ifTrue: [ ^ self scan27 ].
 		currentCharacter == $> ifTrue: [ ^ self scan29 ].
 		currentCharacter == $] ifTrue: [ ^ self scan30 ].
-		currentCharacter == $c ifTrue: [ 
+		currentCharacter == $c ifTrue: [
 			self step.
 			currentCharacter == $< ifTrue: [ ^ self scan27 ].
 			currentCharacter == $> ifTrue: [ ^ self scan29 ].
 			currentCharacter == $] ifTrue: [ ^ self scan30 ].
-			currentCharacter == $r ifTrue: [ 
+			currentCharacter == $r ifTrue: [
 				self step.
 				currentCharacter == $< ifTrue: [ ^ self scan27 ].
 				currentCharacter == $> ifTrue: [ ^ self scan29 ].
 				currentCharacter == $] ifTrue: [ ^ self scan30 ].
-				currentCharacter == $i ifTrue: [ 
+				currentCharacter == $i ifTrue: [
 					self step.
 					currentCharacter == $< ifTrue: [ ^ self scan27 ].
 					currentCharacter == $> ifTrue: [ ^ self scan29 ].
 					currentCharacter == $] ifTrue: [ ^ self scan30 ].
-					currentCharacter == $p ifTrue: [ 
+					currentCharacter == $p ifTrue: [
 						self step.
 						currentCharacter == $< ifTrue: [ ^ self scan27 ].
 						currentCharacter == $> ifTrue: [ ^ self scan29 ].
 						currentCharacter == $] ifTrue: [ ^ self scan30 ].
-						currentCharacter == $t ifTrue: [ 
+						currentCharacter == $t ifTrue: [
 							self step.
 							currentCharacter == $< ifTrue: [ ^ self scan27 ].
-							currentCharacter == $> ifTrue: [ 
+							currentCharacter == $> ifTrue: [
 								self recordMatch: #( 5 17 ).
 								self step.
 								currentCharacter == $< ifTrue: [ ^ self scan27 ].
@@ -588,30 +588,30 @@ HTMLScanner >> scan3 [
 
 	self step.
 	currentCharacter == $< ifTrue: [ ^ self scan2 ].
-	currentCharacter == $> ifTrue: [ 
+	currentCharacter == $> ifTrue: [
 		self recordMatch: #( 18 ).
 		self step.
 		currentCharacter == $< ifTrue: [ ^ self scan2 ].
 		^ self scan1 ].
-	currentCharacter == $s ifTrue: [ 
+	currentCharacter == $s ifTrue: [
 		self step.
 		currentCharacter == $< ifTrue: [ ^ self scan2 ].
-		currentCharacter == $c ifTrue: [ 
+		currentCharacter == $c ifTrue: [
 			self step.
 			currentCharacter == $< ifTrue: [ ^ self scan2 ].
-			currentCharacter == $r ifTrue: [ 
+			currentCharacter == $r ifTrue: [
 				self step.
 				currentCharacter == $< ifTrue: [ ^ self scan2 ].
-				currentCharacter == $i ifTrue: [ 
+				currentCharacter == $i ifTrue: [
 					self step.
 					currentCharacter == $< ifTrue: [ ^ self scan2 ].
-					currentCharacter == $p ifTrue: [ 
+					currentCharacter == $p ifTrue: [
 						self step.
 						currentCharacter == $< ifTrue: [ ^ self scan2 ].
-						currentCharacter == $t ifTrue: [ 
+						currentCharacter == $t ifTrue: [
 							self step.
 							currentCharacter == $< ifTrue: [ ^ self scan2 ].
-							currentCharacter == $> ifTrue: [ 
+							currentCharacter == $> ifTrue: [
 								self recordMatch: #( 17 ).
 								self step.
 								currentCharacter == $< ifTrue: [ ^ self scan2 ] ] ] ] ] ] ] ].
@@ -663,7 +663,7 @@ HTMLScanner >> scan33 [
 
 	self step.
 	currentCharacter == $< ifTrue: [ ^ self scan32 ].
-	currentCharacter == $> ifTrue: [ 
+	currentCharacter == $> ifTrue: [
 		self recordMatch: #( 5 18 ).
 		self step.
 		currentCharacter == $< ifTrue: [ ^ self scan32 ].
@@ -671,35 +671,35 @@ HTMLScanner >> scan33 [
 		currentCharacter == $] ifTrue: [ ^ self scan35 ].
 		^ self scan31 ].
 	currentCharacter == $] ifTrue: [ ^ self scan35 ].
-	currentCharacter == $s ifTrue: [ 
+	currentCharacter == $s ifTrue: [
 		self step.
 		currentCharacter == $< ifTrue: [ ^ self scan32 ].
 		currentCharacter == $> ifTrue: [ ^ self scan34 ].
 		currentCharacter == $] ifTrue: [ ^ self scan35 ].
-		currentCharacter == $c ifTrue: [ 
+		currentCharacter == $c ifTrue: [
 			self step.
 			currentCharacter == $< ifTrue: [ ^ self scan32 ].
 			currentCharacter == $> ifTrue: [ ^ self scan34 ].
 			currentCharacter == $] ifTrue: [ ^ self scan35 ].
-			currentCharacter == $r ifTrue: [ 
+			currentCharacter == $r ifTrue: [
 				self step.
 				currentCharacter == $< ifTrue: [ ^ self scan32 ].
 				currentCharacter == $> ifTrue: [ ^ self scan34 ].
 				currentCharacter == $] ifTrue: [ ^ self scan35 ].
-				currentCharacter == $i ifTrue: [ 
+				currentCharacter == $i ifTrue: [
 					self step.
 					currentCharacter == $< ifTrue: [ ^ self scan32 ].
 					currentCharacter == $> ifTrue: [ ^ self scan34 ].
 					currentCharacter == $] ifTrue: [ ^ self scan35 ].
-					currentCharacter == $p ifTrue: [ 
+					currentCharacter == $p ifTrue: [
 						self step.
 						currentCharacter == $< ifTrue: [ ^ self scan32 ].
 						currentCharacter == $> ifTrue: [ ^ self scan34 ].
 						currentCharacter == $] ifTrue: [ ^ self scan35 ].
-						currentCharacter == $t ifTrue: [ 
+						currentCharacter == $t ifTrue: [
 							self step.
 							currentCharacter == $< ifTrue: [ ^ self scan32 ].
-							currentCharacter == $> ifTrue: [ 
+							currentCharacter == $> ifTrue: [
 								self recordMatch: #( 5 17 ).
 								self step.
 								currentCharacter == $< ifTrue: [ ^ self scan32 ].
@@ -775,44 +775,44 @@ HTMLScanner >> scan37 [
 { #category : #generated }
 HTMLScanner >> scan38 [
 
-	[ 
+	[
 	self step.
 	currentCharacter == $% ifTrue: [ ^ self scan37 ].
-	currentCharacter == $/ ifTrue: [ 
+	currentCharacter == $/ ifTrue: [
 		self step.
 		currentCharacter == $% ifTrue: [ ^ self scan37 ].
 		currentCharacter == $< ifTrue: [ ^ self scan38 ].
-		currentCharacter == $> ifTrue: [ 
+		currentCharacter == $> ifTrue: [
 			self recordMatch: #( 18 ).
 			self step.
 			currentCharacter == $% ifTrue: [ ^ self scan37 ].
 			currentCharacter == $< ifTrue: [ ^ self scan38 ].
 			^ self scan36 ].
-		currentCharacter == $s ifTrue: [ 
+		currentCharacter == $s ifTrue: [
 			self step.
 			currentCharacter == $% ifTrue: [ ^ self scan37 ].
 			currentCharacter == $< ifTrue: [ ^ self scan38 ].
-			currentCharacter == $c ifTrue: [ 
+			currentCharacter == $c ifTrue: [
 				self step.
 				currentCharacter == $% ifTrue: [ ^ self scan37 ].
 				currentCharacter == $< ifTrue: [ ^ self scan38 ].
-				currentCharacter == $r ifTrue: [ 
+				currentCharacter == $r ifTrue: [
 					self step.
 					currentCharacter == $% ifTrue: [ ^ self scan37 ].
 					currentCharacter == $< ifTrue: [ ^ self scan38 ].
-					currentCharacter == $i ifTrue: [ 
+					currentCharacter == $i ifTrue: [
 						self step.
 						currentCharacter == $% ifTrue: [ ^ self scan37 ].
 						currentCharacter == $< ifTrue: [ ^ self scan38 ].
-						currentCharacter == $p ifTrue: [ 
+						currentCharacter == $p ifTrue: [
 							self step.
 							currentCharacter == $% ifTrue: [ ^ self scan37 ].
 							currentCharacter == $< ifTrue: [ ^ self scan38 ].
-							currentCharacter == $t ifTrue: [ 
+							currentCharacter == $t ifTrue: [
 								self step.
 								currentCharacter == $% ifTrue: [ ^ self scan37 ].
 								currentCharacter == $< ifTrue: [ ^ self scan38 ].
-								currentCharacter == $> ifTrue: [ 
+								currentCharacter == $> ifTrue: [
 									self recordMatch: #( 17 ).
 									self step.
 									currentCharacter == $% ifTrue: [ ^ self scan37 ].
@@ -848,42 +848,42 @@ HTMLScanner >> scan4 [
 { #category : #generated }
 HTMLScanner >> scan40 [
 
-	[ 
+	[
 	self step.
-	currentCharacter == $/ ifTrue: [ 
+	currentCharacter == $/ ifTrue: [
 		self step.
 		currentCharacter == $< ifTrue: [ ^ self scan40 ].
-		currentCharacter == $> ifTrue: [ 
+		currentCharacter == $> ifTrue: [
 			self recordMatch: #( 18 ).
 			self step.
 			currentCharacter == $< ifTrue: [ ^ self scan40 ].
 			currentCharacter == $? ifTrue: [ ^ self scan41 ].
 			^ self scan39 ].
 		currentCharacter == $? ifTrue: [ ^ self scan41 ].
-		currentCharacter == $s ifTrue: [ 
+		currentCharacter == $s ifTrue: [
 			self step.
 			currentCharacter == $< ifTrue: [ ^ self scan40 ].
 			currentCharacter == $? ifTrue: [ ^ self scan41 ].
-			currentCharacter == $c ifTrue: [ 
+			currentCharacter == $c ifTrue: [
 				self step.
 				currentCharacter == $< ifTrue: [ ^ self scan40 ].
 				currentCharacter == $? ifTrue: [ ^ self scan41 ].
-				currentCharacter == $r ifTrue: [ 
+				currentCharacter == $r ifTrue: [
 					self step.
 					currentCharacter == $< ifTrue: [ ^ self scan40 ].
 					currentCharacter == $? ifTrue: [ ^ self scan41 ].
-					currentCharacter == $i ifTrue: [ 
+					currentCharacter == $i ifTrue: [
 						self step.
 						currentCharacter == $< ifTrue: [ ^ self scan40 ].
 						currentCharacter == $? ifTrue: [ ^ self scan41 ].
-						currentCharacter == $p ifTrue: [ 
+						currentCharacter == $p ifTrue: [
 							self step.
 							currentCharacter == $< ifTrue: [ ^ self scan40 ].
 							currentCharacter == $? ifTrue: [ ^ self scan41 ].
-							currentCharacter == $t ifTrue: [ 
+							currentCharacter == $t ifTrue: [
 								self step.
 								currentCharacter == $< ifTrue: [ ^ self scan40 ].
-								currentCharacter == $> ifTrue: [ 
+								currentCharacter == $> ifTrue: [
 									self recordMatch: #( 17 ).
 									self step.
 									currentCharacter == $< ifTrue: [ ^ self scan40 ] ].
@@ -938,7 +938,7 @@ HTMLScanner >> scan44 [
 
 	self step.
 	currentCharacter == $< ifTrue: [ ^ self scan43 ].
-	currentCharacter == $> ifTrue: [ 
+	currentCharacter == $> ifTrue: [
 		self recordMatch: #( 3 18 ).
 		self step.
 		currentCharacter == $< ifTrue: [ ^ self scan43 ].
@@ -946,35 +946,35 @@ HTMLScanner >> scan44 [
 		currentCharacter == $? ifTrue: [ ^ self scan46 ].
 		^ self scan42 ].
 	currentCharacter == $? ifTrue: [ ^ self scan46 ].
-	currentCharacter == $s ifTrue: [ 
+	currentCharacter == $s ifTrue: [
 		self step.
 		currentCharacter == $< ifTrue: [ ^ self scan43 ].
 		currentCharacter == $> ifTrue: [ ^ self scan45 ].
 		currentCharacter == $? ifTrue: [ ^ self scan46 ].
-		currentCharacter == $c ifTrue: [ 
+		currentCharacter == $c ifTrue: [
 			self step.
 			currentCharacter == $< ifTrue: [ ^ self scan43 ].
 			currentCharacter == $> ifTrue: [ ^ self scan45 ].
 			currentCharacter == $? ifTrue: [ ^ self scan46 ].
-			currentCharacter == $r ifTrue: [ 
+			currentCharacter == $r ifTrue: [
 				self step.
 				currentCharacter == $< ifTrue: [ ^ self scan43 ].
 				currentCharacter == $> ifTrue: [ ^ self scan45 ].
 				currentCharacter == $? ifTrue: [ ^ self scan46 ].
-				currentCharacter == $i ifTrue: [ 
+				currentCharacter == $i ifTrue: [
 					self step.
 					currentCharacter == $< ifTrue: [ ^ self scan43 ].
 					currentCharacter == $> ifTrue: [ ^ self scan45 ].
 					currentCharacter == $? ifTrue: [ ^ self scan46 ].
-					currentCharacter == $p ifTrue: [ 
+					currentCharacter == $p ifTrue: [
 						self step.
 						currentCharacter == $< ifTrue: [ ^ self scan43 ].
 						currentCharacter == $> ifTrue: [ ^ self scan45 ].
 						currentCharacter == $? ifTrue: [ ^ self scan46 ].
-						currentCharacter == $t ifTrue: [ 
+						currentCharacter == $t ifTrue: [
 							self step.
 							currentCharacter == $< ifTrue: [ ^ self scan43 ].
-							currentCharacter == $> ifTrue: [ 
+							currentCharacter == $> ifTrue: [
 								self recordMatch: #( 3 17 ).
 								self step.
 								currentCharacter == $< ifTrue: [ ^ self scan43 ].
@@ -1025,41 +1025,41 @@ HTMLScanner >> scan47 [
 { #category : #generated }
 HTMLScanner >> scan48 [
 
-	[ 
+	[
 	self step.
-	currentCharacter == $/ ifTrue: [ 
+	currentCharacter == $/ ifTrue: [
 		self step.
 		currentCharacter == $< ifTrue: [ ^ self scan48 ].
-		currentCharacter == $> ifTrue: [ 
+		currentCharacter == $> ifTrue: [
 			self recordMatch: #( 8 18 ).
 			self step.
 			currentCharacter == $< ifTrue: [ ^ self scan48 ].
 			currentCharacter == $> ifTrue: [ ^ self scan49 ].
 			^ self scan47 ].
-		currentCharacter == $s ifTrue: [ 
+		currentCharacter == $s ifTrue: [
 			self step.
 			currentCharacter == $< ifTrue: [ ^ self scan48 ].
 			currentCharacter == $> ifTrue: [ ^ self scan49 ].
-			currentCharacter == $c ifTrue: [ 
+			currentCharacter == $c ifTrue: [
 				self step.
 				currentCharacter == $< ifTrue: [ ^ self scan48 ].
 				currentCharacter == $> ifTrue: [ ^ self scan49 ].
-				currentCharacter == $r ifTrue: [ 
+				currentCharacter == $r ifTrue: [
 					self step.
 					currentCharacter == $< ifTrue: [ ^ self scan48 ].
 					currentCharacter == $> ifTrue: [ ^ self scan49 ].
-					currentCharacter == $i ifTrue: [ 
+					currentCharacter == $i ifTrue: [
 						self step.
 						currentCharacter == $< ifTrue: [ ^ self scan48 ].
 						currentCharacter == $> ifTrue: [ ^ self scan49 ].
-						currentCharacter == $p ifTrue: [ 
+						currentCharacter == $p ifTrue: [
 							self step.
 							currentCharacter == $< ifTrue: [ ^ self scan48 ].
 							currentCharacter == $> ifTrue: [ ^ self scan49 ].
-							currentCharacter == $t ifTrue: [ 
+							currentCharacter == $t ifTrue: [
 								self step.
 								currentCharacter == $< ifTrue: [ ^ self scan48 ].
-								currentCharacter == $> ifTrue: [ 
+								currentCharacter == $> ifTrue: [
 									self recordMatch: #( 8 17 ).
 									self step.
 									currentCharacter == $< ifTrue: [ ^ self scan48 ].
@@ -1104,41 +1104,41 @@ HTMLScanner >> scan50 [
 { #category : #generated }
 HTMLScanner >> scan51 [
 
-	[ 
+	[
 	self step.
-	currentCharacter == $/ ifTrue: [ 
+	currentCharacter == $/ ifTrue: [
 		self step.
 		currentCharacter == $< ifTrue: [ ^ self scan51 ].
-		currentCharacter == $> ifTrue: [ 
+		currentCharacter == $> ifTrue: [
 			self recordMatch: #( 9 18 ).
 			self step.
 			currentCharacter == $< ifTrue: [ ^ self scan51 ].
 			currentCharacter == $> ifTrue: [ ^ self scan52 ].
 			^ self scan50 ].
-		currentCharacter == $s ifTrue: [ 
+		currentCharacter == $s ifTrue: [
 			self step.
 			currentCharacter == $< ifTrue: [ ^ self scan51 ].
 			currentCharacter == $> ifTrue: [ ^ self scan52 ].
-			currentCharacter == $c ifTrue: [ 
+			currentCharacter == $c ifTrue: [
 				self step.
 				currentCharacter == $< ifTrue: [ ^ self scan51 ].
 				currentCharacter == $> ifTrue: [ ^ self scan52 ].
-				currentCharacter == $r ifTrue: [ 
+				currentCharacter == $r ifTrue: [
 					self step.
 					currentCharacter == $< ifTrue: [ ^ self scan51 ].
 					currentCharacter == $> ifTrue: [ ^ self scan52 ].
-					currentCharacter == $i ifTrue: [ 
+					currentCharacter == $i ifTrue: [
 						self step.
 						currentCharacter == $< ifTrue: [ ^ self scan51 ].
 						currentCharacter == $> ifTrue: [ ^ self scan52 ].
-						currentCharacter == $p ifTrue: [ 
+						currentCharacter == $p ifTrue: [
 							self step.
 							currentCharacter == $< ifTrue: [ ^ self scan51 ].
 							currentCharacter == $> ifTrue: [ ^ self scan52 ].
-							currentCharacter == $t ifTrue: [ 
+							currentCharacter == $t ifTrue: [
 								self step.
 								currentCharacter == $< ifTrue: [ ^ self scan51 ].
-								currentCharacter == $> ifTrue: [ 
+								currentCharacter == $> ifTrue: [
 									self recordMatch: #( 9 17 ).
 									self step.
 									currentCharacter == $< ifTrue: [ ^ self scan51 ].
@@ -1184,47 +1184,47 @@ HTMLScanner >> scan55 [
 
 	self step.
 	currentCharacter == $< ifTrue: [ ^ self scan54 ].
-	currentCharacter == $> ifTrue: [ 
+	currentCharacter == $> ifTrue: [
 		self recordMatch: #( 18 20 ).
 		self step.
 		currentCharacter == $< ifTrue: [ ^ self scan54 ].
 		^ self scan53 ].
-	currentCharacter == $s ifTrue: [ 
+	currentCharacter == $s ifTrue: [
 		self step.
 		currentCharacter == $< ifTrue: [ ^ self scan54 ].
-		currentCharacter == $c ifTrue: [ 
+		currentCharacter == $c ifTrue: [
 			self step.
 			currentCharacter == $< ifTrue: [ ^ self scan54 ].
-			currentCharacter == $r ifTrue: [ 
+			currentCharacter == $r ifTrue: [
 				self step.
 				currentCharacter == $< ifTrue: [ ^ self scan54 ].
-				currentCharacter == $i ifTrue: [ 
+				currentCharacter == $i ifTrue: [
 					self step.
 					currentCharacter == $< ifTrue: [ ^ self scan54 ].
-					currentCharacter == $p ifTrue: [ 
+					currentCharacter == $p ifTrue: [
 						self step.
 						currentCharacter == $< ifTrue: [ ^ self scan54 ].
-						currentCharacter == $t ifTrue: [ 
+						currentCharacter == $t ifTrue: [
 							self step.
 							currentCharacter == $< ifTrue: [ ^ self scan54 ].
-							currentCharacter == $> ifTrue: [ 
+							currentCharacter == $> ifTrue: [
 								self recordMatch: #( 17 ).
 								self step.
 								currentCharacter == $< ifTrue: [ ^ self scan54 ] ] ] ] ] ].
 			^ self scan53 ].
-		currentCharacter == $t ifTrue: [ 
+		currentCharacter == $t ifTrue: [
 			self step.
 			currentCharacter == $< ifTrue: [ ^ self scan54 ].
-			currentCharacter == $y ifTrue: [ 
+			currentCharacter == $y ifTrue: [
 				self step.
 				currentCharacter == $< ifTrue: [ ^ self scan54 ].
-				currentCharacter == $l ifTrue: [ 
+				currentCharacter == $l ifTrue: [
 					self step.
 					currentCharacter == $< ifTrue: [ ^ self scan54 ].
-					currentCharacter == $e ifTrue: [ 
+					currentCharacter == $e ifTrue: [
 						self step.
 						currentCharacter == $< ifTrue: [ ^ self scan54 ].
-						currentCharacter == $> ifTrue: [ 
+						currentCharacter == $> ifTrue: [
 							self recordMatch: #( 19 ).
 							self step.
 							currentCharacter == $< ifTrue: [ ^ self scan54 ] ] ] ] ] ] ].
@@ -1236,8 +1236,8 @@ HTMLScanner >> scan56 [
 
 	self step.
 	currentCharacter == $< ifTrue: [ ^ self scan2 ].
-	(currentCharacter == $: or: [ 
-		 (currentCharacter between: $A and: $Z) or: [ 
+	(currentCharacter == $: or: [
+		 (currentCharacter between: $A and: $Z) or: [
 			 currentCharacter between: $a and: $z ] ]) ifTrue: [ ^ self scan57 ].
 	^ self scan1
 ]
@@ -1245,10 +1245,10 @@ HTMLScanner >> scan56 [
 { #category : #generated }
 HTMLScanner >> scan57 [
 
-	[ 
+	[
 	self recordMatch: #( 16 ).
 	self step.
-	currentCharacter == $) ifTrue: [ 
+	currentCharacter == $) ifTrue: [
 		self recordMatch: #( 16 ).
 		self step.
 		currentCharacter == $< ifTrue: [ ^ self scan2 ].
@@ -1256,9 +1256,9 @@ HTMLScanner >> scan57 [
 		^ self scan1 ].
 	currentCharacter == $< ifTrue: [ ^ self scan2 ].
 	currentCharacter == $] ifTrue: [ ^ self scan58 ].
-	(currentCharacter between: $- and: $.) or: [ 
-		(currentCharacter between: $0 and: $:) or: [ 
-			(currentCharacter between: $A and: $Z) or: [ 
+	(currentCharacter between: $- and: $.) or: [
+		(currentCharacter between: $0 and: $:) or: [
+			(currentCharacter between: $A and: $Z) or: [
 				currentCharacter == $_ or: [ currentCharacter between: $a and: $z ] ] ] ] ]
 		whileTrue.
 	^ self scan1
@@ -1279,8 +1279,8 @@ HTMLScanner >> scan59 [
 	self step.
 	currentCharacter == $# ifTrue: [ ^ self scan56 ].
 	currentCharacter == $< ifTrue: [ ^ self scan2 ].
-	(currentCharacter == $: or: [ 
-		 (currentCharacter between: $A and: $Z) or: [ 
+	(currentCharacter == $: or: [
+		 (currentCharacter between: $A and: $Z) or: [
 			 currentCharacter between: $a and: $z ] ]) ifTrue: [ ^ self scan57 ].
 	^ self scan1
 ]
@@ -1297,44 +1297,44 @@ HTMLScanner >> scan6 [
 { #category : #generated }
 HTMLScanner >> scan7 [
 
-	[ 
+	[
 	self step.
 	currentCharacter == $" ifTrue: [ ^ self scan6 ].
-	currentCharacter == $/ ifTrue: [ 
+	currentCharacter == $/ ifTrue: [
 		self step.
 		currentCharacter == $" ifTrue: [ ^ self scan6 ].
 		currentCharacter == $< ifTrue: [ ^ self scan7 ].
-		currentCharacter == $> ifTrue: [ 
+		currentCharacter == $> ifTrue: [
 			self recordMatch: #( 18 ).
 			self step.
 			currentCharacter == $" ifTrue: [ ^ self scan6 ].
 			currentCharacter == $< ifTrue: [ ^ self scan7 ].
 			^ self scan5 ].
-		currentCharacter == $s ifTrue: [ 
+		currentCharacter == $s ifTrue: [
 			self step.
 			currentCharacter == $" ifTrue: [ ^ self scan6 ].
 			currentCharacter == $< ifTrue: [ ^ self scan7 ].
-			currentCharacter == $c ifTrue: [ 
+			currentCharacter == $c ifTrue: [
 				self step.
 				currentCharacter == $" ifTrue: [ ^ self scan6 ].
 				currentCharacter == $< ifTrue: [ ^ self scan7 ].
-				currentCharacter == $r ifTrue: [ 
+				currentCharacter == $r ifTrue: [
 					self step.
 					currentCharacter == $" ifTrue: [ ^ self scan6 ].
 					currentCharacter == $< ifTrue: [ ^ self scan7 ].
-					currentCharacter == $i ifTrue: [ 
+					currentCharacter == $i ifTrue: [
 						self step.
 						currentCharacter == $" ifTrue: [ ^ self scan6 ].
 						currentCharacter == $< ifTrue: [ ^ self scan7 ].
-						currentCharacter == $p ifTrue: [ 
+						currentCharacter == $p ifTrue: [
 							self step.
 							currentCharacter == $" ifTrue: [ ^ self scan6 ].
 							currentCharacter == $< ifTrue: [ ^ self scan7 ].
-							currentCharacter == $t ifTrue: [ 
+							currentCharacter == $t ifTrue: [
 								self step.
 								currentCharacter == $" ifTrue: [ ^ self scan6 ].
 								currentCharacter == $< ifTrue: [ ^ self scan7 ].
-								currentCharacter == $> ifTrue: [ 
+								currentCharacter == $> ifTrue: [
 									self recordMatch: #( 17 ).
 									self step.
 									currentCharacter == $" ifTrue: [ ^ self scan6 ].
@@ -1347,19 +1347,19 @@ HTMLScanner >> scan7 [
 { #category : #generated }
 HTMLScanner >> scan8 [
 
-	[ 
+	[
 	self recordMatch: #( 21 ).
 	self step.
 	currentCharacter == Character space ifTrue: [ ^ self scan6 ].
 	currentCharacter == $< ifTrue: [ ^ self scan10 ].
-	currentCharacter isDigit or: [ 
-		(currentCharacter between: $A and: $F) or: [ 
+	currentCharacter isDigit or: [
+		(currentCharacter between: $A and: $F) or: [
 			currentCharacter between: $a and: $f ] ] ] whileTrue.
-	(currentCharacter == $# or: [ 
-		 (currentCharacter between: $+ and: $?) or: [ 
-			 (currentCharacter between: $G and: $Z) or: [ 
-				 currentCharacter == $_ or: [ 
-					 currentCharacter between: $g and: $z ] ] ] ]) ifTrue: [ 
+	(currentCharacter == $# or: [
+		 (currentCharacter between: $+ and: $?) or: [
+			 (currentCharacter between: $G and: $Z) or: [
+				 currentCharacter == $_ or: [
+					 currentCharacter between: $g and: $z ] ] ] ]) ifTrue: [
 		^ self scan9 ].
 	^ self scan1
 ]
@@ -1367,14 +1367,14 @@ HTMLScanner >> scan8 [
 { #category : #generated }
 HTMLScanner >> scan9 [
 
-	[ 
+	[
 	self recordMatch: #( 21 ).
 	self step.
 	currentCharacter == Character space ifTrue: [ ^ self scan6 ].
 	currentCharacter == $< ifTrue: [ ^ self scan10 ].
-	currentCharacter == $# or: [ 
-		(currentCharacter between: $+ and: $?) or: [ 
-			(currentCharacter between: $A and: $Z) or: [ 
+	currentCharacter == $# or: [
+		(currentCharacter between: $+ and: $?) or: [
+			(currentCharacter between: $A and: $Z) or: [
 				currentCharacter == $_ or: [ currentCharacter between: $a and: $z ] ] ] ] ]
 		whileTrue.
 	^ self scan1
@@ -1383,18 +1383,18 @@ HTMLScanner >> scan9 [
 { #category : #generated }
 HTMLScanner >> scanForToken [
 
-	scope == #style ifTrue: [ 
+	scope == #style ifTrue: [
 		self step.
 		currentCharacter == $< ifTrue: [ ^ self scan54 ].
-		((currentCharacter between: Character tab and: Character lf) or: [ 
-			 currentCharacter == Character cr or: [ 
-				 currentCharacter == Character space ] ]) ifTrue: [ 
-			[ 
+		((currentCharacter between: Character tab and: Character lf) or: [
+			 currentCharacter == Character cr or: [
+				 currentCharacter == Character space ] ]) ifTrue: [
+			[
 			self recordMatch: #( 7 ).
 			self step.
 			currentCharacter == $< ifTrue: [ ^ self scan54 ].
-			(currentCharacter between: Character tab and: Character lf) or: [ 
-				currentCharacter == Character cr or: [ 
+			(currentCharacter between: Character tab and: Character lf) or: [
+				currentCharacter == Character cr or: [
 					currentCharacter == Character space ] ] ] whileTrue ].
 		^ self scan53 ].
 	scope == #default ifTrue: [ ^ self scan17 ].
@@ -1418,8 +1418,8 @@ HTMLScanner >> scanForTokenX1X1 [
 	currentCharacter == $# ifTrue: [ ^ self scan56 ].
 	currentCharacter == $( ifTrue: [ ^ self scan59 ].
 	currentCharacter == $< ifTrue: [ ^ self scan2 ].
-	(currentCharacter == $: or: [ 
-		 (currentCharacter between: $A and: $Z) or: [ 
+	(currentCharacter == $: or: [
+		 (currentCharacter between: $A and: $Z) or: [
 			 currentCharacter between: $a and: $z ] ]) ifTrue: [ ^ self scan57 ].
 	^ self scan1
 ]
@@ -1430,7 +1430,7 @@ HTMLScanner >> scanForTokenX1X2 [
 	self recordMatch: #( 14 ).
 	self step.
 	currentCharacter == $< ifTrue: [ ^ self scan2 ].
-	currentCharacter == $> ifTrue: [ 
+	currentCharacter == $> ifTrue: [
 		self recordMatch: #( 13 ).
 		self step.
 		currentCharacter == $< ifTrue: [ ^ self scan2 ] ].
@@ -1464,11 +1464,11 @@ HTMLScanner >> scanForTokenX1X5 [
 	currentCharacter == $= ifTrue: [ ^ self scanForTokenX1X4 ].
 	currentCharacter == $> ifTrue: [ ^ self scanForTokenX1X3 ].
 	currentCharacter == $[ ifTrue: [ ^ self scanForTokenX1X1 ].
-	((currentCharacter between: Character tab and: Character lf) or: [ 
-		 currentCharacter == Character cr or: [ 
+	((currentCharacter between: Character tab and: Character lf) or: [
+		 currentCharacter == Character cr or: [
 			 currentCharacter == Character space ] ]) ifTrue: [ ^ self scan4 ].
-	(currentCharacter == $: or: [ 
-		 (currentCharacter between: $A and: $Z) or: [ 
+	(currentCharacter == $: or: [
+		 (currentCharacter between: $A and: $Z) or: [
 			 currentCharacter between: $a and: $z ] ]) ifTrue: [ ^ self scan57 ].
 	^ self scan1
 ]
@@ -1483,11 +1483,11 @@ HTMLScanner >> scanForTokenX2 [
 	currentCharacter == $' ifTrue: [ ^ self scan14 ].
 	currentCharacter == $< ifTrue: [ ^ self scan10 ].
 	currentCharacter isDigit ifTrue: [ ^ self scan16 ].
-	((currentCharacter between: Character tab and: Character lf) or: [ 
+	((currentCharacter between: Character tab and: Character lf) or: [
 		 currentCharacter == Character cr ]) ifTrue: [ ^ self scan4 ].
-	((currentCharacter between: $+ and: $?) or: [ 
-		 (currentCharacter between: $A and: $Z) or: [ 
-			 currentCharacter == $_ or: [ currentCharacter between: $a and: $z ] ] ]) 
+	((currentCharacter between: $+ and: $?) or: [
+		 (currentCharacter between: $A and: $Z) or: [
+			 currentCharacter == $_ or: [ currentCharacter between: $a and: $z ] ] ])
 		ifTrue: [ ^ self scan9 ].
 	^ self scan1
 ]
@@ -1495,7 +1495,7 @@ HTMLScanner >> scanForTokenX2 [
 { #category : #generated }
 HTMLScanner >> scanForTokenX2X1 [
 
-	[ 
+	[
 	self recordMatch: #( 7 ).
 	self step.
 	currentCharacter == Character space ] whileTrue

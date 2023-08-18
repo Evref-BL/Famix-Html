@@ -11,38 +11,39 @@ HTMLParser class >> ambiguousTransitions [
 #[ 0 10 0 29] 
 #[ 0 25 0 26] 
 #[ 0 26 0 29] 
-#[ 0 74 0 78] 
-#[ 0 86 0 90] 
-#[ 0 93 0 118] 
-#[ 0 97 0 118] 
-#[ 0 105 0 118] 
-#[ 0 118 0 169] 
-#[ 0 134 0 138] 
-#[ 0 134 0 249] 
-#[ 0 134 0 138 0 253] 
-#[ 0 146 1 17] 
-#[ 0 138 0 150] 
-#[ 0 150 0 249] 
-#[ 0 138 0 150 0 253] 
-#[ 0 138 0 158] 
-#[ 0 158 0 249] 
-#[ 0 138 0 158 0 253] 
-#[ 0 50 0 174] 
-#[ 0 138 0 186] 
-#[ 0 186 0 249] 
-#[ 0 138 0 186 0 253] 
-#[ 0 194 0 253] 
-#[ 0 198 0 253] 
-#[ 0 90 0 206] 
-#[ 0 90 0 249] 
-#[ 0 90 0 206 0 253] 
-#[ 0 50 0 210]
+#[ 0 78 0 82] 
+#[ 0 93 0 114] 
+#[ 0 97 0 114] 
+#[ 0 105 0 114] 
+#[ 0 114 0 117] 
+#[ 0 130 0 134] 
+#[ 0 130 0 134 0 245] 
+#[ 0 130 0 134 0 249] 
+#[ 0 142 1 13] 
+#[ 0 134 0 146] 
+#[ 0 134 0 146 0 245] 
+#[ 0 134 0 146 0 249] 
+#[ 0 134 0 154] 
+#[ 0 134 0 154 0 245] 
+#[ 0 134 0 154 0 249] 
+#[ 0 50 0 170] 
+#[ 0 134 0 182] 
+#[ 0 134 0 182 0 245] 
+#[ 0 134 0 182 0 249] 
+#[ 0 190 0 245] 
+#[ 0 190 0 249] 
+#[ 0 194 0 245] 
+#[ 0 194 0 249] 
+#[ 0 86 0 202] 
+#[ 0 86 0 202 0 245] 
+#[ 0 86 0 202 0 249] 
+#[ 0 50 0 206]
 	).
 ]
 
 { #category : #'generated-accessing' }
 HTMLParser class >> cacheId [
-	^'2023-08-18T13:56:25.331+02:00'
+	^'2023-08-18T14:52:04.594+02:00'
 ]
 
 { #category : #generated }
@@ -76,12 +77,11 @@ htmlElements
 
 htmlElement
     :  StartTag <TAG_OPEN> 'beginTagOpen' <TAG_NAME> 'tagOpenName' (Attributes 'attributes')?  <SEA_WS>?
-      (RetDefault <TAG_CLOSE> 'beginTagClose' (Content 'children' StartTag <TAG_OPEN> 'endTagOpen' <TAG_SLASH> <TAG_NAME> 'endTagOpenName' <SEA_WS>?  RetDefault <TAG_CLOSE> 'endTagClose' )? | RetDefault <TAG_SLASH_CLOSE>) {{ Element }}
+      (RetDefault <TAG_SLASH_CLOSE> | RetDefault <TAG_CLOSE> 'beginTagClose' (Content 'children' StartTag <TAG_OPEN> 'endTagOpen' <TAG_SLASH> <TAG_NAME> 'endTagOpenName' <SEA_WS>?  RetDefault <TAG_CLOSE> 'endTagClose' )?) {{ Element }}
     | <SCRIPTLET>
     | script
     | style
-    | <HTML_TEXT>
-    | htmlComment 'comment' {{Comment}}
+    | htmlMisc
     ;
 
 Content
@@ -318,7 +318,7 @@ attvalue <SINGLE_QUOTE_STRING>
 { #category : #generated }
 HTMLParser class >> reduceTable [
 ^#(
-	#(44 0 #reduceActionForRetDefault1: 2456577 true) 
+	#(44 0 #reduceActionForRetDefault1: 2412545 true) 
 	#(24 0 #nil 188417 false) 
 	#(26 1 #liftFirstValue: 295937 false) 
 	#(26 1 #liftFirstValue: 295938 false) 
@@ -329,58 +329,57 @@ HTMLParser class >> reduceTable [
 	#(23 6 #reduceActionForhtmlDocument3: 157699 false) 
 	#(23 6 #reduceActionForhtmlDocument3: 157698 false) 
 	#(25 2 #reduceActionForhtmlElements_2: 258050 false) 
-	#(43 0 #reduceActionForStartTag1: 2414593 true) 
+	#(43 0 #reduceActionForStartTag1: 2370561 true) 
 	#(23 7 #reduceActionForhtmlDocument4: 157700 false) 
-	#(40 1 #liftFirstValue: 1421313 false) 
-	#(40 1 #liftFirstValue: 1421314 false) 
+	#(40 1 #liftFirstValue: 1377281 false) 
+	#(40 1 #liftFirstValue: 1377282 false) 
 	#(29 1 #liftFirstValue: 423949 false) 
-	#(39 1 #liftFirstValue: 1330179 false) 
+	#(39 1 #liftFirstValue: 1286147 false) 
+	#(39 1 #liftFirstValue: 1286146 false) 
 	#(29 1 #liftFirstValue: 423952 false) 
-	#(39 1 #liftFirstValue: 1330178 false) 
 	#(28 2 #liftFirstValue: 373762 false) 
-	#(39 1 #reduceActionForhtmlMisc1: 1330177 false) 
-	#(29 1 #reduceActionForhtmlMisc1: 423953 false) 
+	#(39 1 #reduceActionForhtmlMisc1: 1286145 false) 
 	#(29 1 #liftFirstValue: 423950 false) 
 	#(29 1 #liftFirstValue: 423951 false) 
-	#(41 2 #liftFirstValue: 1496065 false) 
-	#(41 2 #liftFirstValue: 1496066 false) 
-	#(42 2 #liftFirstValue: 1569793 false) 
-	#(42 2 #liftFirstValue: 1569794 false) 
+	#(41 2 #liftFirstValue: 1452033 false) 
+	#(41 2 #liftFirstValue: 1452034 false) 
+	#(42 2 #liftFirstValue: 1525761 false) 
+	#(42 2 #liftFirstValue: 1525762 false) 
 	#(27 3 #reduceActionForhtmlElements1: 354305 false) 
-	#(37 1 #reduceActionForAttribute1: 1120257 false) 
-	#(45 0 #reduceActionForStartATTVALUE1: 3662849 true) 
-	#(36 0 #reduceActionFor__SEA_WS___Attribute__htmlAttribute___1: 1069057 false) 
+	#(37 1 #reduceActionForAttribute1: 1076225 false) 
+	#(45 0 #reduceActionForStartATTVALUE1: 3618817 true) 
+	#(36 0 #reduceActionFor__SEA_WS___Attribute__htmlAttribute___1: 1025025 false) 
+	#(29 5 #reduceActionForhtmlElement2: 423938 false) 
+	#(33 0 #reduceActionForhtmlElements_1: 880641 false) 
 	#(29 5 #reduceActionForhtmlElement1: 423937 false) 
-	#(33 0 #reduceActionForhtmlElements_1: 924673 false) 
-	#(29 5 #reduceActionForhtmlElement3: 423939 false) 
-	#(34 3 #reduceActionForAttributes1: 1014785 false) 
-	#(29 6 #reduceActionForhtmlElement4: 423940 false) 
-	#(29 6 #reduceActionForhtmlElement3: 423942 false) 
+	#(34 3 #reduceActionForAttributes1: 970753 false) 
+	#(29 6 #reduceActionForhtmlElement5: 423941 false) 
+	#(29 6 #reduceActionForhtmlElement1: 423940 false) 
+	#(29 6 #reduceActionForhtmlElement8: 423944 false) 
 	#(29 6 #reduceActionForhtmlElement7: 423943 false) 
-	#(29 6 #reduceActionForhtmlElement9: 423945 false) 
-	#(38 1 #liftFirstValue: 1275906 false) 
-	#(38 1 #liftFirstValue: 1275905 false) 
-	#(31 1 #reduceActionForContent1: 896001 false) 
-	#(36 2 #reduceActionFor__SEA_WS___Attribute__htmlAttribute___2: 1069058 false) 
-	#(35 1 #liftFirstValue: 1069057 false) 
-	#(29 7 #reduceActionForhtmlElement10: 423946 false) 
-	#(29 7 #reduceActionForhtmlElement9: 423948 false) 
-	#(32 1 #reduceActionFor__htmlComment__comment____htmlElement__element_____CDATA____htmlChardata__5: 924677 false) 
-	#(32 1 #reduceActionFor__htmlComment__comment____htmlElement__element_____CDATA____htmlChardata__3: 924675 false) 
-	#(33 2 #reduceActionFor__htmlComment__comment____htmlElement__element_____CDATA____htmlChardata___2: 924674 false) 
-	#(32 1 #reduceActionFor__htmlComment__comment____htmlElement__element_____CDATA____htmlChardata__1: 924673 false) 
-	#(31 2 #reduceActionForContent2: 896002 false) 
-	#(35 2 #liftSecondValue: 1069058 false) 
-	#(32 2 #reduceActionFor__htmlComment__comment____htmlElement__element_____CDATA____htmlChardata__5: 924678 false) 
-	#(32 2 #reduceActionFor__htmlComment__comment____htmlElement__element_____CDATA____htmlChardata__3: 924676 false) 
-	#(32 2 #reduceActionFor__htmlComment__comment____htmlElement__element_____CDATA____htmlChardata__1: 924674 false) 
-	#(37 5 #reduceActionForAttribute2: 1120258 false) 
-	#(30 0 #nil 686081 false) 
-	#(30 1 #liftFirstValue: 686082 false) 
-	#(29 13 #reduceActionForhtmlElement2: 423938 false) 
-	#(29 14 #reduceActionForhtmlElement5: 423941 false) 
-	#(29 14 #reduceActionForhtmlElement8: 423944 false) 
-	#(29 15 #reduceActionForhtmlElement11: 423947 false)
+	#(38 1 #liftFirstValue: 1231874 false) 
+	#(38 1 #liftFirstValue: 1231873 false) 
+	#(31 1 #reduceActionForContent1: 851969 false) 
+	#(36 2 #reduceActionFor__SEA_WS___Attribute__htmlAttribute___2: 1025026 false) 
+	#(35 1 #liftFirstValue: 1025025 false) 
+	#(29 7 #reduceActionForhtmlElement11: 423947 false) 
+	#(29 7 #reduceActionForhtmlElement7: 423946 false) 
+	#(32 1 #reduceActionFor__htmlComment__comment____htmlElement__element_____CDATA____htmlChardata__5: 880645 false) 
+	#(32 1 #reduceActionFor__htmlComment__comment____htmlElement__element_____CDATA____htmlChardata__3: 880643 false) 
+	#(33 2 #reduceActionFor__htmlComment__comment____htmlElement__element_____CDATA____htmlChardata___2: 880642 false) 
+	#(32 1 #reduceActionFor__htmlComment__comment____htmlElement__element_____CDATA____htmlChardata__1: 880641 false) 
+	#(31 2 #reduceActionForContent2: 851970 false) 
+	#(35 2 #liftSecondValue: 1025026 false) 
+	#(32 2 #reduceActionFor__htmlComment__comment____htmlElement__element_____CDATA____htmlChardata__5: 880646 false) 
+	#(32 2 #reduceActionFor__htmlComment__comment____htmlElement__element_____CDATA____htmlChardata__3: 880644 false) 
+	#(32 2 #reduceActionFor__htmlComment__comment____htmlElement__element_____CDATA____htmlChardata__1: 880642 false) 
+	#(37 5 #reduceActionForAttribute2: 1076226 false) 
+	#(30 0 #nil 717825 false) 
+	#(30 1 #liftFirstValue: 717826 false) 
+	#(29 13 #reduceActionForhtmlElement3: 423939 false) 
+	#(29 14 #reduceActionForhtmlElement6: 423942 false) 
+	#(29 14 #reduceActionForhtmlElement9: 423945 false) 
+	#(29 15 #reduceActionForhtmlElement12: 423948 false)
 	).
 ]
 
@@ -454,102 +453,101 @@ HTMLParser class >> transitionTable [
 #[1 0 30 0 1 0 30 0 2 0 30 0 6 0 30 0 7 0 30 0 8 0 30 0 9 0 30 0 10 0 30 0 11 0 81 0 27 0 85 0 28 0 38 0 46] 
 #[1 0 30 0 1 0 30 0 2 0 30 0 6 0 30 0 7 0 30 0 8 0 30 0 9 0 30 0 10 0 30 0 11 0 81 0 27 0 85 0 28 0 42 0 46] 
 #[0 0 46 0 1 0 2 0 6 0 7 0 8 0 9 0 10 0 11 0 46] 
-#[1 0 129 0 1 0 129 0 2 0 121 0 6 0 125 0 7 0 109 0 8 0 113 0 9 0 50 0 10 0 117 0 11 0 121 0 29 0 125 0 39 0 129 0 40 0 121 0 41 0 121 0 42 0 141 0 43] 
+#[1 0 129 0 1 0 129 0 2 0 121 0 6 0 125 0 7 0 109 0 8 0 113 0 9 0 50 0 10 0 125 0 11 0 121 0 29 0 125 0 39 0 129 0 40 0 121 0 41 0 121 0 42 0 141 0 43] 
 #[1 0 30 0 1 0 30 0 2 0 30 0 6 0 30 0 7 0 30 0 8 0 30 0 9 0 30 0 10 0 30 0 11 0 81 0 27 0 85 0 28 0 54 0 46] 
 #[0 0 58 0 1 0 2 0 4 0 6 0 7 0 8 0 9 0 10 0 11 0 46] 
 #[0 0 62 0 1 0 2 0 4 0 6 0 7 0 8 0 9 0 10 0 11 0 46] 
 #[0 0 66 0 1 0 2 0 4 0 6 0 7 0 8 0 9 0 10 0 11 0 46] 
-#[0 0 70 0 1 0 2 0 6 0 7 0 8 0 9 0 10 0 11 0 46] 
+#[0 0 70 0 1 0 2 0 4 0 6 0 7 0 8 0 9 0 10 0 11 0 46] 
 #[1 0 145 0 17 0 149 0 18] 
 #[1 0 153 0 19 0 157 0 20] 
-#[1 0 23 0 1 0 23 0 2 0 23 0 6 0 23 0 7 0 23 0 8 0 23 0 9 0 23 0 10 0 23 0 11 0 74 0 46] 
+#[0 0 74 0 1 0 2 0 4 0 6 0 7 0 8 0 9 0 10 0 11 0 46] 
 #[1 0 30 0 1 0 30 0 2 0 30 0 6 0 30 0 7 0 30 0 8 0 30 0 9 0 30 0 10 0 30 0 11 0 161 0 28 0 30 0 46] 
-#[0 0 82 0 1 0 2 0 6 0 7 0 8 0 9 0 10 0 11 0 46] 
-#[1 0 27 0 1 0 27 0 2 0 27 0 6 0 27 0 7 0 27 0 8 0 27 0 9 0 27 0 10 0 27 0 11 0 90 0 46] 
+#[1 0 23 0 1 0 23 0 2 0 23 0 6 0 23 0 7 0 23 0 8 0 23 0 9 0 23 0 10 0 23 0 11 0 78 0 46] 
+#[0 0 86 0 1 0 2 0 6 0 7 0 8 0 9 0 10 0 11 0 46] 
+#[0 0 90 0 1 0 2 0 4 0 6 0 7 0 8 0 9 0 10 0 11 0 46] 
 #[0 0 94 0 1 0 2 0 4 0 6 0 7 0 8 0 9 0 10 0 11 0 46] 
-#[0 0 98 0 1 0 2 0 4 0 6 0 7 0 8 0 9 0 10 0 11 0 46] 
 #[0 0 165 0 10] 
+#[0 0 98 0 1 0 2 0 4 0 6 0 7 0 8 0 9 0 10 0 11 0 46] 
 #[0 0 102 0 1 0 2 0 4 0 6 0 7 0 8 0 9 0 10 0 11 0 46] 
 #[0 0 106 0 1 0 2 0 4 0 6 0 7 0 8 0 9 0 10 0 11 0 46] 
 #[0 0 110 0 1 0 2 0 4 0 6 0 7 0 8 0 9 0 10 0 11 0 46] 
-#[0 0 114 0 1 0 2 0 4 0 6 0 7 0 8 0 9 0 10 0 11 0 46] 
-#[1 0 31 0 1 0 35 0 2 0 118 0 6 0 39 0 7 0 118 0 8 0 118 0 9 0 118 0 10 0 43 0 11 0 125 0 39 0 173 0 40 0 118 0 46] 
-#[0 0 177 0 16] 
-#[0 0 78 0 1 0 2 0 6 0 7 0 8 0 9 0 10 0 11 0 46] 
-#[0 0 86 0 1 0 2 0 6 0 7 0 8 0 9 0 10 0 11 0 46] 
-#[1 0 181 0 7 0 6 0 12 0 6 0 13 0 185 0 34 0 189 0 44] 
-#[1 0 6 0 12 0 6 0 13 0 193 0 16 0 197 0 37 0 201 0 44] 
-#[1 0 205 0 7 0 6 0 12 0 6 0 13 0 209 0 44] 
-#[1 0 213 0 12 0 217 0 13] 
-#[1 0 122 0 7 0 122 0 12 0 122 0 13 0 126 0 15 0 122 0 16 0 221 0 45] 
-#[1 0 130 0 7 0 130 0 12 0 130 0 13 0 130 0 16 0 225 0 36] 
-#[1 0 229 0 12 0 233 0 13] 
-#[1 0 6 0 12 0 6 0 13 0 237 0 44] 
-#[1 0 241 0 12 0 245 0 13] 
-#[1 0 47 0 1 0 47 0 2 0 47 0 4 0 47 0 6 0 51 0 7 0 47 0 8 0 47 0 9 0 47 0 10 0 55 0 11 1 1 0 31 1 5 0 33 1 9 0 38 0 134 0 46] 
-#[0 0 142 0 1 0 2 0 4 0 6 0 7 0 8 0 9 0 10 0 11 0 46] 
-#[0 1 13 0 15] 
-#[1 0 59 0 7 0 146 0 12 0 146 0 13 0 193 0 16 1 21 0 35 1 21 0 37] 
-#[1 0 63 0 1 0 63 0 2 0 63 0 4 0 63 0 6 0 67 0 7 0 63 0 8 0 63 0 9 0 63 0 10 0 71 0 11 1 29 0 31 1 5 0 33 1 9 0 38 0 150 0 46] 
-#[0 0 154 0 1 0 2 0 4 0 6 0 7 0 8 0 9 0 10 0 11 0 46] 
-#[1 1 33 0 12 1 37 0 13] 
-#[1 0 75 0 1 0 75 0 2 0 75 0 4 0 75 0 6 0 79 0 7 0 75 0 8 0 75 0 9 0 75 0 10 0 83 0 11 1 41 0 31 1 5 0 33 1 9 0 38 0 158 0 46] 
-#[0 0 162 0 1 0 2 0 4 0 6 0 7 0 8 0 9 0 10 0 11 0 46] 
-#[0 0 166 0 1 0 2 0 4 0 6 0 8 0 9 0 10 0 11] 
-#[0 0 170 0 1 0 2 0 4 0 6 0 8 0 9 0 10 0 11] 
-#[1 0 50 0 10 1 45 0 43] 
-#[1 1 65 0 1 1 65 0 2 1 49 0 4 1 57 0 6 0 109 0 8 0 113 0 9 0 87 0 10 1 57 0 11 1 57 0 29 1 61 0 32 1 65 0 40 1 57 0 41 1 57 0 42 0 141 0 43] 
-#[1 0 138 0 1 0 138 0 2 0 138 0 4 0 138 0 6 0 138 0 8 0 138 0 9 0 138 0 10 0 138 0 11 1 69 0 33] 
-#[1 0 50 0 21 1 73 0 43] 
-#[1 0 193 0 16 1 77 0 37] 
+#[1 0 27 0 1 0 31 0 2 0 114 0 6 0 35 0 7 0 114 0 8 0 114 0 9 0 114 0 10 0 39 0 11 0 169 0 39 0 129 0 40 0 114 0 46] 
+#[0 0 173 0 16] 
+#[0 0 82 0 1 0 2 0 6 0 7 0 8 0 9 0 10 0 11 0 46] 
+#[1 0 177 0 7 0 6 0 12 0 6 0 13 0 181 0 34 0 185 0 44] 
+#[1 0 6 0 12 0 6 0 13 0 189 0 16 0 193 0 37 0 197 0 44] 
+#[1 0 201 0 7 0 6 0 12 0 6 0 13 0 205 0 44] 
+#[1 0 209 0 12 0 213 0 13] 
+#[1 0 118 0 7 0 118 0 12 0 118 0 13 0 122 0 15 0 118 0 16 0 217 0 45] 
+#[1 0 126 0 7 0 126 0 12 0 126 0 13 0 126 0 16 0 221 0 36] 
+#[1 0 225 0 12 0 229 0 13] 
+#[1 0 6 0 12 0 6 0 13 0 233 0 44] 
+#[1 0 237 0 12 0 241 0 13] 
+#[1 0 43 0 1 0 43 0 2 0 43 0 4 0 43 0 6 0 47 0 7 0 43 0 8 0 43 0 9 0 43 0 10 0 51 0 11 0 253 0 31 1 1 0 33 1 5 0 38 0 130 0 46] 
+#[0 0 138 0 1 0 2 0 4 0 6 0 7 0 8 0 9 0 10 0 11 0 46] 
+#[0 1 9 0 15] 
+#[1 0 55 0 7 0 142 0 12 0 142 0 13 0 189 0 16 1 17 0 35 1 17 0 37] 
+#[1 0 59 0 1 0 59 0 2 0 59 0 4 0 59 0 6 0 63 0 7 0 59 0 8 0 59 0 9 0 59 0 10 0 67 0 11 1 25 0 31 1 1 0 33 1 5 0 38 0 146 0 46] 
+#[0 0 150 0 1 0 2 0 4 0 6 0 7 0 8 0 9 0 10 0 11 0 46] 
+#[1 1 29 0 12 1 33 0 13] 
+#[1 0 71 0 1 0 71 0 2 0 71 0 4 0 71 0 6 0 75 0 7 0 71 0 8 0 71 0 9 0 71 0 10 0 79 0 11 1 37 0 31 1 1 0 33 1 5 0 38 0 154 0 46] 
+#[0 0 158 0 1 0 2 0 4 0 6 0 7 0 8 0 9 0 10 0 11 0 46] 
+#[0 0 162 0 1 0 2 0 4 0 6 0 7 0 8 0 9 0 10 0 11] 
+#[0 0 166 0 1 0 2 0 4 0 6 0 7 0 8 0 9 0 10 0 11] 
+#[1 0 50 0 10 1 41 0 43] 
+#[1 1 61 0 1 1 61 0 2 1 45 0 4 1 49 0 6 1 49 0 7 0 109 0 8 0 113 0 9 0 83 0 10 1 49 0 11 1 49 0 29 1 53 0 32 1 49 0 39 1 61 0 40 1 49 0 41 1 49 0 42 0 141 0 43] 
+#[1 0 134 0 1 0 134 0 2 0 134 0 4 0 134 0 6 0 134 0 7 0 134 0 8 0 134 0 9 0 134 0 10 0 134 0 11 1 65 0 33] 
+#[1 0 50 0 21 1 69 0 43] 
+#[1 0 189 0 16 1 73 0 37] 
+#[0 0 174 0 7 0 12 0 13 0 16] 
 #[0 0 178 0 7 0 12 0 13 0 16] 
-#[0 0 182 0 7 0 12 0 13 0 16] 
-#[1 0 50 0 10 1 81 0 43] 
-#[1 0 91 0 1 0 91 0 2 0 91 0 4 0 91 0 6 0 95 0 7 0 91 0 8 0 91 0 9 0 91 0 10 0 99 0 11 1 85 0 31 1 5 0 33 1 9 0 38 0 186 0 46] 
-#[0 0 190 0 1 0 2 0 4 0 6 0 7 0 8 0 9 0 10 0 11 0 46] 
-#[1 0 50 0 10 1 89 0 43] 
-#[0 1 93 0 10] 
-#[1 0 194 0 1 0 194 0 2 0 194 0 4 0 194 0 6 1 97 0 7 0 194 0 8 0 194 0 9 0 194 0 10 0 103 0 11 1 97 0 38] 
-#[0 0 74 0 1 0 2 0 4 0 6 0 7 0 8 0 9 0 10 0 11] 
-#[1 0 198 0 1 0 198 0 2 0 198 0 4 0 198 0 6 1 101 0 7 0 198 0 8 0 198 0 9 0 198 0 10 0 107 0 11 1 101 0 38] 
-#[0 0 202 0 1 0 2 0 4 0 6 0 8 0 9 0 10 0 11] 
-#[1 0 111 0 1 0 111 0 2 0 111 0 4 0 111 0 6 0 115 0 7 0 111 0 8 0 111 0 9 0 111 0 10 0 119 0 11 1 105 0 38] 
-#[1 1 65 0 1 1 65 0 2 1 49 0 4 1 57 0 6 0 109 0 8 0 113 0 9 0 123 0 10 1 57 0 11 1 57 0 29 1 61 0 32 1 65 0 40 1 57 0 41 1 57 0 42 0 141 0 43] 
-#[0 1 109 0 21] 
-#[0 0 214 0 7 0 12 0 13 0 16] 
-#[0 1 113 0 10] 
-#[1 0 50 0 10 1 117 0 43] 
-#[0 1 121 0 10] 
+#[1 0 50 0 10 1 77 0 43] 
+#[1 0 87 0 1 0 87 0 2 0 87 0 4 0 87 0 6 0 91 0 7 0 87 0 8 0 87 0 9 0 87 0 10 0 95 0 11 1 81 0 31 1 1 0 33 1 5 0 38 0 182 0 46] 
+#[0 0 186 0 1 0 2 0 4 0 6 0 7 0 8 0 9 0 10 0 11 0 46] 
+#[1 0 50 0 10 1 85 0 43] 
+#[0 1 89 0 10] 
+#[1 0 190 0 1 0 190 0 2 0 190 0 4 0 190 0 6 0 99 0 7 0 190 0 8 0 190 0 9 0 190 0 10 0 103 0 11 1 93 0 38] 
+#[1 0 194 0 1 0 194 0 2 0 194 0 4 0 194 0 6 0 107 0 7 0 194 0 8 0 194 0 9 0 194 0 10 0 111 0 11 1 97 0 38] 
+#[0 0 198 0 1 0 2 0 4 0 6 0 7 0 8 0 9 0 10 0 11] 
+#[0 0 78 0 1 0 2 0 4 0 6 0 7 0 8 0 9 0 10 0 11] 
+#[1 0 115 0 1 0 115 0 2 0 115 0 4 0 115 0 6 0 119 0 7 0 115 0 8 0 115 0 9 0 115 0 10 0 123 0 11 1 101 0 38] 
+#[1 1 61 0 1 1 61 0 2 1 45 0 4 1 49 0 6 1 49 0 7 0 109 0 8 0 113 0 9 0 127 0 10 1 49 0 11 1 49 0 29 1 53 0 32 1 49 0 39 1 61 0 40 1 49 0 41 1 49 0 42 0 141 0 43] 
+#[0 1 105 0 21] 
+#[0 0 210 0 7 0 12 0 13 0 16] 
+#[0 1 109 0 10] 
+#[1 0 50 0 10 1 113 0 43] 
+#[0 1 117 0 10] 
+#[0 1 121 0 14] 
+#[0 0 214 0 1 0 2 0 4 0 6 0 7 0 8 0 9 0 10 0 11] 
+#[0 0 218 0 1 0 2 0 4 0 6 0 7 0 8 0 9 0 10 0 11] 
+#[0 0 222 0 1 0 2 0 4 0 6 0 7 0 8 0 9 0 10 0 11] 
+#[0 0 226 0 7 0 12 0 13 0 16] 
 #[0 1 125 0 14] 
-#[0 0 218 0 1 0 2 0 4 0 6 0 8 0 9 0 10 0 11] 
-#[0 0 222 0 1 0 2 0 4 0 6 0 8 0 9 0 10 0 11] 
-#[0 0 226 0 1 0 2 0 4 0 6 0 8 0 9 0 10 0 11] 
-#[0 0 230 0 7 0 12 0 13 0 16] 
-#[0 1 129 0 14] 
-#[0 1 133 0 10] 
-#[0 1 137 0 14] 
+#[0 1 129 0 10] 
+#[0 1 133 0 14] 
+#[0 1 137 0 16] 
 #[0 1 141 0 16] 
-#[0 1 145 0 16] 
-#[0 1 149 0 14] 
-#[0 1 153 0 16] 
-#[1 1 161 0 7 0 234 0 12 1 161 0 30] 
-#[1 1 165 0 7 0 234 0 12 1 165 0 30] 
-#[0 1 169 0 16] 
-#[1 1 173 0 7 0 234 0 12 1 173 0 30] 
-#[0 0 238 0 12] 
+#[0 1 145 0 14] 
+#[0 1 149 0 16] 
+#[1 1 157 0 7 0 230 0 12 1 157 0 30] 
+#[1 1 161 0 7 0 230 0 12 1 161 0 30] 
+#[0 1 165 0 16] 
+#[1 1 169 0 7 0 230 0 12 1 169 0 30] 
+#[0 0 234 0 12] 
+#[1 0 6 0 12 1 173 0 44] 
 #[1 0 6 0 12 1 177 0 44] 
-#[1 0 6 0 12 1 181 0 44] 
-#[1 1 185 0 7 0 234 0 12 1 185 0 30] 
-#[1 0 6 0 12 1 189 0 44] 
+#[1 1 181 0 7 0 230 0 12 1 181 0 30] 
+#[1 0 6 0 12 1 185 0 44] 
+#[0 1 189 0 12] 
 #[0 1 193 0 12] 
-#[0 1 197 0 12] 
-#[1 0 6 0 12 1 201 0 44] 
-#[0 1 205 0 12] 
+#[1 0 6 0 12 1 197 0 44] 
+#[0 1 201 0 12] 
+#[0 0 238 0 1 0 2 0 4 0 6 0 7 0 8 0 9 0 10 0 11 0 46] 
 #[0 0 242 0 1 0 2 0 4 0 6 0 7 0 8 0 9 0 10 0 11 0 46] 
+#[0 1 205 0 12] 
 #[0 0 246 0 1 0 2 0 4 0 6 0 7 0 8 0 9 0 10 0 11 0 46] 
-#[0 1 209 0 12] 
-#[0 0 250 0 1 0 2 0 4 0 6 0 7 0 8 0 9 0 10 0 11 0 46] 
-#[0 0 254 0 1 0 2 0 4 0 6 0 7 0 8 0 9 0 10 0 11 0 46]
+#[0 0 250 0 1 0 2 0 4 0 6 0 7 0 8 0 9 0 10 0 11 0 46]
 	).
 ]
 
@@ -708,7 +706,7 @@ HTMLParser >> reduceActionForhtmlDocument4: nodes [
 ]
 
 { #category : #'generated-reduction actions' }
-HTMLParser >> reduceActionForhtmlElement10: nodes [
+HTMLParser >> reduceActionForhtmlElement11: nodes [
 
 	| result |
 	result := HTMLElementNode new.
@@ -720,7 +718,7 @@ HTMLParser >> reduceActionForhtmlElement10: nodes [
 ]
 
 { #category : #'generated-reduction actions' }
-HTMLParser >> reduceActionForhtmlElement11: nodes [
+HTMLParser >> reduceActionForhtmlElement12: nodes [
 
 	| result |
 	result := HTMLElementNode new.
@@ -742,12 +740,22 @@ HTMLParser >> reduceActionForhtmlElement1: nodes [
 	result := HTMLElementNode new.
 	result beginTagOpen: (nodes at: 2).
 	result tagOpenName: (nodes at: 3).
-	result beginTagClose: (nodes at: 5).
 	^ result
 ]
 
 { #category : #'generated-reduction actions' }
 HTMLParser >> reduceActionForhtmlElement2: nodes [
+
+	| result |
+	result := HTMLElementNode new.
+	result beginTagOpen: (nodes at: 2).
+	result tagOpenName: (nodes at: 3).
+	result beginTagClose: (nodes at: 5).
+	^ result
+]
+
+{ #category : #'generated-reduction actions' }
+HTMLParser >> reduceActionForhtmlElement3: nodes [
 
 	| result |
 	result := HTMLElementNode new.
@@ -762,17 +770,7 @@ HTMLParser >> reduceActionForhtmlElement2: nodes [
 ]
 
 { #category : #'generated-reduction actions' }
-HTMLParser >> reduceActionForhtmlElement3: nodes [
-
-	| result |
-	result := HTMLElementNode new.
-	result beginTagOpen: (nodes at: 2).
-	result tagOpenName: (nodes at: 3).
-	^ result
-]
-
-{ #category : #'generated-reduction actions' }
-HTMLParser >> reduceActionForhtmlElement4: nodes [
+HTMLParser >> reduceActionForhtmlElement5: nodes [
 
 	| result |
 	result := HTMLElementNode new.
@@ -783,7 +781,7 @@ HTMLParser >> reduceActionForhtmlElement4: nodes [
 ]
 
 { #category : #'generated-reduction actions' }
-HTMLParser >> reduceActionForhtmlElement5: nodes [
+HTMLParser >> reduceActionForhtmlElement6: nodes [
 
 	| result |
 	result := HTMLElementNode new.
@@ -805,7 +803,6 @@ HTMLParser >> reduceActionForhtmlElement7: nodes [
 	result beginTagOpen: (nodes at: 2).
 	result tagOpenName: (nodes at: 3).
 	result _attributes: (nodes at: 4).
-	result beginTagClose: (nodes at: 6).
 	^ result
 ]
 
@@ -818,10 +815,6 @@ HTMLParser >> reduceActionForhtmlElement8: nodes [
 	result tagOpenName: (nodes at: 3).
 	result _attributes: (nodes at: 4).
 	result beginTagClose: (nodes at: 6).
-	result _children: (nodes at: 7).
-	result endTagOpen: (nodes at: 9).
-	result endTagOpenName: (nodes at: 11).
-	result endTagClose: (nodes at: 14).
 	^ result
 ]
 
@@ -833,6 +826,11 @@ HTMLParser >> reduceActionForhtmlElement9: nodes [
 	result beginTagOpen: (nodes at: 2).
 	result tagOpenName: (nodes at: 3).
 	result _attributes: (nodes at: 4).
+	result beginTagClose: (nodes at: 6).
+	result _children: (nodes at: 7).
+	result endTagOpen: (nodes at: 9).
+	result endTagOpenName: (nodes at: 11).
+	result endTagClose: (nodes at: 14).
 	^ result
 ]
 
