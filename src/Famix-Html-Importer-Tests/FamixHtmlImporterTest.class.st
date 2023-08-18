@@ -158,7 +158,7 @@ FamixHtmlImporterTest >> testCanParseCommentFirstThenDiv [
 FamixHtmlImporterTest >> testCanParseConsecutiveAttributes [
 
 	importer importString:
-		' <bl-hyperlink-click [arrow]="false" testLabelValue="Lien_31" id="lien31" (clickEvent)="openPhase(BanqueListeFormulaire) ;$event.preventDefault()"[link]="''#''"></bl-hyperlink-click>'.
+		' <a [element]="false" testLabelValue="Lien_31" id="lien31" (clickEvent)="someCode"[link]="''#''"></a>'.
 	self assert: (htmlModel allWithType: FamixHtmlElement) size equals: 1.
 	self
 		assert:
