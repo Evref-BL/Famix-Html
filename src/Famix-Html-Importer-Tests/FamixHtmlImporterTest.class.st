@@ -117,7 +117,7 @@ FamixHtmlImporterTest >> testCanParseCommentFirstThenDiv [
 FamixHtmlImporterTest >> testCanParseConsecutiveAttributes [
 
 	importer importString:
-		' <bl-hyperlink-click [arrow]="false" testLabelValue="Lien_31" id="lien31" (clickEvent)="openPhase(BanqueListeFormulaire) ;$event.preventDefault()"[link]="''#''">'.
+		' <bl-hyperlink-click [arrow]="false" testLabelValue="Lien_31" id="lien31" (clickEvent)="openPhase(BanqueListeFormulaire) ;$event.preventDefault()"[link]="''#''"></bl-hyperlink-click>'.
 	self assert: (htmlModel allWithType: FamixHtmlElement) size equals: 1.
 	self
 		assert:
@@ -186,7 +186,9 @@ FamixHtmlImporterTest >> testCanParseTwoComments [
 { #category : #initialization }
 FamixHtmlImporterTest >> testIncorrectTagName [
 
-	self should: (importer importString: '<[div]>') raise: Exception
+	self
+		should: (importer importString: '<[div]></[div]>')
+		raise: Exception
 ]
 
 { #category : #initialization }
