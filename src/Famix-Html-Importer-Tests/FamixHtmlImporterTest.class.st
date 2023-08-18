@@ -274,3 +274,23 @@ FamixHtmlImporterTest >> testParseMultipleChildren [
 				 el tagName = 'div' ]) domElements size
 		equals: 2
 ]
+
+{ #category : #initialization }
+FamixHtmlImporterTest >> testShortTagWithShortAttribute [
+
+	importer importString: '<div test/>'.
+	self assert: (htmlModel allWithType: FamixHtmlElement) size equals: 1.
+	self
+		assert: (htmlModel allWithType: FamixHtmlAttribute) size
+		equals: 1
+]
+
+{ #category : #initialization }
+FamixHtmlImporterTest >> testShortTagWithShortHashAttribute [
+
+	importer importString: '<div #test/>'.
+	self assert: (htmlModel allWithType: FamixHtmlElement) size equals: 1.
+	self
+		assert: (htmlModel allWithType: FamixHtmlAttribute) size
+		equals: 1
+]
