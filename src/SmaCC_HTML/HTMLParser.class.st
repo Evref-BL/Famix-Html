@@ -24,7 +24,7 @@ HTMLParser class >> ambiguousTransitions [
 
 { #category : #'generated-accessing' }
 HTMLParser class >> cacheId [
-	^'2023-08-18T16:48:02.877+02:00'
+	^'2023-08-18T16:54:30.674+02:00'
 ]
 
 { #category : #generated }
@@ -275,24 +275,11 @@ attvalue <ATTRIBUTE>
     ;
 
 attvalue <ATTCHARS>
-    : <ATTCHAR>+ \ ?
+    : <ATTCHAR>+
     ;
 
 attvalue <ATTCHAR>
-    : \-
-    | _
-    | \.
-    | \/
-    | \+
-    | \,
-    | \?
-    | \=
-    | \:
-    | \;
-    | \#
-    | \<
-    | \>
-    | [0-9a-zA-Z]
+    : [0-9a-zA-Z]
     ;
 
 attvalue <HEXCHARS>

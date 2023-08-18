@@ -100,6 +100,26 @@ FamixHtmlImporterTest >> testCanImportTagWithEndOfLine [
 ]
 
 { #category : #'parse - attributes' }
+FamixHtmlImporterTest >> testCanParseAttributeEndAtLastTagCharacter [
+
+	importer importString: ' <div read=true></div>'.
+	self assert: (htmlModel allWithType: FamixHtmlElement) size equals: 1.
+	self
+		assert:
+			(htmlModel allWithType: FamixHtmlAttribute) anyOne entityAttributes
+				size
+		equals: 1.
+	self
+		assert:
+		(htmlModel allWithType: FamixHtmlAttribute) anyOne attributeName
+		equals: 'read'.
+	self
+		assert:
+		(htmlModel allWithType: FamixHtmlAttribute) anyOne attributeValue
+		equals: 'true'
+]
+
+{ #category : #'parse - attributes' }
 FamixHtmlImporterTest >> testCanParseAttributePrefixedWithStar [
 
 	importer importString: '<div *ngIf="hello"></div>'.
