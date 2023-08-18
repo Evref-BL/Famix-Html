@@ -16,21 +16,18 @@ HTMLParser class >> ambiguousTransitions [
 #[ 0 97 0 114] 
 #[ 0 105 0 114] 
 #[ 0 114 0 117] 
-#[ 0 30 0 130] 
-#[ 0 30 0 130 0 134] 
-#[ 0 142 1 5] 
-#[ 0 30 0 146] 
-#[ 0 30 0 134 0 146] 
-#[ 0 30 0 154] 
-#[ 0 30 0 134 0 154] 
-#[ 0 30 0 178] 
-#[ 0 30 0 134 0 178]
+#[ 0 130 0 134] 
+#[ 0 142 0 253] 
+#[ 0 134 0 146] 
+#[ 0 134 0 154] 
+#[ 0 30 0 50] 
+#[ 0 134 0 170]
 	).
 ]
 
 { #category : #'generated-accessing' }
 HTMLParser class >> cacheId [
-	^'2023-08-18T14:54:54.711+02:00'
+	^'2023-08-18T15:05:29.117+02:00'
 ]
 
 { #category : #generated }
@@ -64,7 +61,7 @@ htmlElements
 
 htmlElement
     :  StartTag <TAG_OPEN> 'beginTagOpen' <TAG_NAME> 'tagOpenName' (Attributes 'attributes')?  <SEA_WS>?
-      (RetDefault <TAG_SLASH_CLOSE> | RetDefault <TAG_CLOSE> 'beginTagClose' ((htmlElements 'children')? StartTag <TAG_OPEN> 'endTagOpen' <TAG_SLASH> <TAG_NAME> 'endTagOpenName' <SEA_WS>?  RetDefault <TAG_CLOSE> 'endTagClose' )?) {{ Element }}
+      (RetDefault <TAG_SLASH_CLOSE> | RetDefault <TAG_CLOSE> 'beginTagClose' ((htmlElements 'children')* StartTag <TAG_OPEN> 'endTagOpen' <TAG_SLASH> <TAG_NAME> 'endTagOpenName' <SEA_WS>?  RetDefault <TAG_CLOSE> 'endTagClose' )?) {{ Element }}
     | <SCRIPTLET>
     | script
     | style
@@ -333,19 +330,19 @@ HTMLParser class >> reduceTable [
 	#(43 0 #reduceActionForStartATTVALUE1: 3508225 true) 
 	#(34 0 #reduceActionFor__SEA_WS___Attribute__htmlAttribute___1: 914433 false) 
 	#(28 5 #reduceActionForhtmlElement2: 423938 false) 
-	#(30 0 #nil 623617 false) 
+	#(30 0 #reduceActionFor__SEA_WS___Attribute__htmlAttribute___1: 623617 false) 
 	#(28 5 #reduceActionForhtmlElement1: 423937 false) 
 	#(32 3 #reduceActionForAttributes1: 860161 false) 
 	#(28 6 #reduceActionForhtmlElement5: 423941 false) 
 	#(28 6 #reduceActionForhtmlElement1: 423940 false) 
 	#(28 6 #reduceActionForhtmlElement8: 423944 false) 
 	#(28 6 #reduceActionForhtmlElement7: 423943 false) 
-	#(29 1 #liftFirstValue: 623617 false) 
-	#(30 1 #liftFirstValue: 623618 false) 
 	#(34 2 #reduceActionFor__SEA_WS___Attribute__htmlAttribute___2: 914434 false) 
 	#(33 1 #liftFirstValue: 914433 false) 
 	#(28 7 #reduceActionForhtmlElement11: 423947 false) 
 	#(28 7 #reduceActionForhtmlElement7: 423946 false) 
+	#(29 1 #liftFirstValue: 623617 false) 
+	#(30 2 #reduceActionFor__SEA_WS___Attribute__htmlAttribute___2: 623618 false) 
 	#(33 2 #liftSecondValue: 914434 false) 
 	#(35 5 #reduceActionForAttribute2: 965634 false) 
 	#(31 0 #nil 726017 false) 
@@ -379,7 +376,7 @@ HTMLParser class >> symbolNames [
 	     '<STYLE_SHORT_BODY>' '<ATTVALUE_VALUE>' 'B e g i n' 'htmlDocument'
 	     'scriptletOrSeaWs*' 'htmlElements*' 'scriptletOrSeaWs'
 	     'htmlElements' 'htmlMisc*' 'htmlElement' '(htmlElements ''children'')'
-	     '(htmlElements ''children'')?' '<SEA_WS>?' 'Attributes'
+	     '(htmlElements ''children'')*' '<SEA_WS>?' 'Attributes'
 	     '(<SEA_WS>? Attribute ''htmlAttribute'')'
 	     '(<SEA_WS>? Attribute ''htmlAttribute'')*'
 	     'Attribute' 'htmlChardata' 'htmlMisc' 'htmlComment'
@@ -456,31 +453,31 @@ HTMLParser class >> transitionTable [
 #[1 0 225 0 11 0 229 0 12] 
 #[1 0 6 0 11 0 6 0 12 0 233 0 42] 
 #[1 0 237 0 11 0 241 0 12] 
-#[1 0 43 0 1 0 43 0 2 0 43 0 5 0 43 0 6 0 43 0 7 0 43 0 8 0 47 0 9 0 43 0 10 0 253 0 26 0 85 0 27 0 253 0 29 0 253 0 30 0 130 0 44] 
+#[1 0 43 0 1 0 43 0 2 0 43 0 5 0 43 0 6 0 43 0 7 0 43 0 8 0 43 0 9 0 43 0 10 0 245 0 30 0 130 0 44] 
 #[0 0 138 0 1 0 2 0 5 0 6 0 7 0 8 0 9 0 10 0 44] 
-#[0 1 1 0 14] 
-#[1 0 51 0 6 0 142 0 11 0 142 0 12 0 189 0 15 1 9 0 33 1 9 0 35] 
-#[1 0 55 0 1 0 55 0 2 0 55 0 5 0 55 0 6 0 55 0 7 0 55 0 8 0 59 0 9 0 55 0 10 1 17 0 26 0 85 0 27 1 17 0 29 1 17 0 30 0 146 0 44] 
+#[0 0 249 0 14] 
+#[1 0 47 0 6 0 142 0 11 0 142 0 12 0 189 0 15 1 1 0 33 1 1 0 35] 
+#[1 0 51 0 1 0 51 0 2 0 51 0 5 0 51 0 6 0 51 0 7 0 51 0 8 0 51 0 9 0 51 0 10 1 9 0 30 0 146 0 44] 
 #[0 0 150 0 1 0 2 0 5 0 6 0 7 0 8 0 9 0 10 0 44] 
-#[1 1 21 0 11 1 25 0 12] 
-#[1 0 63 0 1 0 63 0 2 0 63 0 5 0 63 0 6 0 63 0 7 0 63 0 8 0 67 0 9 0 63 0 10 1 29 0 26 0 85 0 27 1 29 0 29 1 29 0 30 0 154 0 44] 
+#[1 1 13 0 11 1 17 0 12] 
+#[1 0 55 0 1 0 55 0 2 0 55 0 5 0 55 0 6 0 55 0 7 0 55 0 8 0 55 0 9 0 55 0 10 1 21 0 30 0 154 0 44] 
 #[0 0 158 0 1 0 2 0 5 0 6 0 7 0 8 0 9 0 10 0 44] 
-#[0 0 162 0 9] 
-#[0 0 166 0 9] 
-#[1 0 50 0 9 1 33 0 41] 
+#[1 0 30 0 1 0 30 0 2 0 30 0 5 0 30 0 6 0 30 0 7 0 30 0 8 0 59 0 9 0 30 0 10 1 29 0 26 0 85 0 27 1 29 0 29 1 33 0 41] 
 #[1 0 50 0 20 1 37 0 41] 
 #[1 0 189 0 15 1 41 0 35] 
-#[0 0 170 0 6 0 11 0 12 0 15] 
-#[0 0 174 0 6 0 11 0 12 0 15] 
-#[1 0 50 0 9 1 45 0 41] 
-#[1 0 71 0 1 0 71 0 2 0 71 0 5 0 71 0 6 0 71 0 7 0 71 0 8 0 75 0 9 0 71 0 10 1 49 0 26 0 85 0 27 1 49 0 29 1 49 0 30 0 178 0 44] 
-#[0 0 182 0 1 0 2 0 5 0 6 0 7 0 8 0 9 0 10 0 44] 
-#[1 0 50 0 9 1 53 0 41] 
+#[0 0 162 0 6 0 11 0 12 0 15] 
+#[0 0 166 0 6 0 11 0 12 0 15] 
+#[1 0 30 0 1 0 30 0 2 0 30 0 5 0 30 0 6 0 30 0 7 0 30 0 8 0 59 0 9 0 30 0 10 1 29 0 26 0 85 0 27 1 29 0 29 1 45 0 41] 
+#[1 0 63 0 1 0 63 0 2 0 63 0 5 0 63 0 6 0 63 0 7 0 63 0 8 0 63 0 9 0 63 0 10 1 49 0 30 0 170 0 44] 
+#[0 0 174 0 1 0 2 0 5 0 6 0 7 0 8 0 9 0 10 0 44] 
+#[1 0 30 0 1 0 30 0 2 0 30 0 5 0 30 0 6 0 30 0 7 0 30 0 8 0 59 0 9 0 30 0 10 1 29 0 26 0 85 0 27 1 29 0 29 1 53 0 41] 
+#[0 0 178 0 1 0 2 0 5 0 6 0 7 0 8 0 9 0 10] 
+#[0 0 182 0 1 0 2 0 5 0 6 0 7 0 8 0 9 0 10] 
 #[0 1 57 0 9] 
 #[0 1 61 0 20] 
 #[0 0 186 0 6 0 11 0 12 0 15] 
 #[0 1 65 0 9] 
-#[1 0 50 0 9 1 69 0 41] 
+#[1 0 30 0 1 0 30 0 2 0 30 0 5 0 30 0 6 0 30 0 7 0 30 0 8 0 59 0 9 0 30 0 10 1 29 0 26 0 85 0 27 1 29 0 29 1 69 0 41] 
 #[0 1 73 0 9] 
 #[0 1 77 0 13] 
 #[0 0 190 0 6 0 11 0 12 0 15] 
@@ -631,7 +628,7 @@ HTMLParser >> reduceActionForhtmlElement12: nodes [
 	result tagOpenName: (nodes at: 3).
 	result _attributes: (nodes at: 4).
 	result beginTagClose: (nodes at: 7).
-	result _children: (nodes at: 8).
+	result addObjects: (nodes at: 8) to: result childrens.
 	result endTagOpen: (nodes at: 10).
 	result endTagOpenName: (nodes at: 12).
 	result endTagClose: (nodes at: 15).
@@ -667,7 +664,7 @@ HTMLParser >> reduceActionForhtmlElement3: nodes [
 	result beginTagOpen: (nodes at: 2).
 	result tagOpenName: (nodes at: 3).
 	result beginTagClose: (nodes at: 5).
-	result _children: (nodes at: 6).
+	result addObjects: (nodes at: 6) to: result childrens.
 	result endTagOpen: (nodes at: 8).
 	result endTagOpenName: (nodes at: 10).
 	result endTagClose: (nodes at: 13).
@@ -693,7 +690,7 @@ HTMLParser >> reduceActionForhtmlElement6: nodes [
 	result beginTagOpen: (nodes at: 2).
 	result tagOpenName: (nodes at: 3).
 	result beginTagClose: (nodes at: 6).
-	result _children: (nodes at: 7).
+	result addObjects: (nodes at: 7) to: result childrens.
 	result endTagOpen: (nodes at: 9).
 	result endTagOpenName: (nodes at: 11).
 	result endTagClose: (nodes at: 14).
@@ -732,7 +729,7 @@ HTMLParser >> reduceActionForhtmlElement9: nodes [
 	result tagOpenName: (nodes at: 3).
 	result _attributes: (nodes at: 4).
 	result beginTagClose: (nodes at: 6).
-	result _children: (nodes at: 7).
+	result addObjects: (nodes at: 7) to: result childrens.
 	result endTagOpen: (nodes at: 9).
 	result endTagOpenName: (nodes at: 11).
 	result endTagClose: (nodes at: 14).

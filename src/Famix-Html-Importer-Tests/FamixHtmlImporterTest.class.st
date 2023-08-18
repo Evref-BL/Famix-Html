@@ -244,3 +244,16 @@ FamixHtmlImporterTest >> testParseMultilineWithDashesAndTest [
 		(htmlModel allWithType: FamixHtmlElement) size
 		equals: 1
 ]
+
+{ #category : #initialization }
+FamixHtmlImporterTest >> testParseMultipleChildren [
+
+	importer importString: '<div>
+	<span></span>
+	<span></span>
+</div>'.
+	self
+		assert: ((htmlModel allWithType: FamixHtmlElement) detect: [ :el |
+				 el tagName = 'div' ]) domElements size
+		equals: 2
+]

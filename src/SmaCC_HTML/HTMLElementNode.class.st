@@ -5,7 +5,7 @@ Class {
 		'beginTagOpen',
 		'tagOpenName',
 		'beginTagClose',
-		'_children',
+		'childrens',
 		'endTagOpen',
 		'endTagOpenName',
 		'endTagClose',
@@ -26,20 +26,6 @@ HTMLElementNode >> _attributes: aHTMLAttributesNode [
 	self _attributes notNil ifTrue: [ self _attributes parent: nil ].
 	_attributes := aHTMLAttributesNode.
 	self _attributes notNil ifTrue: [ self _attributes parent: self ]
-]
-
-{ #category : #generated }
-HTMLElementNode >> _children [
-
-	^ _children
-]
-
-{ #category : #generated }
-HTMLElementNode >> _children: anOrderedCollection [
-
-	self setParent: self _children to: nil.
-	_children := anOrderedCollection.
-	self setParent: self _children to: self
 ]
 
 { #category : #generated }
@@ -70,6 +56,20 @@ HTMLElementNode >> beginTagOpen [
 HTMLElementNode >> beginTagOpen: aSmaCCToken [
 
 	beginTagOpen := aSmaCCToken
+]
+
+{ #category : #generated }
+HTMLElementNode >> childrens [
+
+	^ childrens
+]
+
+{ #category : #generated }
+HTMLElementNode >> childrens: anOrderedCollection [
+
+	self setParent: self childrens to: nil.
+	childrens := anOrderedCollection.
+	self setParent: self childrens to: self
 ]
 
 { #category : #generated }
@@ -108,6 +108,12 @@ HTMLElementNode >> endTagOpenName: aSmaCCToken [
 	endTagOpenName := aSmaCCToken
 ]
 
+{ #category : #'generated-initialize-release' }
+HTMLElementNode >> initialize [
+	super initialize.
+	childrens := OrderedCollection new: 2.
+]
+
 { #category : #generated }
 HTMLElementNode >> nodeVariables [
 
@@ -117,7 +123,7 @@ HTMLElementNode >> nodeVariables [
 { #category : #generated }
 HTMLElementNode >> otherVariables [
 
-	^ #( #_children )
+	^ #( #childrens )
 ]
 
 { #category : #generated }
