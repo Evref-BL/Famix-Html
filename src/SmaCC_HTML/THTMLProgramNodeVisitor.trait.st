@@ -12,6 +12,12 @@ THTMLProgramNodeVisitor >> visitAttribute: anAttribute [
 ]
 
 { #category : #generated }
+THTMLProgramNodeVisitor >> visitAttributes: anAttributes [
+
+	^ self visitProgram: anAttributes
+]
+
+{ #category : #generated }
 THTMLProgramNodeVisitor >> visitComment: aComment [
 
 	^ self visitProgram: aComment

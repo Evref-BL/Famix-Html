@@ -9,10 +9,24 @@ Class {
 		'endTagOpen',
 		'endTagOpenName',
 		'endTagClose',
-		'htmlAttributes'
+		'_attributes'
 	],
 	#category : #'SmaCC_HTML'
 }
+
+{ #category : #generated }
+HTMLElementNode >> _attributes [
+
+	^ _attributes
+]
+
+{ #category : #generated }
+HTMLElementNode >> _attributes: aHTMLAttributesNode [
+
+	self _attributes notNil ifTrue: [ self _attributes parent: nil ].
+	_attributes := aHTMLAttributesNode.
+	self _attributes notNil ifTrue: [ self _attributes parent: self ]
+]
 
 { #category : #generated }
 HTMLElementNode >> _children [
@@ -59,12 +73,6 @@ HTMLElementNode >> beginTagOpen: aSmaCCToken [
 ]
 
 { #category : #generated }
-HTMLElementNode >> compositeNodeVariables [
-
-	^ #( #htmlAttributes )
-]
-
-{ #category : #generated }
 HTMLElementNode >> endTagClose [
 
 	^ endTagClose
@@ -101,29 +109,9 @@ HTMLElementNode >> endTagOpenName: aSmaCCToken [
 ]
 
 { #category : #generated }
-HTMLElementNode >> htmlAttributes [
-
-	^ htmlAttributes
-]
-
-{ #category : #generated }
-HTMLElementNode >> htmlAttributes: anOrderedCollection [
-
-	self setParents: self htmlAttributes to: nil.
-	htmlAttributes := anOrderedCollection.
-	self setParents: self htmlAttributes to: self
-]
-
-{ #category : #'generated-initialize-release' }
-HTMLElementNode >> initialize [
-	super initialize.
-	htmlAttributes := OrderedCollection new: 2.
-]
-
-{ #category : #generated }
 HTMLElementNode >> nodeVariables [
 
-	^ #( #_children )
+	^ #( #_children #_attributes )
 ]
 
 { #category : #generated }
