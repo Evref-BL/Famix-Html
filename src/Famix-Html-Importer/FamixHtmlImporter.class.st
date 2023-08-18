@@ -1,4 +1,15 @@
 "
+This is an importer for an HTML document.
+
+Unlike an XML parser, we try to parse also document that can be used in frameworks such as React, Angular, _and so on_.
+
+## Specification
+
+We deal with [void elements](https://developer.mozilla.org/en-US/docs/Glossary/Void_element)
+
+
+## Example
+
 ```st
 importer := FamixHtmlImporter new.
 importer model: FamixHtmlModel new.
