@@ -7,13 +7,13 @@ Class {
 { #category : #generated }
 HTMLScanner >> emptySymbolTokenId [
 
-	^ 44
+	^ 45
 ]
 
 { #category : #generated }
 HTMLScanner >> errorTokenId [
 
-	^ 45
+	^ 46
 ]
 
 { #category : #generated }

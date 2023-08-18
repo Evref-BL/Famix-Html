@@ -4,12 +4,12 @@ Class {
 	#instVars : [
 		'beginTagOpen',
 		'tagOpenName',
-		'htmlAttributes',
 		'beginTagClose',
 		'_children',
 		'endTagOpen',
 		'endTagOpenName',
-		'endTagClose'
+		'endTagClose',
+		'htmlAttributes'
 	],
 	#category : #'SmaCC_HTML'
 }
