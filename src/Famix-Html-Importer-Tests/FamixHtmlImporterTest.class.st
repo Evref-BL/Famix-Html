@@ -199,11 +199,25 @@ FamixHtmlImporterTest >> testCanParseTwoComments [
 ]
 
 { #category : #initialization }
-FamixHtmlImporterTest >> testIncorrectTagName [
+FamixHtmlImporterTest >> testCanParseWithoutEndingTag [
 
+	importer importString: '<div>
+			<span>
+			<div-b>
+				<a>
+				<div-c></div-c>
+				<b/>
+			</div-b>
+		</div>'.
+	self assert: (htmlModel allWithType: FamixHtmlElement) size equals: 6.
 	self
-		should: (importer importString: '<[div]></[div]>')
-		raise: Exception
+		assert: ((htmlModel allWithType: FamixHtmlElement) detect: [ :tag |
+				 tag tagName = 'div' ]) domElements size
+		equals: 2.
+	self
+		assert: ((htmlModel allWithType: FamixHtmlElement) detect: [ :tag |
+				 tag tagName = 'div-b' ]) domElements size
+		equals: 3
 ]
 
 { #category : #initialization }
@@ -273,6 +287,18 @@ FamixHtmlImporterTest >> testParseMultipleChildren [
 		assert: ((htmlModel allWithType: FamixHtmlElement) detect: [ :el |
 				 el tagName = 'div' ]) domElements size
 		equals: 2
+]
+
+{ #category : #initialization }
+FamixHtmlImporterTest >> testParseWithInterpolation [
+
+	importer importString: ' <mat-card-header>
+                                <mat-card-title>
+                                    <icon [iconClassName]="''filter''"></icon>
+                                    {{ ''interpolated'' | translate }}
+                                </mat-card-title>
+                            </mat-card-header>'.
+	self assert: (htmlModel allWithType: FamixHtmlElement) size equals: 3
 ]
 
 { #category : #initialization }
