@@ -6,6 +6,8 @@ Trait {
 	#instVars : [
 		'#domElements => FMMany type: #FamixHtmlDomElement opposite: #withDomElements'
 	],
+	#traits : 'TEntityMetaLevelDependency',
+	#classTraits : 'TEntityMetaLevelDependency classTrait',
 	#category : #'Famix-Html-Traits'
 }
 

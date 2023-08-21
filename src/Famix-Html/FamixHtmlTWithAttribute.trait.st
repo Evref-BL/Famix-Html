@@ -3,6 +3,8 @@ A dom element with attribute
 "
 Trait {
 	#name : #FamixHtmlTWithAttribute,
+	#traits : 'TEntityMetaLevelDependency',
+	#classTraits : 'TEntityMetaLevelDependency classTrait',
 	#category : #'Famix-Html-Traits'
 }
 

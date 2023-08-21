@@ -69,6 +69,8 @@ FamixHtmlGenerator >> defineHierarchy [
 	element --|> tWithAttribute.
 	element --|> tHasIndexedReferenceToImmediateSource.
 	attribute --|> tHasIndexedReferenceToImmediateSource.
+	tWithDomElements --|> #TEntityMetaLevelDependency.
+	tWithAttribute --|> #TEntityMetaLevelDependency.
 ]
 
 { #category : #definition }
