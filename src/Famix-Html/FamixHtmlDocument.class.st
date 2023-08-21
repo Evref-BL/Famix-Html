@@ -6,6 +6,9 @@ Class {
 	#superclass : #FamixHtmlEntity,
 	#traits : 'FamixHtmlTWithDomElements + FamixTHasImmediateSource',
 	#classTraits : 'FamixHtmlTWithDomElements classTrait + FamixTHasImmediateSource classTrait',
+	#instVars : [
+		'#fileNameReference => FMProperty'
+	],
 	#category : #'Famix-Html-Entities'
 }
 
@@ -16,6 +19,20 @@ FamixHtmlDocument class >> annotation [
 	<package: #'Famix-Html'>
 	<generated>
 	^ self
+]
+
+{ #category : #accessing }
+FamixHtmlDocument >> fileNameReference [
+
+	<FMProperty: #fileNameReference type: #String>
+	<generated>
+	^ fileNameReference
+]
+
+{ #category : #accessing }
+FamixHtmlDocument >> fileNameReference: anObject [
+	<generated>
+	fileNameReference := anObject
 ]
 
 { #category : #testing }

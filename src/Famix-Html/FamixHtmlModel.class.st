@@ -1,6 +1,8 @@
 Class {
 	#name : #FamixHtmlModel,
 	#superclass : #MooseModel,
+	#traits : 'FamixHtmlTEntityCreator',
+	#classTraits : 'FamixHtmlTEntityCreator classTrait',
 	#category : #'Famix-Html-Model'
 }
 

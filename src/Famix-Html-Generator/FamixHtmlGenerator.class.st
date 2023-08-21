@@ -78,8 +78,11 @@ FamixHtmlGenerator >> defineProperties [
 	attribute property: #attributeName type: #String.
 	attribute property: #attributeValue type: #String.
 	element property: #tagName type: #String.
-	tHasIndexedReferenceToImmediateSource property: #startPos type: #Number.
+	tHasIndexedReferenceToImmediateSource
+		property: #startPos
+		type: #Number.
 	tHasIndexedReferenceToImmediateSource property: #endPos type: #Number.
+	document property: #fileNameReference type: #String
 ]
 
 { #category : #definition }

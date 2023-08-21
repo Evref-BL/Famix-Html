@@ -46,10 +46,16 @@ FamixHtmlImporter >> create: aType for: aNode [
 ]
 
 { #category : #'as yet unclassified' }
+FamixHtmlImporter >> importFromFileReference: aFileReference [
+	^ (self importString: aFileReference asFileReference contents)
+		  fileNameReference: aFileReference pathString;
+		  yourself
+]
+
+{ #category : #'as yet unclassified' }
 FamixHtmlImporter >> importString: aHTMLString [
 
-	self accept: (HTMLParser parse: aHTMLString).
-	^ model
+	^ self accept: (HTMLParser parse: aHTMLString)
 ]
 
 { #category : #accessing }
@@ -92,7 +98,8 @@ FamixHtmlImporter >> visitDocument: aDocument [
 	parentNode := self model add: FamixHtmlDocument new.
 	currentDocument := parentNode.
 	parentNode source: aDocument source.
-	self clone visitSmaCCParseNode: aDocument
+	self clone visitSmaCCParseNode: aDocument.
+	^ currentDocument
 ]
 
 { #category : #generated }
