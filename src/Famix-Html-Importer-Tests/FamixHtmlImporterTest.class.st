@@ -49,6 +49,14 @@ FamixHtmlImporterTest >> testCanImportEmptyFile [
 ]
 
 { #category : #initialization }
+FamixHtmlImporterTest >> testCanImportOnlyAScript [
+
+	importer importString: '<script src="tslib.es6.js"></script>'.
+	self flag: 'Not sure how to deal with it'.
+	self assert: htmlModel size equals: 1
+]
+
+{ #category : #initialization }
 FamixHtmlImporterTest >> testCanImportSimpleDiv [
 
 	importer importString: '<div></div>'.
