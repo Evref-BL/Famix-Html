@@ -86,6 +86,7 @@ FamixHtmlImporter >> parentNode: anObject [
 FamixHtmlImporter >> visitAttribute: anAttribute [
 
 	| currentEntity |
+
 	currentEntity := parentNode addAttribute:
 		                 (self create: FamixHtmlAttribute for: anAttribute).
 	currentEntity attributeName: anAttribute attributeName value.

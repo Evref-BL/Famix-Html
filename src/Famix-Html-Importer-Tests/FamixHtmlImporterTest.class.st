@@ -370,6 +370,19 @@ FamixHtmlImporterTest >> testParseWithInterpolation [
 	self assert: (htmlModel allWithType: FamixHtmlElement) size equals: 3
 ]
 
+{ #category : #initialization }
+FamixHtmlImporterTest >> testParseWithInterpolationAsAttributValue [
+
+	importer importString:
+		'<div data-toggle="tooltip" data-placement="top" title=${modelresume.tooltipCompetence} class="stackpanel horizontal"></div>'.
+
+	self
+		assert:
+			((htmlModel allWithType: FamixHtmlAttribute) detect: [ :att |
+				 att attributeName = 'title' ]) attributeValue
+		equals: '${modelresume.tooltipCompetence}'
+]
+
 { #category : #'parse - attributes' }
 FamixHtmlImporterTest >> testShortTagWithShortAttribute [
 

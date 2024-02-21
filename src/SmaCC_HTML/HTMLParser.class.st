@@ -24,7 +24,7 @@ HTMLParser class >> ambiguousTransitions [
 
 { #category : #'generated-accessing' }
 HTMLParser class >> cacheId [
-	^'2023-10-17T17:59:49.381+02:00'
+	^'2024-02-21T15:14:41.779617+01:00'
 ]
 
 { #category : #generated }
@@ -274,6 +274,7 @@ attvalue <ATTRIBUTE>
     | <ATTCHARS>
     | <HEXCHARS>
     | <DECCHARS>
+    | <STRING_INTERPOLATION>
     ;
 
 attvalue <ATTCHARS>
@@ -294,6 +295,10 @@ attvalue <DECCHARS>
 
 attvalue <DOUBLE_QUOTE_STRING>
     : \"" [^\""]* \""
+    ;
+
+attvalue <STRING_INTERPOLATION>
+    : \$\{ [^\}]* \}
     ;
 
 attvalue <SINGLE_QUOTE_STRING>
