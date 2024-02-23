@@ -6,9 +6,9 @@ FamixHtmlTWithDomElements >> miHTMLExtension [
 	<inspectorPresentationOrder: 150 title: 'HTML'>
 	^ SpTreeTablePresenter new
 		  addColumn: (SpCompositeTableColumn new
-				   addColumn: ((SpImageTableColumn evaluated: #midasIcon)
+				   "addColumn: ((SpImageTableColumn evaluated: #midasIcon)
 						    width: 20;
-						    yourself);
+						    yourself);"
 				   addColumn: (SpStringTableColumn evaluated: [ :node |
 						    String streamContents: [ :stream |
 							    node isDocument
